@@ -23,7 +23,7 @@ https://github.com/r-fairhurst/MeetnSleep
 - Email (backup)
 - GitHub
 
-### Rules For communication
+### Rules for communication
 - Be respectful when communicating with other team members.
 - Communicate issues early.
 - Respond to messages within 24 hours. (excluding holidays)
