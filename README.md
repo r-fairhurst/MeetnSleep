@@ -209,25 +209,27 @@ Upon receiving the archive, user can click on specific past summaries, getting i
 Exceptions: failure conditions and scenarios:
 An error can be thrown if the archive has not yet been populated (local or server)
 If we create a log-in and account server, a guest may or may not have an archive (local files empty?) / Further, help the user log-in to an existing account.
-8. Hybrid Audio recording(Aiden Reedy)
-Actors: The user and the application
-Triggers: The user selects “Hybrid mode” on the application
-Preconditions: An input device must be set up and recognized by the system for both the in-person audio and the virtual audio
-Postconditions (success scenario):  The application starts recording the audio for the meeting from both inputs
-List of Steps: 
-The user navigates to the homepage.
-The user selects ‘Hybrid’.
-The user verifies that the correct input device is configured for in-person and virtual audio.
-The user presses the ‘Record’ button.
-The application validates the selected input device.
-The application starts recording the audio.
-A confirmation message is displayed to the user, indicating that the recording is in progress.
-Extensions/variations of the success scenario
-Pause button for recording
-The transcript notes whether a person online or in person is speaking
-The application can tell when a different speaker talks
-Exceptions: failure conditions and scenarios
-Audio input device issue: either they weren’t selected or they got disconnected during the recording
+### 8. Hybrid Audio recording(Aiden Reedy)
+**Actors:** The user and the application
+**Triggers:** The user selects “Hybrid mode” on the application
+**Preconditions:** An input device must be set up and recognized by the system for both the in-person audio and the virtual audio
+**Postconditions (success scenario):**  The application starts recording the audio for the meeting from both inputs
+**List of Steps:** 
+- The user navigates to the homepage.
+- The user selects ‘Hybrid’.
+- The user verifies that the correct input device is configured for in-person and virtual audio.
+- The user presses the ‘Record’ button.
+- The application validates the selected input device.
+- The application starts recording the audio.
+- A confirmation message is displayed to the user, indicating that the recording is in progress.
+
+**Extensions/variations of the success scenario**
+- Pause button for recording
+- The transcript notes whether a person online or in person is speaking
+- The application can tell when a different speaker talks
+
+**Exceptions: failure conditions and scenarios:**
+- Audio input device issue: either they weren’t selected or they got disconnected during the recording
 
 ## Non-functional Requirements
 Open source:
