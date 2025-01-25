@@ -77,143 +77,200 @@ This application would be beneficial because it would be compatible with various
 
 # Project Requirements Elicitation
 
-Functional Requirements (Use Cases):
-1. In Person Audio Recording (William Morton)
-Actor(s): User
-Trigger(s): User clicking/pressing the ‘In Person Recording’ button within the application
-Precondition(s): 
-User must have an in-person recording
-An input device must be set up and recognized by the system
-Postcondition(s): The application starts recording the audio for the meeting.
-List of Steps: 
-The user navigates to the homepage.
-The user selects ‘In-Person’.
-The user verifies that the correct input device is configured.
-The user presses the ‘Record’ button.
-The application validates the selected input device.
-The application starts recording the audio.
-A confirmation message is displayed to the user, indicating that the recording is in progress.
-Extension(s):
-Pause/Resume button for the recording.
-Application notification that the recording was started.
-Recording in progress feedback.
-Exceptions:
+## Functional Requirements (Use Cases):
+
+### 1. In Person Audio Recording (William Morton)
+**Actor(s):** User  
+
+**Trigger(s):** User clicking/pressing the ‘In Person Recording’ button within the application  
+
+**Precondition(s):**
+- User must have an in-person recording
+- An input device must be set up and recognized by the system
+  
+**Postcondition(s):** The application starts recording the audio for the meeting.  
+
+**List of Steps:**
+- The user navigates to the homepage.
+- The user selects ‘In-Person’.
+- The user verifies that the correct input device is configured.
+- The user presses the ‘Record’ button.
+- The application validates the selected input device.
+- The application starts recording the audio.
+- A confirmation message is displayed to the user, indicating that the recording is in progress.
+  
+**Extension(s):**
+- Pause/Resume button for the recording.
+- Application notification that the recording was started.
+- Recording in progress feedback.
+  
+**Exceptions:**  
 No specified input device:
-User attempts to start a recording without specifying the input device.
-The application displays a message to the user indicating there needs to be an input device specified.
-The user opens the input device options and selects working input device.
-The user presses ‘Record’ again to start the recording.
-	Input device error:
-The system displays an error message if the input device has a malfunction.
-The user can either specify a new device or troubleshoot the current device using the input device settings.
-The user presses ‘Record’ again to start the recording.
-2. Save summary to archive(Aidan Daly)
-Actors: User
-Triggers: The user selects the “save” button on their meeting summary when a meeting has ended. 
-Preconditions: The user already has a registered and active Meet n Sleep account. The account is configured to store meeting transcripts in the user’s specific archive. The user is logged into their account before the meeting they want summarized, has begun. 
-Postconditions (success scenario): The software generates the summarized text files for each meeting and organizes them in an archive. The system allows users to export these textfiles to their own hard drive without corruption. The archive is sorted by date so it is easier for the user to find specific meeting transcripts.  
-List of steps (success scenario): 
-The user hits record in the Meet n Sleep app
-The user starts their meeting
-The user ends their meeting 
-The user hits “save” in the Meet n Sleep app.
-The user navigates to the “archive” in the app and finds the transcript for the recent meeting. 
-Extensions/variations of the success scenario: Users can add meeting titles and custom tags to their meeting files to make them easier to find after saving them to the archive. 
-Exceptions: failure conditions and scenarios: Poor audio quality can make it difficult for the software to decipher and understand what is being said in the meeting, which will make it hard to have accurate summarizations. These meetings will be marked in the archive as “unclear audio” so that the user knows something went wrong. 
+- User attempts to start a recording without specifying the input device.
+- The application displays a message to the user indicating there needs to be an input device specified.
+- The user opens the input device options and selects working input device.
+- The user presses ‘Record’ again to start the recording.
+  
+Input device error:  
+- The system displays an error message if the input device has a malfunction.
+- The user can either specify a new device or troubleshoot the current device using the input device settings.
+- The user presses ‘Record’ again to start the recording.
 
-3. Summarization of a Meeting (Ryan Fairhurst)
-Actors: User + an LLM or a python library
-Triggers: once the user has ended their meeting and saved the transcript to a txt file
-Preconditions: The meeting has successfully be transcribed to a .txt after the user ended the meeting
-Postconditions (success scenario): a separate file has been created with a summary of what the meeting was about, along with any important details
-List of steps (success scenario):
-The user records a meeting
-The meeting is transcribed to a .txt file
-The .txt file is then fed into a LLM or some other software to be summarized
-The summarization is in a separate file
-The summarization can be viewed by the user at any time
-Extensions/variations of the success scenario:  The user will be given multiple options of summarization depending on what format they want/ level of detail they want
-Exceptions: failure conditions and scenarios: If the meeting transcript is missing things, then the summary will also miss those things and not be accurate. The LLM/library we choose to do the summarization will have to also not clear out any details it was given, but with any LLM/library it is possible it might deem something not important and skip over it. The LLM or library that we use must be free. 
-4. Deletion of a Recorded Meeting (Aiden Reedy)
-	Actors: User
-Triggers: The user initiates the deletion process by selecting a recorded meeting from their archive and pressing “delete” 
-Preconditions: A transcript/summary .txt file from a previous meeting has already been added to the user’s archive.
-Postconditions: The selected recorded meeting is permanently deleted from the user’s archive and associated storage. The system updates the archive to reflect the deletion and frees up storage space.
-	List of steps(success scenario): 
-The user opens their meet n sleep app, and navigates to their meeting archive. 
-The user selects the meeting they wish to delete. 
-The system displays a confirmation prompt with the details of the selected recording, such as meeting title or date. 
-The user confirms the deletion by clicking the “delete” button. 
-The system deletes the recording and updates the user’s storage usage and archive interface. 
-Extensions/variations of the success scenario: The user can have the option to do a bulk deletion of meeting summaries. Another extension is that the system temporarily moves deleted recordings to a recycle bin where the file will be permanently deleted after a set period of time. 
-Exceptions: failure of the success scenario:  When a user deletes a .txt file from the archive and their system does not immediately reflect the change in their storage space. 
-5. Application Audio Recording (Arianna Valencia)
-Actors: User
-Triggers:
-User selects the “Online Recording” button on the main page of the application 
-Preconditions: 
-User must have a valid input device selected (Preferably the built-in input device on the meeting device)
-Postconditions (success scenario)
-The application successfully records the meeting audio 
-List of steps (success scenario)
-User navigates to main page 
-User selects “Online Meeting” 
-User verifies that the desired input device is selected
-User clicks the “Record” button 
-The application starts recording the online meeting audio 
-A confirmation message is displayed 
-Extensions/variations of the success scenario
-Pause and Resume buttons for the recording process
+### 2. Save summary to archive(Aidan Daly)
+**Actors:** User  
 
+**Triggers:** The user selects the “save” button on their meeting summary when a meeting has ended.  
 
-Exceptions: failure conditions and scenarios
-No input device is selected
-Application displays an error message prompting the user to select a valid input device
-Input device failure
-Application displays an error message indicating that there was an issue with the input device
+**Preconditions:** 
+- The user already has a registered and active Meet n Sleep account.
+- The account is configured to store meeting transcripts in the user’s specific archive.
+- The user is logged into their account before the meeting they want summarized, has begun.
+  
+**Postconditions (success scenario):**
+- The software generates the summarized text files for each meeting and organizes them in an archive.
+- The system allows users to export these textfiles to their own hard drive without corruption.
+- The archive is sorted by date so it is easier for the user to find specific meeting transcripts.
+  
+**List of steps (success scenario):**
+- The user hits record in the Meet n Sleep app
+- The user starts their meeting
+- The user ends their meeting 
+- The user hits “save” in the Meet n Sleep app.
+- The user navigates to the “archive” in the app and finds the transcript for the recent meeting.
+  
+**Extensions/variations of the success scenario:**  
+Users can add meeting titles and custom tags to their meeting files to make them easier to find after saving them to the archive.  
 
-6. Transcript Creation (Nadir Isweesi)
-Actors: The user.
-Triggers: The user joins a meeting with voice input enabled.
-Preconditions: No specific preconditions.
-Postconditions (success scenario): The transcript is generated in real-time and displayed on the screen.
-List of steps (success scenario):
-The user navigates to the homepage.
-The user joins a meeting.
-The user clicks on the transcript icon.
-The transcript appears on the screen in real-time.
-Extensions/variations of the success scenario
-The user can toggle the transcript button to display or hide the transcript.
-The transcript will be stored after the meeting.
-Exceptions: failure conditions and scenarios
-Noice or poor recording quality may prevent accurate transcription.
-Audio input device issue.
-The transcript does not sync with the audio.
- 
-7. Case: Accessing Archive of Summaries (Ian McKee)
-Actors:
-The user is involved with wanting to access their previous summaries.
-Triggers:
-On the main menu, a button is clicked.
-Preconditions:
-There is a past archive to access (i.e. it’s not empty)
-Postconditions (success scenario):
-User receives a list of previous summaries, with action goals.
-List of steps (success scenario):
-User’s on menu
-User requests archive by pressing button
-Archive isn’t empty (local files or account server has at least 1 past summary)
-User receives information
-Extensions/variations of the success scenario:
-Upon receiving the archive, user can click on specific past summaries, getting insights like original transcript length, summary length, that summary’s specific action goals.
-Exceptions: failure conditions and scenarios:
-An error can be thrown if the archive has not yet been populated (local or server)
-If we create a log-in and account server, a guest may or may not have an archive (local files empty?) / Further, help the user log-in to an existing account.
+**Exceptions: failure conditions and scenarios:**  
+Poor audio quality can make it difficult for the software to decipher and understand what is being said in the meeting, which will make it hard to have accurate summarizations. These meetings will be marked in the archive as “unclear audio” so that the user knows something went wrong. 
+
+### 3. Summarization of a Meeting (Ryan Fairhurst)
+**Actors:** User + an LLM or a python library  
+
+**Triggers:** once the user has ended their meeting and saved the transcript to a txt file  
+
+**Preconditions:** The meeting has successfully be transcribed to a .txt after the user ended the meeting  
+
+**Postconditions (success scenario):** a separate file has been created with a summary of what the meeting was about, along with any important details  
+
+**List of steps (success scenario):**
+- The user records a meeting
+- The meeting is transcribed to a .txt file
+- The .txt file is then fed into a LLM or some other software to be summarized
+- The summarization is in a separate file
+- The summarization can be viewed by the user at any time
+  
+**Extensions/variations of the success scenario:**  
+The user will be given multiple options of summarization depending on what format they want/ level of detail they want  
+
+**Exceptions: failure conditions and scenarios:**  
+If the meeting transcript is missing things, then the summary will also miss those things and not be accurate. The LLM/library we choose to do the summarization will have to also not clear out any details it was given, but with any LLM/library it is possible it might deem something not important and skip over it. The LLM or library that we use must be free.
+
+### 4. Deletion of a Recorded Meeting (Aiden Reedy)
+**Actors:** User  
+
+**Triggers:** The user initiates the deletion process by selecting a recorded meeting from their archive and pressing “delete"  
+
+**Preconditions:** A transcript/summary .txt file from a previous meeting has already been added to the user’s archive.  
+
+**Postconditions:** The selected recorded meeting is permanently deleted from the user’s archive and associated storage. The system updates the archive to reflect the deletion and frees up storage space.  
+
+**List of steps(success scenario):**
+- The user opens their meet n sleep app, and navigates to their meeting archive. 
+- The user selects the meeting they wish to delete. 
+- The system displays a confirmation prompt with the details of the selected recording, such as meeting title or date. 
+- The user confirms the deletion by clicking the “delete” button. 
+- The system deletes the recording and updates the user’s storage usage and archive interface.
+  
+**Extensions/variations of the success scenario:**  
+The user can have the option to do a bulk deletion of meeting summaries. Another extension is that the system temporarily moves deleted recordings to a recycle bin where the file will be permanently deleted after a set period of time. 
+  
+**Exceptions: failure of the success scenario:**  
+When a user deletes a .txt file from the archive and their system does not immediately reflect the change in their storage space.
+
+### 5. Application Audio Recording (Arianna Valencia)
+**Actors:** User  
+
+**Triggers:** User selects the “Online Recording” button on the main page of the application  
+
+**Preconditions:** User must have a valid input device selected (Preferably the built-in input device on the meeting device)  
+
+**Postconditions (success scenario):** The application successfully records the meeting audio  
+
+**List of steps (success scenario):**
+- User navigates to main page 
+- User selects “Online Meeting” 
+- User verifies that the desired input device is selected
+- User clicks the “Record” button 
+- The application starts recording the online meeting audio 
+- A confirmation message is displayed
+  
+**Extensions/variations of the success scenario:**  
+- Pause and Resume buttons for the recording process
+  
+**Exceptions: failure conditions and scenarios:**  
+- No input device is selected
+- Application displays an error message prompting the user to select a valid input device
+- Input device failure
+- Application displays an error message indicating that there was an issue with the input device
+  
+### 6. Transcript Creation (Nadir Isweesi)
+**Actors:** The user.  
+
+**Triggers:** The user joins a meeting with voice input enabled.  
+
+**Preconditions:** No specific preconditions.  
+
+**Postconditions (success scenario):** 
+The transcript is generated in real-time and displayed on the screen.  
+
+**List of steps (success scenario):**
+- The user navigates to the homepage.
+- The user joins a meeting.
+- The user clicks on the transcript icon.
+- The transcript appears on the screen in real-time.
+  
+**Extensions/variations of the success scenario:**  
+- The user can toggle the transcript button to display or hide the transcript.
+- The transcript will be stored after the meeting.
+  
+**Exceptions (failure conditions and scenarios):**  
+- Noice or poor recording quality may prevent accurate transcription.
+- Audio input device issue.
+- The transcript does not sync with the audio.
+
+### 7. Accessing Archive of Summaries (Ian McKee)
+**Actors:** The user is involved with wanting to access their previous summaries.  
+
+**Triggers:** On the main menu, a button is clicked.  
+
+**Preconditions:**
+There is a past archive to access (i.e. it’s not empty)  
+
+**Postconditions (success scenario):** User receives a list of previous summaries, with action goals.  
+
+**List of steps (success scenario):** 
+- User’s on menu
+- User requests archive by pressing button
+- Archive isn’t empty (local files or account server has at least 1 past summary)
+- User receives information
+  
+**Extensions/variations of the success scenario:**  
+- Upon receiving the archive, user can click on specific past summaries, getting insights like original transcript length, summary length, that summary’s specific action goals.
+  
+**Exceptions: failure conditions and scenarios:**  
+- An error can be thrown if the archive has not yet been populated (local or server)
+- If we create a log-in and account server, a guest may or may not have an archive (local files empty?) / Further, help the user log-in to an existing account.  
+
 ### 8. Hybrid Audio recording(Aiden Reedy)
-**Actors:** The user and the application
-**Triggers:** The user selects “Hybrid mode” on the application
-**Preconditions:** An input device must be set up and recognized by the system for both the in-person audio and the virtual audio
-**Postconditions (success scenario):**  The application starts recording the audio for the meeting from both inputs
+**Actors:** The user and the application  
+
+**Triggers:** The user selects “Hybrid mode” on the application  
+
+**Preconditions:** An input device must be set up and recognized by the system for both the in-person audio and the virtual audio  
+
+**Postconditions (success scenario):**  The application starts recording the audio for the meeting from both inputs  
+
 **List of Steps:** 
 - The user navigates to the homepage.
 - The user selects ‘Hybrid’.
@@ -222,13 +279,13 @@ If we create a log-in and account server, a guest may or may not have an archive
 - The application validates the selected input device.
 - The application starts recording the audio.
 - A confirmation message is displayed to the user, indicating that the recording is in progress.
-
-**Extensions/variations of the success scenario**
+  
+**Extensions/variations of the success scenario**  
 - Pause button for recording
 - The transcript notes whether a person online or in person is speaking
 - The application can tell when a different speaker talks
-
-**Exceptions: failure conditions and scenarios:**
+   
+**Exceptions: failure conditions and scenarios:**  
 - Audio input device issue: either they weren’t selected or they got disconnected during the recording
 
 ## Non-functional Requirements
