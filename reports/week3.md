@@ -1,12 +1,12 @@
 # Week 3 Report
 
 ## Team Report:
-**Goals From Last Week:** As per our timeline and roles, carry out our specific tasks, collaborating as needed for designers, backend engineers, etc. We have to think about GUI development, APIs on the backend, among other specifics as we start to implement this work. By the end of the week, 1/26.
-**Current Contributions:** 
+- **Goals From Last Week:** As per our timeline and roles, carry out our specific tasks, collaborating as needed for designers, backend engineers, etc. We have to think about GUI development, APIs on the backend, among other specifics as we start to implement this work. By the end of the week, 1/26.
+- **Current Contributions:** 
 - Created the basic structure of the backend hosting service.
 - Implemented the initial speech-to-text script
 - Divided tasks among ourselves
-**Future Plans:** 
+- **Future Plans:** 
 - Create the initial web interface using Flask (before next Tuesday 2/4)
 - Get transcripts of existing meeting videos/audios
 - Finalize GUI framework decision and develop a prototype for GUI
@@ -21,16 +21,16 @@ Finish work by 2/2
 - **Current Contributions:** Contributing on the Trello board to help decide what frameworks we will be using for the project. Helped decide on which GUI design framework to use( possibly Figma). Helped decide on which speech to text Python library to use for the application. Finally, helped the group figure out how to summarize the text we got from the speech to text implementation. 
 - **Future Plans:** Once we have decided on a GUI framework to use and have started making our initial prototypes. I will begin to quality check what we have so far. I will start the testing process of our prototype and if I find any bugs, report them to the development team. After reporting the bugs, I will collaborate with the team to fix these bugs. 
 #### Ryan Fairhurst
-**Last Week Contributions:** Helped to create the project elicitation, the presentation on 1/22, and this week's weekly report. Attended last weeks TA meeting
-**Current Contributions:** Added the weekly tasks we need to decide on to Trello, along with some of the other things we need to work on/have finished. Helped figure out what GUI framework we might use
-**Future Plans:** Help create any GUI design prototypes using figma to translate to the GUI framework later, And help making initial prototypes for speech to text, summarization, and the desktop app
+- **Last Week Contributions:** Helped to create the project elicitation, the presentation on 1/22, and this week's weekly report. Attended last weeks TA meeting
+- **Current Contributions:** Added the weekly tasks we need to decide on to Trello, along with some of the other things we need to work on/have finished. Helped figure out what GUI framework we might use
+- **Future Plans:** Help create any GUI design prototypes using figma to translate to the GUI framework later, And help making initial prototypes for speech to text, summarization, and the desktop app
 #### Ian McKee
 - **Last Week Contributions:** I will discuss with members Ryan and Arianna on the GUI and UX organization of our tool, by the end of the week, 1/26. 
 - I plan to also discuss with the backend engineers and the rest of the group, making sure we’re on the same page of requirements and feasibility. Also by the end of this week, 1/26.
 - **Current Contributions:** I discussed with Nadir the feasibility of running our app. We decided a Flask web implementation would be simplest. I discussed with the UX team about our GUI and framework for it.
-**Future Plans:** 
-- I plan to work further on GUI design, completing a prototype with Arianna and Ryan. By 2/4.
-- I plan to begin/develop the base of the Flask framework for our web portion hosting our service by 2/4.
+- **Future Plans:** 
+I plan to work further on GUI design, completing a prototype with Arianna and Ryan. By 2/4.
+I plan to begin/develop the base of the Flask framework for our web portion hosting our service by 2/4.
 #### Aiden Reedy
 - **Last Week Contributions:** Worked on the project elicitation by creating a use case. I presented our slides to the class and did my weekly report.
 - **Current Contributions:** I completed my part of the weekly report, and talked with the other backend engineer to figure out our plan for implementing the speech recognition/speech-to-text. Discussed how we plan to implement the application as a whole.
