@@ -1,5 +1,5 @@
 __pycache__
-.DS_STROE
+.DS_Store
 /src/main/services/media_processing.py
 /src/main/services/storage
 /storage
