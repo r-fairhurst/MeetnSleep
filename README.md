@@ -1,10 +1,10 @@
 # MeetnSleep
 
-## Project Proposal - Team 10
-
-### Trello Board
+## Trello Board
 
 https://trello.com/b/UIMxJcQj/cs362-team-10
+
+## Project Proposal - Team 10
 
 ### Team Information
 
