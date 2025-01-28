@@ -1,5 +1,5 @@
 # Speech Recognition
-# pip install SpeechRecognition
+# Dependencies: pip install SpeechRecognition
 import SpeechRecognition as sr
 
 recognizer = sr.Recognizer()
