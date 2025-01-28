@@ -1,5 +1,8 @@
 # Speech Recognition
 # Dependencies: pip install SpeechRecognition
+
+# Use microphone instead of audio file 
+
 import SpeechRecognition as sr
 
 recognizer = sr.Recognizer()
