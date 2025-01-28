@@ -2,6 +2,10 @@
 
 ## Project Proposal - Team 10
 
+### Trello Board
+
+https://trello.com/b/UIMxJcQj/cs362-team-10
+
 ### Team Information
 
 | Name             | Role                           | Responsibility                                      |
