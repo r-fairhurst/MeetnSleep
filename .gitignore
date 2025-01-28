@@ -3,3 +3,4 @@ __pycache__
 /src/main/services/media_processing.py
 /src/main/services/storage
 /storage
+scripts/convert_audio.py
