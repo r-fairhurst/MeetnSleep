@@ -8,15 +8,12 @@ import wave
 import speech_recognition as sr
 
 '''
-NEED TODO
-
-Test scripts using a data set of expected outputs and inputs
-Determine the success rate of the program 
+TODO:
+[DONE] Test scripts using a data set of expected outputs and inputs
+[DONE] Determine the success rate of the program
 Update for microphone access
 Provide backend cli interface
-
 '''
-
 
 def transcribe_audio(filename):
     try:
@@ -26,13 +23,16 @@ def transcribe_audio(filename):
 
             try:
                 text = recognizer.recognize_google(audio_data)
-                print("Transcript:", text)
+                return text
             except sr.UnknownValueError:
                 print("ERROR: Could not understand the audio.")
+                return None
             except sr.RequestError:
                 print("ERROR: Could not request results from Google Speech Recognition.")
+                return None
     except FileNotFoundError:
         print("ERROR: File " + filename + " was not found.")
+        return None
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -41,4 +41,5 @@ if __name__ == "__main__":
         sys.exit(1)
     filename = sys.argv[1]
     
-    transcribe_audio(filename)
+    text = transcribe_audio(filename)
+    print(text)
