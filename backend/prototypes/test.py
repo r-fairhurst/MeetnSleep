@@ -7,6 +7,17 @@ import pyaudio
 import wave
 import speech_recognition as sr
 
+'''
+NEED TODO
+
+Test scripts using a data set of expected outputs and inputs
+Determine the success rate of the program 
+Update for microphone access
+Provide backend cli interface
+
+'''
+
+
 def transcribe_audio(filename):
     try:
         recognizer = sr.Recognizer()
