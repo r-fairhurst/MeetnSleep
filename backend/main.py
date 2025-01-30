@@ -1,4 +1,3 @@
-# Yippee i love python
 from tqdm import tqdm
 import time
 

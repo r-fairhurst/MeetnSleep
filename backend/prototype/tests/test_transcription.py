@@ -2,6 +2,7 @@ import unittest
 import json
 import os
 import sys
+from tqdm import tqdm
 import Levenshtein # pip install python-Levenshtein
 
 # Add the parent directory to sys.path
@@ -32,33 +33,40 @@ class TestTranscription(unittest.TestCase):
 
     def test_transcription_accuracy(self):
         """Test each audio file and print similarity score."""
+        
         total_score = 0
         num_tests = 0
 
-        for filename, expected_text in self.expected_outputs.items():
-            with self.subTest(audio_file=filename):
-                audio_path = os.path.join(self.test_folder, filename)
-                actual_transcription = transcribe_audio(audio_path)
+        # Wrap the loop with tqdm to show a progress bar
+        for filename, expected_text in tqdm(self.expected_outputs.items(), 
+                                            desc="Testing", 
+                                            ncols=75, 
+                                            ascii=False,
+                                            position=num_tests,
+                                            leave=True):
+            audio_path = os.path.join(self.test_folder, filename)
+            actual_transcription = transcribe_audio(audio_path)
 
-                if actual_transcription is None:
-                    print(f"ERROR: Transcription failed for {filename}")
-                    self.fail(f"transcribe_audio returned None for {filename}")
+            if actual_transcription is None:
+                print(f"ERROR: Transcription failed for {filename}")
+                self.fail(f"transcribe_audio returned None for {filename}")
 
-                actual_transcription = actual_transcription.strip()
-                similarity_score = self.calculate_similarity(expected_text.strip(), actual_transcription)
-                print(f"{filename}: {similarity_score:.2f}% accuracy")
+            actual_transcription = actual_transcription.strip()
+            similarity_score = self.calculate_similarity(expected_text.strip(), actual_transcription)
+            # Use tqdm.write() to ensure the progress bar stays in place and print accuracy
+            tqdm.write(f"{filename}: {similarity_score:.2f}% accuracy")
 
-                total_score += similarity_score
-                num_tests += 1
+            total_score += similarity_score
+            num_tests += 1
 
-                self.assertGreaterEqual(similarity_score, 80, f"Low accuracy: {similarity_score:.2f}%")  # Adjust threshold if needed
+            self.assertGreaterEqual(similarity_score, 80, f"Low accuracy: {similarity_score:.2f}%")  # Adjust threshold if needed
 
         # Calculate and print average accuracy
         if num_tests > 0:
             average_accuracy = total_score / num_tests
-            print(f"\nAverage Accuracy: {average_accuracy:.2f}%")
+            tqdm.write(f"\nAverage Accuracy: {average_accuracy:.2f}%")
         else:
-            print("\nNo tests were run.")
+            tqdm.write("\nNo tests were run.")
 
 if __name__ == "__main__":
     unittest.main()
