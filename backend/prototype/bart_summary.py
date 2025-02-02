@@ -1,3 +1,4 @@
+# pip install transformers torch
 from transformers import BartForConditionalGeneration, BartTokenizer
 
 # Initialize the BART model and tokenizer
