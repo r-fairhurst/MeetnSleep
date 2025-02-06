@@ -47,5 +47,5 @@ We are also working towards combining both backend systems so that they can be e
 
 #### Nadir Isweesi
 - **Last Week Contributions:** Will implement the backend side with William Morton to get the transcript of existing videos/audios.
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Current Contributions:** implemented some of the transcript of audio/videos, and decided with the team our GUI framwork.
+- **Future Plans:** Will try to sync the transcription with the videos to make it movies-subtitle pattern.
