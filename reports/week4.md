@@ -29,8 +29,9 @@ We are also working towards combining both backend systems so that they can be e
 #### Ian McKee
 - **Last Week Contributions:** - I plan to work further on GUI design, completing a prototype with Arianna and Ryan. By 2/4.
     - I plan to begin/develop the base of the Flask framework for our web portion hosting our service by 2/4.
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Current Contributions:** I worked with Arianna to flesh out the front-end, the beginning GUI designs and front-end framework. We worked through Django and Flask. I got stuck on Django implementation with the HTML and CSS side. What worked is our GUI draft designs on Canva, to prepare how we want the user to interact with our application.
+- **Future Plans:** - The following week, I plan to commit a workable HTML and CSS front-end, on some accessible website, like the ENGR servers. Arianna and I are both handling the front-end here. Up through 2/11 this part of the webpage hosting should be simple.
+- I will help develop the base of the Flask framework for our web portion with the front-end and back-end teams, hosting our service by 2/11.
 
 #### Aiden Reedy
 - **Last Week Contributions:**  I completed my part of the weekly report, and talked with the other backend engineer to figure out our plan for implementing the speech recognition/speech-to-text. Discussed how we plan to implement the application as a whole.
