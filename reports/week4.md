@@ -16,9 +16,9 @@ Finish work by 2/2
 - **Future Plans:** 
 
 #### Aidan Daly
-- **Last Week Contributions:** Once we have decided on a GUI framework to use and have started making our initial prototypes. I will begin to quality check what we have so far. I will start the testing process of our prototype and if I find any bugs, report them to the development team. After reporting the bugs, I will collaborate with the team to fix these bugs. 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** Contributing on the Trello board to help decide what frameworks we will be using for the project. Helped decide on which GUI design framework to use( possibly Figma). Helped decide on which speech to text Python library to use for the application. Finally, helped the group figure out how to summarize the text we got from the speech to text implementation. 
+- **Current Contributions:** This week I worked with the team on the project architecture and design assignment that was due this tuesday. I have also collaborated with the group to figure out what front end framework we want to use and how it will help us integrate the front and back end. I have also attended every stand up meeting after class to communicate these things with the team. This week I will also work with the team to create our slides for our 10 minute presentation due sunday. 
+- **Future Plans:** As the tester I will start to test and debug our prototype for the frontend and the backend as we start to implement them. Since this is not too much work, I will also work as a wildcard to help the frontend and backend when needed. This could be for when I spot a bug, I can help whichever group add changes to their code to make it more robust and free from bugs. 
 
 #### Ryan Fairhurst
 - **Last Week Contributions:** Decided on GUI frameworks completing a prototype with Arianna and Ian.
