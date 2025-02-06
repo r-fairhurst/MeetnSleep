@@ -7,8 +7,8 @@
 - **Current Contributions:** We added microphone input functionality to our working code. We organized our team collaboration on Trello in line with requirements. We are completing our decision on our front-end framework. Within HTML and CSS, we'll handle either Django or Flask. 
 
 - **Future Plans:** - We need to develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.).
-- We plan on finalizing our front-end framework and committing a working webpage on ENGR server by 2/11.
-- We plan on getting the basics of test handling.
+    - We plan on finalizing our front-end framework and committing a working webpage on ENGR server by 2/11.
+    - We plan on getting the basics of test handling.
 
 ## Individual Contributions:
 #### William Morton
