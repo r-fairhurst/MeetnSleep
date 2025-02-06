@@ -11,9 +11,10 @@
 ## Individual Contributions:
 #### William Morton
 - **Last Week Contributions:** Complete relevant backend audio processing architecture for the app (Transcribing videos/audio). Present findings and ideas to team leader and team members.
-Finish work by 2/2
-- **Current Contributions:** 
-- **Future Plans:** 
+Also contributed to developing a summarization solution for our meeting summarization component. 
+- **Current Contributions:** Currently working on finalizing the summarization tool and determining which technologies we will be using to accomplish it. Current possible solutions include using the OpenAI API, BART, T5, Sumy.
+- **Future Plans:** As a backend engineer, I will be focused on completing the implementation of the backend systems for our project. In our next steps we will be working to verify that both backend systems work as expected via tests.
+We are also working towards combining both backend systems so that they can be exposed to the frontend in a modular way. 
 
 #### Aidan Daly
 - **Last Week Contributions:** Contributing on the Trello board to help decide what frameworks we will be using for the project. Helped decide on which GUI design framework to use( possibly Figma). Helped decide on which speech to text Python library to use for the application. Finally, helped the group figure out how to summarize the text we got from the speech to text implementation. 
