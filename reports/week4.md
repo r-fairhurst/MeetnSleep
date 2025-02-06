@@ -41,9 +41,9 @@ We are also working towards combining both backend systems so that they can be e
 - **Future Plans:**  Add threading to the speech-to-text so there's no pause while it sends the recording to the API. Add an output to file feature to the speech-to-text.
 
 #### Arianna Valencia
-- **Last Week Contributions:** Collaborated with Ian to figure out the planning for the GUI and plan to create a prototype by 02/04
-- **Current Contributions:**  
-- **Future Plans:** 
+- **Last Week Contributions:** Did research on a variety of different frameworks available for creating a GUI based around python. Interacted on the trello board about these frameworks. 
+- **Current Contributions:** Collaborated with Ian to figure out the planning for the GUI and plan to create a prototype by 02/04. Have been reading the Django documentation and figuring out the best way to set up framework. Proposed an idea to Ian and Ryan for task distribution on the front end implementation.
+- **Future Plans:** Have the framework fully set up and HTML/CSS started by 02/11 
 
 #### Nadir Isweesi
 - **Last Week Contributions:** Will implement the backend side with William Morton to get the transcript of existing videos/audios.
