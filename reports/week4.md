@@ -32,9 +32,9 @@ Finish work by 2/2
 - **Future Plans:** 
 
 #### Aiden Reedy
-- **Last Week Contributions:** Start to implement the speech-to-text and figure out how to best handle the file storing as a whole. Divide tasks for the speech-to-text implementation with other backend engineers.
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:**  I completed my part of the weekly report, and talked with the other backend engineer to figure out our plan for implementing the speech recognition/speech-to-text. Discussed how we plan to implement the application as a whole.
+- **Current Contributions:**  Added microphone input to the speech-to-text and tested it. Did two of the risks and the backend's part of part 2 for the Project Architecture and Design assignment. Preformed some tests on the summarizer and did research into other options for the summarizer. Did my part of the weekly report.
+- **Future Plans:**  Add threading to the speech-to-text so there's no pause while it sends the recording to the API. Add an output to file feature to the speech-to-text.
 
 #### Arianna Valencia
 - **Last Week Contributions:** Collaborated with Ian to figure out the planning for the GUI and plan to create a prototype by 02/04
