@@ -11,7 +11,7 @@ import speech_recognition as sr
 TODO:
 [DONE] Test scripts using a data set of expected outputs and inputs
 [DONE] Determine the success rate of the program
-Update for microphone access
+[Done] Update for microphone access
 Provide backend cli interface
 '''
 
