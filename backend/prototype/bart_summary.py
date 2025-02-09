@@ -1,3 +1,4 @@
+# INSTRUCTIONS: python bart_summary.py
 # pip install transformers torch
 from transformers import BartForConditionalGeneration, BartTokenizer
 

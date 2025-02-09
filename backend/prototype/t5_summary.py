@@ -1,3 +1,4 @@
+# INSTRUCTIONS: python t5_summary.py
 # pip install transformers torch
 # pip install sentencepiece
 from transformers import T5Tokenizer, T5ForConditionalGeneration
