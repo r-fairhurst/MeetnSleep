@@ -29,4 +29,5 @@ summary_ids = model.generate(inputs, max_length=150, min_length=50, length_penal
 
 # Decode the summary and print it
 summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
-print("Summary:", summary)
+print("Meeting Summary:")
+print(summary)
