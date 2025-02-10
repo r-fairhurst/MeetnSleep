@@ -3,7 +3,6 @@ from dotenv import dotenv_values  # pip install python-dotenv
 from openai import OpenAI         # pip install openai
 
 config = dotenv_values("KEY.env")
-
 api_key = config.get("OPENAI_KEY")
 
 client = OpenAI(
