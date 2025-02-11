@@ -1,4 +1,4 @@
-# MeetnSleep
+# MeetnSleep / Minute-Meet
 
 ## Trello Board
 
