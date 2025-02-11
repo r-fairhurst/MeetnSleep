@@ -1,14 +1,14 @@
 # Week 5 Report
 
 ## Team Report:
-- **Goals From Last Week:** - We need to develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.).
-- We plan on finalizing our front-end framework and committing a working webpage on ENGR server by 2/11.
-- We plan on getting the basics of test handling.
+- **Goals From Last Week:** We need to develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.).
+We plan on finalizing our front-end framework and committing a working webpage on ENGR server by 2/11.
+We plan on getting the basics of test handling.
 
 - **Current Contributions:** Finalized project architecture. We added microphone input functionality to our working code. We decided on Django, abandoning Flask, to handle our HTML and CSS on the front-end. We presented our mid-term project update to the class. We organized our team collaboration on Trello in line with requirements. 
-- **Future Plans:** - Develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.).
-- Committing a working webpage on ENGR server using base HTML, CSS, simple Django by 2/18.
-- Integrate our successful back-end handling of input functionality, and successful summarizing to front-end users will interact with.
+- **Future Plans:** Develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.).
+Committing a working webpage on ENGR server using base HTML, CSS, simple Django by 2/18.
+Integrate our successful back-end handling of input functionality, and successful summarizing to front-end users will interact with.
 
 ## Individual Contributions:
 #### William Morton
