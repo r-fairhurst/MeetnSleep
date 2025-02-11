@@ -37,9 +37,9 @@ Integrate our successful back-end handling of input functionality, and successfu
 - **Future Plans:** I want to further reduce the gap in recording when making an api call. I'm planning on making them different processes rather than different threads which will hopfully reduce that. I might also have two programs that record / make api calls that can swap back and forth.
 
 #### Arianna Valencia
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** Collaborated with Ian to figure out the planning for the GUI and plan to create a prototype by 02/04. Have been reading the Django documentation and figuring out the best way to set up framework. Proposed an idea to Ian and Ryan for task distribution on the front end implementation.
+- **Current Contributions:** Worked on the team presentation and architecture document. Helped create a more formal prototype of the UI of our product. Worked on getting some of the Django Project set up and am still hoping to get that done by today 2/11.
+- **Future Plans:** Work on HTML and CSS with Ian and have the Django project (with some html and css) committed by 2/14
 
 #### Nadir Isweesi
 - **Last Week Contributions:** tried to sync the transcription with the videos to make it movies-subtitle pattern, but still have some latency and it is out of sync
