@@ -1,7 +1,7 @@
 import timeit
-from bart_summary import bartSummary
-from gemini_summary import geminiSummary
-from t5_summary import tFiveSummary
+from summaries.bart_summary import bartSummary
+from summaries.gemini_summary import geminiSummary
+from summaries.t5_summary import tFiveSummary
 
 # For each function, run 10 tests and take the average time
 def test(text):
