@@ -8,7 +8,8 @@
 ## Individual Contributions:
 #### William Morton
 - **Last Week Contributions:** 
-- **Current Contributions:** 
+- **Current Contributions:** As a backend engineer, I will be focused on completing the implementation of the backend systems for our project. This week it is looking like i will be working on the summary systems and connecting it with the other backend system.
+- In our next steps we will be working to verify that both backend systems work as expected via tests. We are also working towards combining both backend systems so that they can be exposed to the frontend in a modular way. 
 - **Future Plans:**
 
 #### Aidan Daly
