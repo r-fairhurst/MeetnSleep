@@ -18,9 +18,9 @@
 - **Future Plans:** In the future, I plan to start developing the front end ui with the ui team. There has not been much work for me to do as a tester, so i changed my role to software tester/front end. So after I finish with the front end team on designing the UI, I will begin to start testing our prototypes, making sure our results are as expected. I will make sure that we also have no bugs in our code. However, if there is bugs, I will report them to the rest of the team and work with them on fixing them. 
 
 #### Ryan Fairhurst
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:**
+- **Last Week Contributions:**  Finalized our project architecture, and helping with further fleshing out our project milestones, project documentation, project risks, and software design. 
+- **Current Contributions:** Submitted final version of our projects midterm/presentation. Added week5 report to github. Finalized our milestones/project risks/frontend design and architecture. Helped finish our project presentation 
+- **Future Plans:** code our archive capabilites by 2/17/25, which includes viewing old summaries and transcripts
 
 #### Ian McKee
 - **Last Week Contributions:** 
