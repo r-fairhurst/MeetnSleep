@@ -12,9 +12,9 @@
 - **Future Plans:**
 
 #### Aidan Daly
-- **Last Week Contributions:**
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** This week I worked with the team on the project architecture and design assignment that was due this tuesday. I have also collaborated with the group to figure out what front end framework we want to use and how it will help us integrate the front and back end. I have also attended every stand up meeting after class to communicate these things with the team. This week I will also work with the team to create our slides for our 10 minute presentation due sunday. 
+- **Current Contributions:** This week I intend to work with my team to bolster our project architecture and design based off of our critical reviews from our presentation on monday. We will make sure that we finalize which frameworks we want to use for the front and back end of the assignment, including which LLM to use for our meeting summarizer. I partook in the presentation on monday by highlighting how our app minute-meet solves the problems that we want to solve. I also joined my team in our standup meetings after each class and our zoom meeting over the weekend so that we could all stay on track and have great communication. 
+- **Future Plans:** In the future, I plan to start developing the front end ui with the ui team. There has not been much work for me to do as a tester, so i changed my role to software tester/front end. So after I finish with the front end team on designing the UI, I will begin to start testing our prototypes, making sure our results are as expected. I will make sure that we also have no bugs in our code. However, if there is bugs, I will report them to the rest of the team and work with them on fixing them. 
 
 #### Ryan Fairhurst
 - **Last Week Contributions:** 
