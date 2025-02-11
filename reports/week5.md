@@ -8,8 +8,7 @@
 ## Individual Contributions:
 #### William Morton
 - **Last Week Contributions:** Wroked on the summarization tool and determining which technologies we will be using to accomplish it. Created tests for summarization using the OpenAI API, Gemini API, BART, T5, and Sumy libraries.
-- **Current Contributions:** As a backend engineer, I will be focused on completing the implementation of the backend systems for our project. This week it is looking like I will be working on finalizing the summary systems and connecting it with the other
-- backend system.
+- **Current Contributions:** As a backend engineer, I will be focused on completing the implementation of the backend systems for our project. This week it is looking like I will be working on finalizing the summary systems and connecting it with the other backend system.
 - **Future Plans:** In our next steps we will be working to verify that both backend systems work as expected via tests. We are also working towards combining both backend systems so that they can be exposed to the frontend in a modular way. The overall goal for this week is to have a concrete example of passing an audio file into the backend for transcription and summarization.
 
 #### Aidan Daly
