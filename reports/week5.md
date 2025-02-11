@@ -32,9 +32,9 @@ Integrate our successful back-end handling of input functionality, and successfu
 - **Future Plans:** I plan to find time this week to commit a workable HTML and CSS front-end, on some accessible website, like the ENGR servers. Up through 2/11 the webpage hosting can be trivial, with base HTML and CSS, and Arianna and my development of the back-end on Django framework.
 
 #### Aiden Reedy
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** Added microphone input to the speech-to-text and tested it. Did two of the risks and the backend's part of part 2 for the Project Architecture and Design assignment. Preformed some tests on the summarizer and did research into other options for the summarizer. Did my part of the weekly report.
+- **Current Contributions:** I used threading to lower the gap in recordings when making api calls and also worked on output of the transcript. I met with the team and helped make our midterm slide show then later presented it to the class. I also added my weekly report.
+- **Future Plans:** I want to further reduce the gap in recording when making an api call. I'm planning on making them different processes rather than different threads which will hopfully reduce that. I might also have two programs that record / make api calls that can swap back and forth.
 
 #### Arianna Valencia
 - **Last Week Contributions:** 
