@@ -1,13 +1,18 @@
 # Week 5 Report
 
 ## Team Report:
-- **Goals From Last Week:**   We added microphone input functionality to our working code. We organized our team collaboration on Trello in line with requirements. We are completing our decision on our front-end framework. We decided to use Django to handle our HTML and our CSS. 
-- **Current Contributions:** Finished the midterm presentation and project architecture. We presented our project midterm update to the class.
-- **Future Plans:** 
+- **Goals From Last Week:** - We need to develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.).
+- We plan on finalizing our front-end framework and committing a working webpage on ENGR server by 2/11.
+- We plan on getting the basics of test handling.
+
+- **Current Contributions:** Finalized project architecture. We added microphone input functionality to our working code. We decided on Django, abandoning Flask, to handle our HTML and CSS on the front-end. We presented our mid-term project update to the class. We organized our team collaboration on Trello in line with requirements. 
+- **Future Plans:** - Develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.).
+- Committing a working webpage on ENGR server using base HTML, CSS, simple Django by 2/18.
+- Integrate our successful back-end handling of input functionality, and successful summarizing to front-end users will interact with.
 
 ## Individual Contributions:
 #### William Morton
-- **Last Week Contributions:** Wroked on the summarization tool and determining which technologies we will be using to accomplish it. Created tests for summarization using the OpenAI API, Gemini API, BART, T5, and Sumy libraries.
+- **Last Week Contributions:** Worked on the summarization tool and determining which technologies we will be using to accomplish it. Created tests for summarization using the OpenAI API, Gemini API, BART, T5, and Sumy libraries.
 - **Current Contributions:** As a backend engineer, I will be focused on completing the implementation of the backend systems for our project. This week it is looking like I will be working on finalizing the summary systems and connecting it with the other backend system.
 - **Future Plans:** In our next steps we will be working to verify that both backend systems work as expected via tests. We are also working towards combining both backend systems so that they can be exposed to the frontend in a modular way. The overall goal for this week is to have a concrete example of passing an audio file into the backend for transcription and summarization.
 
@@ -22,9 +27,9 @@
 - **Future Plans:** code our archive capabilites by 2/17/25, which includes viewing old summaries and transcripts
 
 #### Ian McKee
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** The following week, I plan to commit a workable HTML and CSS front-end, on some accessible website, like the ENGR servers. Arianna and I are both handling the front-end here. Up through 2/11 this part of the webpage hosting should be simple. I will help develop the base of the Flask framework for our web portion with the front-end and back-end teams, hosting our service by 2/11.
+- **Current Contributions:** Helped refine our project's UI architecture and reduced the problem with current services down to the specifics during mid-term presentation this week. We scrapped Flask and are using Django.
+- **Future Plans:** I plan to find time this week to commit a workable HTML and CSS front-end, on some accessible website, like the ENGR servers. Up through 2/11 the webpage hosting can be trivial, with base HTML and CSS, and Arianna and my development of the back-end on Django framework.
 
 #### Aiden Reedy
 - **Last Week Contributions:** 
