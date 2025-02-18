@@ -17,9 +17,9 @@
 - **Future Plans:** I plan to continue communicating with the rest of the team about our prototype until we have release our final product. Whilst testing the prototype or final implementation I will also recommend any changes that I think we should have on our front end for nice UI design or the backend for our summarization tool. I will also help set up our github action tool on github so that we can have automation in our release cycles. Finally, I plan to contribute with the team in our final project as a presenter. 
 
 #### Ryan Fairhurst
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:**
+- **Last Week Contributions:** Submitted final version of our projects midterm/presentation. Added week5 report to github. Finalized our milestones/project risks/frontend design and architecture. Helped finish our project presentation
+- **Current Contributions:** I have started the implementation of opening up a summary file or transcription and displaying it as HTML. I have pushed what I have accomplished so far, but requires further testing and to see if this is how we want to handle loading txt files for displayment.
+- **Future Plans:** I plan on communicating with the rest of our team about the front and back end of our prototype, along with the creation of documentation for developers and users to help with their site. Along with setting up GitHub Actions to set up automatic testing for our project to catch any input errors and the like for us. I also plan on finishing the 
 
 #### Ian McKee
 - **Last Week Contributions:** 
