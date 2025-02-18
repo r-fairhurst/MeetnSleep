@@ -1,8 +1,8 @@
-# Week 3 Report
+# Week 6 Report
 
 ## Team Report:
-- **Goals From Last Week:** 
-- **Current Contributions:** 
+- **Goals From Last Week:** Develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.). Committing a working webpage on ENGR server using base HTML, CSS, simple Django by 2/18. Integrate our successful back-end handling of input functionality, and successful summarizing to front-end users will interact with.
+- **Current Contributions:** We further developed our front-end and back-end.
 - **Future Plans:** 
 
 ## Individual Contributions:
@@ -22,9 +22,9 @@
 - **Future Plans:** I plan on communicating with the rest of our team about the front and back end of our prototype, along with the creation of documentation for developers and users to help with their site. Along with setting up GitHub Actions to set up automatic testing for our project to catch any input errors and the like for us. I also plan on finishing the 
 
 #### Ian McKee
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** I plan to find time this week to commit a workable HTML and CSS front-end, on some accessible website, like the ENGR servers. Up through 2/11 the webpage hosting can be trivial, with base HTML and CSS, and Arianna and my development of the back-end on Django framework.
+- **Current Contributions:** I had some HTML and CSS development of the front-end, and discussed with Arianna some GUI design choices.
+- **Future Plans:** I will work further with Arianna on the Django implementation, and talk with our back-end team on connecting the database with this.
 
 #### Aiden Reedy
 - **Last Week Contributions:**  I used threading to lower the gap in recordings when making api calls and also worked on output of the transcript. I met with the team and helped make our midterm slide show then later presented it to the class. I also added my weekly report.
