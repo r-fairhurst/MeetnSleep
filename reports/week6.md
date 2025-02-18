@@ -37,6 +37,6 @@
 - **Future Plans:** 
 
 #### Nadir Isweesi
-- **Last Week Contributions:** 
-- **Current Contributions:**
-- **Future Plans:** 
+- **Last Week Contributions:** Added text summarization to meetings using LLMs!
+- **Current Contributions:**  improving text summarization more to make it summarize text in the best way we can.
+- **Future Plans:** Save the summarization to a separate file after the meeting.
