@@ -27,9 +27,9 @@
 - **Future Plans:** 
 
 #### Aiden Reedy
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:**  I used threading to lower the gap in recordings when making api calls and also worked on output of the transcript. I met with the team and helped make our midterm slide show then later presented it to the class. I also added my weekly report.
+- **Current Contributions:** Working on finding a way to lower the gap in recordings when making api calls, testing having 2 recording threads that overlap and alternate so there's no gap.
+- **Future Plans:**  Connect the speech to text, transcription and summarizer all together / to the front end and get a prototype going.
 
 #### Arianna Valencia
 - **Last Week Contributions:** 
