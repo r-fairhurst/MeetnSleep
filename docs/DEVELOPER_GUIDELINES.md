@@ -48,9 +48,23 @@ Our main project structure is the following (MVC-style structure):
 
 # 4. How to test the software
 
-We use pytest for backend testing.
-To test, Run:
-`pytest`
+We have two different testing suites, one for transcription and one for summarization. 
+
+## Transcription
+
+The transcription testing suite uses predefined `.wav` audio files with expected outputs.
+
+The `.wav` audio files used for testing can be found at `src/test/test_transcription_inputs/` along 
+with the expected outputs.
+
+To run the tests navigate to the `src/test/` directory.
+Run the following command:
+
+`python test_live_transcription.py`
+
+The automated tool transcribes the audio file and compares it with the expected output.
+
+## Summarization
 
 # 5. How to add a new test
 
