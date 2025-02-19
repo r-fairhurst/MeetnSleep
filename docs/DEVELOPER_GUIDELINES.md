@@ -39,7 +39,7 @@ Our main project structure is the following (MVC-style structure):
     ├── storage/               # Storage for files (e.g. transcripts, summaries.)
     └── requirements.txt 
 
-# 3. How to run the software
+# 3. How to build the software
 
 ### Install dependencies
 `pip install -r requirements.txt`
@@ -51,13 +51,3 @@ Our main project structure is the following (MVC-style structure):
 We use pytest for backend testing.
 To test, Run:
 `pytest`
-
-# 5. How to use the software
-
-# 6. Support & Questions
-- Open a GitHub Issue.
-
-- Reach out to the maintainers via isweesin@oregonstate.edu or mortonwi@oregonstate.edu
-
-# 7. Known bugs
-- Nothing bugs appear so far
