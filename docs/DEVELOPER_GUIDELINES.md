@@ -55,3 +55,6 @@ To test, Run:
 # 5. How to use the software
 
 # 6. Support & Questions
+- Open a GitHub Issue.
+
+- Reach out to the maintainers via isweesin@oregonstate.edu or mortonwi@oregonstate.edu
