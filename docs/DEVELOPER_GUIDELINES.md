@@ -48,7 +48,7 @@ Our main project structure is the following (MVC-style structure):
 
 # 4. How to test the software
 
-We have two different testing suites, one for transcription and one for summarization. 
+There are two different testing suites available, one for transcription and one for summarization. 
 
 ## Transcription
 
