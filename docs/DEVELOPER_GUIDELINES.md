@@ -51,3 +51,7 @@ Our main project structure is the following (MVC-style structure):
 We use pytest for backend testing.
 To test, Run:
 `pytest`
+
+# 5. How to add a new test
+
+# 6. How to build a release of the software
