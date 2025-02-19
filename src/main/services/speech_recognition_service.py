@@ -98,3 +98,14 @@ def reset_listening():
     """Reset the stop_listening flag"""
     global stop_listening
     stop_listening = False
+
+# TEST FUNC
+def transcribe_audio(file_path):
+    """Transcribe audio from a given file and return the text."""
+    try:
+        with sr.AudioFile(file_path) as source:
+            audio = recognizer.record(source)
+            return recognizer.recognize_google(audio)
+    except Exception as e:
+        print(f"Error transcribing {file_path}: {e}")
+        return None
