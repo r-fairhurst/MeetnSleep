@@ -75,7 +75,7 @@ for the audio. It is required that the audio file is in english.
 
 1. Navigate to the `src/test/test_transcription_inputs/` directory. 
 
-2. Add the `.wav` file to the directory.
+2. Add the `.wav` file to this directory.
 
 3. Open the `expected_outputs.json` file and add the file name and accurate transcription in the form:
    `"filename.wav": "transcription text"`
