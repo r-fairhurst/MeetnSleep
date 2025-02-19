@@ -57,15 +57,29 @@ The transcription testing suite uses predefined `.wav` audio files with expected
 The `.wav` audio files used for testing can be found at `src/test/test_transcription_inputs/` along 
 with the expected outputs.
 
-To run the tests navigate to the `src/test/` directory.
-Run the following command:
+To run the tests, navigate to the `src/test/` directory and run the following command:
 
 `python test_live_transcription.py`
 
-The automated tool transcribes the audio file and compares it with the expected output.
+The automated tool transcribes the audio file, compares it with the expected output, and returns the accuracy 
+as a percentage.
 
 ## Summarization
 
+Not yet implemented.
+
 # 5. How to add a new test
+
+Adding a new test requires that the user have a predefined `.wav` audio file and an accurate transcription available
+for the audio. It is required that the audio file is in english.
+
+1. Navigate to the `src/test/test_transcription_inputs/` directory. 
+
+2. Add the `.wav` file to the directory.
+
+3. Open the `expected_outputs.json` file and add the file name and accurate transcription in the form:
+   `"filename.wav": "transcription text"`
+   
+5. Test that the file is included in the test suite by executing the test suite as explained in Developer Guidelines 5.
 
 # 6. How to build a release of the software
