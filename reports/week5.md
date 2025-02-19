@@ -43,5 +43,5 @@ Integrate our successful back-end handling of input functionality, and successfu
 
 #### Nadir Isweesi
 - **Last Week Contributions:** tried to sync the transcription with the videos to make it movies-subtitle pattern, but still have some latency and it is out of sync
-- **Current Contributions:** Will try to look up what other poeple do in their similar projects and sync it well.
+- **Current Contributions:** Will try to look up what other people do in their similar projects and sync it well.
 - **Future Plans:** Will try to make turint video/audio to text easier and using one click
