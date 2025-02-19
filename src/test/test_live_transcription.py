@@ -15,12 +15,14 @@ class TestTranscription(unittest.TestCase):
         """Load expected outputs before running tests."""
         base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         expected_outputs_path = os.path.join(base_dir, "test", "test_transcription_inputs", "expected_outputs.json")
-        print("EXPECTED OUTPUTS PATH: " + expected_outputs_path)
         with open(expected_outputs_path, "r") as f:
             self.expected_outputs = json.load(f)
 
         self.test_folder = os.path.join(os.path.dirname(__file__), "test_transcription_inputs")
-        print("TEST FOLDER PATH: " + self.test_folder)
+        
+        # Debugging statements
+        # print("EXPECTED OUTPUTS PATH: " + expected_outputs_path)
+        # print("TEST FOLDER PATH: " + self.test_folder)
 
     def calculate_similarity(self, expected, actual):
         """Calculate transcription accuracy as a percentage using Levenshtein distance."""
