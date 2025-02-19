@@ -21,6 +21,24 @@ To Contribute:
 
 
 # 2. Directory Structure.
+Our main project structure is the following:
+meetnsleep
+├── README.md              # Project overview
+├── frontend/              # Frontend code (if applicable)
+│   ├── app.js            # main frontend logic
+│   ├── components/       # reusable components
+│   ├── public/           # Static files
+│   ├── src/              # Source code
+├── scripts/               # Utility scripts
+├── src/                   # Main source code for the app
+│   ├── api/              # API routes (to use the Django app)
+│   ├── models/           # Data models
+│   ├── services/         # the app logic
+│   ├── utils/            # Helper functions
+│   ├── tests/            # Unit & integration tests
+
+├── storage/               # Storage for files (e.g. transcripts, summaries.)
+└── requirements.txt 
 
 
 # 3. How to run the software
