@@ -21,7 +21,7 @@ To Contribute:
 
 
 # 2. Directory Structure.
-Our main project structure is the following:
+Our main project structure is the following (MVC-style structure):
 meetnsleep
 ├── README.md              # Project overview
 ├── frontend/              # Frontend code (if applicable)
