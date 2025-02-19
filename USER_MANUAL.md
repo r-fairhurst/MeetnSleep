@@ -35,4 +35,4 @@ Follow the on screen instructions to use other features.
 
 # 5. Known bugs
 
-- Nothing bugs appear so far
+- None
