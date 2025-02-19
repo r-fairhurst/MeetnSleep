@@ -3,4 +3,7 @@ __pycache__
 /src/main/services/media_processing.py
 /src/main/services/storage
 /storage
+src/main/storage/transcripts/
+src/main/storage/transcripts/*
+!src/main/storage/transcripts/.gitkeep
 scripts/convert_audio.py
