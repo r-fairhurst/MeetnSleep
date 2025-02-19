@@ -41,6 +41,10 @@ Our main project structure is the following (MVC-style structure):
 
 # 3. How to run the software
 
+### Install dependencies
+`pip install -r requirements.txt`
+### Running the backend
+`python src/mainapp.py`
 
 # 4. How to test the software
 
