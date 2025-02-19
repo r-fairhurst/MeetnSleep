@@ -58,3 +58,6 @@ To test, Run:
 - Open a GitHub Issue.
 
 - Reach out to the maintainers via isweesin@oregonstate.edu or mortonwi@oregonstate.edu
+
+# 7. Known bugs
+- Nothing bugs appear so far
