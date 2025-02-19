@@ -4,10 +4,10 @@ Developer Guidelines
 # 1. How to Obtain the Source Code
 
 ## Clone the Repository
-    `
+    
         git clone https://github.com/r-fairhurst/MeetnSleep.git
         cd meetnsleep
-    `
+    
 ## Contribute
 To Contribute:
 1. Fork the Repository
