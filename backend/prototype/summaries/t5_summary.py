@@ -18,7 +18,7 @@ def tFiveSummary(text, enablePrint):
     summary_ids = model.generate(input_ids, max_length=max_length, num_beams=5, early_stopping=True)
     summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
     
-    if (enablePrint != False):
+    if (enablePrint):
         print("\n\nT5 Meeting Summary:")
         print(summary + "\n\n")
 
