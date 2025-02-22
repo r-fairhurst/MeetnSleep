@@ -3,7 +3,7 @@
 # pip install sentencepiece
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
-def tFiveSummary(text, enablePrint):
+def t_five_summary(text, enablePrint):
     max_length=150
 
     # Load the model and tokenizer
@@ -22,6 +22,4 @@ def tFiveSummary(text, enablePrint):
         print("\n\nT5 Meeting Summary:")
         print(summary + "\n\n")
 
-    return
-
-tFiveSummary("TEXT HERE", True)
+    return summary
