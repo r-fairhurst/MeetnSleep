@@ -49,7 +49,7 @@ def test_transcription_accuracy(expected_outputs, test_folder):
     # This line shows which file is being tested currently
     tqdm.write("\n")
 
-    for filename, expected_text in tqdm(expected_outputs.items(), desc="Testing", ncols=75):
+    for filename, expected_text in tqdm(expected_outputs.items(), desc="Testing Transcription", ncols=75):
         audio_path = os.path.join(test_folder, filename)
         actual_transcription = transcribe_audio(audio_path)
 
