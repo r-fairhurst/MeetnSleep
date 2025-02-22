@@ -1,0 +1,21 @@
+Participants: Jamie (Scrum Master), Chris (Developer), Pat (QA Engineer), Riley (Product Owner)
+
+Jamie: Let’s kick off the sprint retrospective. What went well this sprint?
+
+Chris: The daily stand-ups kept us on track. Also, the pair programming sessions helped speed up debugging.
+
+Pat: Testing was smoother because of clearer acceptance criteria this time.
+
+Jamie: Awesome. What didn’t go so well?
+
+Riley: We underestimated the time needed for the new feature stories.
+
+Chris: Agreed. The dependencies weren’t clear upfront.
+
+Jamie: Noted. Let’s improve backlog grooming for better estimations. Any action items?
+
+Pat: Maybe a dedicated session for dependency mapping next sprint?
+
+Riley: Sounds good to me.
+
+Jamie: Great suggestions. Let’s keep improving. Thanks, team!

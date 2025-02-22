@@ -1,0 +1,17 @@
+Participants: Alex (Project Manager), Jordan (Developer), Sam (Designer)
+
+Alex: Good morning, everyone. Let’s start with project updates. Jordan, how’s the API integration going?
+
+Jordan: Morning! The API integration is about 80% complete. I ran into some authentication issues, but I expect to resolve them by tomorrow.
+
+Alex: Great. Sam, how’s the UI design coming along?
+
+Sam: The main screens are complete. I’m finalizing the responsive design today. Should we review the color scheme again?
+
+Alex: Let’s schedule a quick review tomorrow. Anything blocking your progress?
+
+Sam: Nope, all good.
+
+Alex: Awesome. Jordan, if you need any support with the API, let me know. Let’s aim for the sprint demo on Friday.
+
+Jordan & Sam: Sounds good!
