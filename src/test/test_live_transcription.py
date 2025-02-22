@@ -35,10 +35,6 @@ def setUp(self):
         self.expected_outputs = json.load(f)
 
     self.test_folder = os.path.join(os.path.dirname(__file__), "test_transcription_inputs")
-    
-    # Debugging statements
-    # print("EXPECTED OUTPUTS PATH: " + expected_outputs_path)
-    # print("TEST FOLDER PATH: " + self.test_folder)
 
 def calculate_similarity(expected, actual):
     """Calculate transcription accuracy as a percentage using Levenshtein distance."""
