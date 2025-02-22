@@ -6,11 +6,7 @@ from tqdm import tqdm
 
 # Add the parent directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from main.llms.gemini_api import geminiSummary
-
-# Add ChatGPT test
-# from main.llms.chatgpt_api import _________
+from main.llms.gemini_api import gemini_summary
 
 # RUN WITH pytest OR pytest -s
 
@@ -23,7 +19,7 @@ def transcript_files():
         return json.load(f)
 
 def test_gemini_summary(transcript_files):
-    """Test geminiSummary on multiple transcript files with progress bar."""
+    """Test Gemini summary on multiple transcript files with progress bar."""
     
     # This line shows which file is being tested currently
     tqdm.write("\n")
@@ -41,11 +37,11 @@ def test_gemini_summary(transcript_files):
             transcript_content = file.read()
 
         try:
-            summary = geminiSummary(transcript_content, False)
+            summary = gemini_summary(transcript_content, False)
             # If the file has content, summary shouldn't be None
             if transcript_content.strip():
                 assert summary is not None, f"Summary is None for {file_name}"
         except Exception as e:
             pytest.fail(f"geminiSummary raised an exception for {file_name}: {e}")
 
-        tqdm.write(f"{file_name}: Summary Returned")
+        tqdm.write(f"{file_name}: Summary returned")

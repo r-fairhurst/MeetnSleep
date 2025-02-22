@@ -3,7 +3,7 @@ from dotenv import dotenv_values  # pip install python-dotenv
 from google import genai
 
 # Gemini based summary tool
-def geminiSummary(text, enablePrint):
+def gemini_summary(text, enablePrint):
     # Configure the api_key and the client for gemini
     # requires KEY.env file in the same directory
     # Always get the KEY.env file from the same directory as this script
