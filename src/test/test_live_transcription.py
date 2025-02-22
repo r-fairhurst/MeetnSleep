@@ -10,8 +10,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from main.services.speech_recognition_service import transcribe_audio
 
-# Tests the transcription tool based on predefined inputs
-# Please refer to the developer documentation on GitHub for any issues.
+# RUN WITH pytest OR pytest -s
 
 @pytest.fixture(scope="module")
 def expected_outputs():
