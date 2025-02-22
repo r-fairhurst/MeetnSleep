@@ -7,7 +7,7 @@ def t_five_summary(text, enablePrint):
     max_length=150
 
     # Load the model and tokenizer
-    tokenizer = T5Tokenizer.from_pretrained('t5-large')
+    tokenizer = T5Tokenizer.from_pretrained('t5-large', legacy=False)
     model = T5ForConditionalGeneration.from_pretrained('t5-large')
     
     # Prepare input text for summarization
