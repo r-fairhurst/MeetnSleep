@@ -7,3 +7,5 @@ python-Levenshtein
 python-dotenv
 google-genai
 protobuf
+transformers
+torch
