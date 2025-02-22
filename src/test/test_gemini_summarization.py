@@ -20,10 +20,8 @@ def transcript_files():
 
 def test_gemini_summary(transcript_files):
     """Test Gemini summary on multiple transcript files with progress bar."""
-    
-    # This line shows which file is being tested currently
     tqdm.write("\n")
-    
+
     total_tests = len(transcript_files)
     assert total_tests > 0, "No test files found in the JSON list."
 
@@ -36,12 +34,14 @@ def test_gemini_summary(transcript_files):
         with open(file_path, "r", encoding="utf-8") as file:
             transcript_content = file.read()
 
-        try:
-            summary = gemini_summary(transcript_content, False)
-            # If the file has content, summary shouldn't be None
-            if transcript_content.strip():
-                assert summary is not None, f"Summary is None for {file_name}"
-        except Exception as e:
-            pytest.fail(f"geminiSummary raised an exception for {file_name}: {e}")
+        summary, error = gemini_summary(transcript_content, False)
+        
+        # If am error occurred, fail the test and return the error
+        if error:
+            pytest.fail(f"gemini_summary raised an exception for {file_name}: {type(error).__name__}: {error}")
+
+        # If the file has content, summary shouldn't be None
+        if transcript_content.strip():
+            assert summary is not None, f"Summary is None for {file_name}"
 
         tqdm.write(f"{file_name}: Summary returned")
