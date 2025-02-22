@@ -3,3 +3,4 @@ ffmpeg
 Fastapi
 Unicorn
 tqdm
+python-Levenshtein
