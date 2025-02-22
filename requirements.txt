@@ -5,3 +5,4 @@ Unicorn
 tqdm
 python-Levenshtein
 python-dotenv
+google
