@@ -6,3 +6,4 @@ tqdm
 python-Levenshtein
 python-dotenv
 google-genai
+protobuf
