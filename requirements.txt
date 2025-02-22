@@ -9,3 +9,4 @@ google-genai
 protobuf
 transformers
 torch
+sentencepiece
