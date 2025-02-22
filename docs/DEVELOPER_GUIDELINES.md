@@ -48,21 +48,24 @@ Our main project structure is the following (MVC-style structure):
 
 # 4. How to test the software
 
-There are two different testing suites available, one for transcription and one for summarization. 
+There are two different testing suites available, one for transcription and one for summarization. These both utilize 
+PyTest and can be run using `pytest` or `pytest -s`.
 
 ## Transcription
 
 The transcription testing suite uses predefined `.wav` audio files with expected outputs.
 
 The `.wav` audio files used for testing can be found at `src/test/test_transcription_inputs/` along 
-with the expected outputs.
+with the expected outputs `.json` file.
 
 To run the tests, navigate to the `src/test/` directory and run the following command:
 
-`python test_live_transcription.py`
+`pytest` or `pytest`
 
-The automated tool transcribes the audio file, compares it with the expected output, and returns the accuracy 
-as a percentage.
+PyTest will the the automated tests and determine if they all pass.
+
+If `pytest -s` was executed, the automated tool transcribes the audio file, compares it with the expected output, and 
+returns the accuracy as a percentage.
 
 ## Summarization
 
@@ -80,6 +83,7 @@ for the audio. It is required that the audio file is in english.
 3. Open the `expected_outputs.json` file and add the file name and accurate transcription in the form:
    `"filename.wav": "transcription text"`
    
-5. Test that the file is included in the test suite by executing the test suite as explained in Developer Guidelines 5.
+5. Test that the file is included in the test suite by executing the test suite as explained in Developer Guidelines
+5.
 
 # 6. How to build a release of the software
