@@ -1,6 +1,4 @@
-# main.py
-
-import os
+# src/main/llms/chatgpt_api.pyimport os
 import sys
 from openai import OpenAI
 from services.speech_recognition_service import (
