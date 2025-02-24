@@ -6,9 +6,8 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Minute-Meet - Automatic Transcriber & Summarizer</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'minuteMeet/main.css' %}">
-        <script src='app.js'></script>
-        <script src='index.js'></script>
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'minuteMeet/home.css' %}">
+        <script src="{% static 'minuteMeet/index.js' %}"></script>
     </head>
     <body>
         <h1>Minute-Meet</h1>
@@ -22,15 +21,15 @@
             <!--container for the new recording button and text-->
             <div class="button-containers" id="create-button-container">
                 <!--new recording button-->
-                <button type="button">+</button>
+                <button type="button" id="create-button">+</button>
                 <h4>Start a New Recording</h4>
             </div>
             <!--container for the archive and settings buttons-->
             <div class="button-containers" id="archive-settings-container">
                 <!--archive button-->
-                <button type="button">Past Summaries</button>
+                <button type="button" id="archive-button">Past Summaries</button>
                 <!--settinfs button-->
-                <button type="button">Settings</button>
+                <button type="button" id="settings-button">Settings</button>
             </div>
         </div>
         

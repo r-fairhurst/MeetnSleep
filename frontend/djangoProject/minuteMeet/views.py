@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def index(request):
-    #return HttpResponse("index page for project")
+def home(request):
+    return render(request, 'home.html')
 
-    # context = {
-    #     'variable1': 'value1',
-    #     'variable2': 'value2',
-    # }
-    return render(request, 'index.html')
+def recordingPage(request):
+    return render(request, "recording.html")
+
+def archivePage(request):
+    return render(request, "archive.html")
