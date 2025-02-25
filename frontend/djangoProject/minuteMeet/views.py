@@ -1,5 +1,9 @@
+import os
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from src.main.services.speech_recognition_service import listen_for_speech, transcribe_audio
 
 # Create your views here.
 def home(request):
@@ -11,3 +15,35 @@ def recordingPage(request):
 def archivePage(request):
     return render(request, "archive.html")
 
+
+
+@csrf_exempt
+def start_transcription(request):
+    # endpoint to start live speech recognition
+    if request.method == "POST":
+        transcript = listen_for_speech()
+        if transcript:
+            return JsonResponse({"success": True, "transcript": transcript})
+        return JsonResponse({"success": False, "message": "No speech detected or error occurred."})
+    
+    return JsonResponse({"error": "Invalid request method."}, status=400)
+
+@csrf_exempt
+def upload_audio_transcription(request):
+    # endpoint to transcribe uploaded audio files
+    if request.method == "POST" and request.FILES.get("audio_file"):
+        audio_file = request.FILES["audio_file"]
+        file_path = f"storage/uploads/{audio_file.name}"
+
+        os.makedirs("storage/uploads", exist_ok=True)
+        with open(file_path, "wb+") as destination:
+            for chunk in audio_file.chunks():
+                destination.write(chunk)
+
+        transcript = transcribe_audio(file_path)
+        if transcript:
+            return JsonResponse({"success": True, "transcript": transcript})
+
+        return JsonResponse({"success": False, "message": "Could not transcribe the audio."})
+
+    return JsonResponse({"error": "No audio file provided."}, status=400)
