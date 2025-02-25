@@ -3,7 +3,7 @@
 ## Team Report:
 - **Goals From Last Week:** Develop preliminary documentation for how the user'll use the service, and how their data is handled (APIs in the background, etc.). Committing a working webpage on ENGR server using base HTML, CSS, simple Django by 2/18. Integrate our successful back-end handling of input functionality, and successful summarizing to front-end users will interact with.
 - **Current Contributions:** We further developed our front-end and back-end.
-- **Future Plans:** 
+- **Future Plans:** We will be working towards our beta release which means we will be integrating our frontend and backend systems for the first time and handling any errors that may arise.
 
 ## Individual Contributions:
 #### William Morton
