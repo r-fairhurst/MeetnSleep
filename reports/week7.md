@@ -1,7 +1,7 @@
 # Week 7 Report
 
 ## Team Report:
-- **Goals From Last Week:** 
+- **Goals From Last Week:** We added tests to our back-end system and developed our front-end.
 - **Current Contributions:** Completed CI integration with GitHub Actions, implemented automatic testing of our python files using pytest and the GitHub actions.
 - **Future Plans:** We plan to integrate the frontend and backend, with team discussions, by end of week 2/30. We plan to have draft documentation of at least the backend by end of week 2/28.
 
