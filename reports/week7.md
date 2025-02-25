@@ -1,9 +1,9 @@
-# Week 3 Report
+# Week 7 Report
 
 ## Team Report:
 - **Goals From Last Week:** 
 - **Current Contributions:** Completed CI integration with GitHub Actions, implemented automatic testing of our python files using pytest and the GitHub actions.
-- **Future Plans:** 
+- **Future Plans:** We plan to integrate the frontend and backend, with team discussions, by end of week 2/30. We plan to have draft documentation of at least the backend by end of week 2/28.
 
 ## Individual Contributions:
 #### William Morton
@@ -22,9 +22,9 @@
 - **Future Plans:** Add a unit for one of our main functions/programs. This will be done by 2/25 at night. As well as helping with frontend development
 
 #### Ian McKee
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** I will work further with Arianna on the Django implementation, and talk with our back-end team on connecting the database with this.
+- **Current Contributions:** Revisited the Django setup to better understand how it connects to frontend. 
+- **Future Plans:** Clarify dependencies with team on backend side, to facilitate backend integration, this will be done by middle of week 2/26. I'll implement one test. Help backend team with writing documentation, and even facilitate drafts for frontend documentation, by end of week 2/30.
 
 #### Aiden Reedy
 - **Last Week Contributions:** 
