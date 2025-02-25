@@ -26,3 +26,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const startButton = document.getElementById("create-button");
+
+    startButton.addEventListener("click", () => {
+        fetch("/start_transcription/", {
+            method: "POST",
+            headers: {
+                "X-CSRFToken": getCSRFToken(),
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Transcript: " + data.transcript);
+            } else {
+                alert("Speech not recognized. Try again.");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+});
+
+// Helper function to get CSRF token
+// this will ensure Django accepts the request instead of rejecting it as a potential CSRF attack
+// read more: https://portswigger.net/web-security/csrf
+function getCSRFToken() {
+    return document.cookie.split("; ")
+        .find(row => row.startsWith("csrftoken"))
+        ?.split("=")[1];
+}
