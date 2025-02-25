@@ -9,7 +9,7 @@
 #### William Morton
 - **Last Week Contributions:** I was focused on completing the implementation of the backend systems for our project. I will be worked on finalizing the summary systems and connecting it with the other backend system.
 - **Current Contributions:** This week the backend team is focused on adding tests to verify that the backend system is working as intended. We will also be working on creating documentation for both users and other developers so that they can have a full understanding of our system. 
-- **Future Plans:** Future plans for the backend team include finalizing gthe implementation of the backend so that it can be used with the frontend to provide both transcription and summarization. 
+- **Future Plans:** Future plans for the backend team include finalizing the implementation of the backend so that it can be used with the frontend to provide both transcription and summarization. 
 
 #### Aidan Daly
 - **Last Week Contributions:** This week I intend to work with my team to bolster our project architecture and design based off of our critical reviews from our presentation on monday. We will make sure that we finalize which frameworks we want to use for the front and back end of the assignment, including which LLM to use for our meeting summarizer. I partook in the presentation on monday by highlighting how our app minute-meet solves the problems that we want to solve. I also joined my team in our standup meetings after each class and our zoom meeting over the weekend so that we could all stay on track and have great communication. 
