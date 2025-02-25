@@ -27,9 +27,9 @@
 - **Future Plans:** Clarify dependencies with team on backend side, to facilitate backend integration, this will be done by middle of week 2/26. I'll implement one test. Help backend team with writing documentation, and even facilitate drafts for frontend documentation, by end of week 2/30.
 
 #### Aiden Reedy
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** Working on finding a way to lower the gap in recordings when making api calls, testing having 2 recording threads that overlap and alternate so there's no gap.
+- **Current Contributions:** Still trying to find the best way to not have a gap in recordings. Adding tests to out project and did the weekly report.
+- **Future Plans:** Finish the merge between front and back end so everything runs smoothly and so we have a working prototype that we can present.
 
 #### Arianna Valencia
 - **Last Week Contributions:** 
