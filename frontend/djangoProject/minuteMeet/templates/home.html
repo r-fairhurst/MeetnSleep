@@ -8,7 +8,7 @@
     <title>Minute-Meet - Automatic Transcriber & Summarizer</title>
     <link rel="stylesheet" href="{% static 'minuteMeet/home.css' %}">
     <script src="{% static 'minuteMeet/index.js' %}" defer></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>  
 </head>
 <body>
     <header>
@@ -28,6 +28,38 @@
                 <button type="button" id="settings-button">Settings</button>
             </div>
         </section>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="audioFile" accept="audio/*">
+            <button type="submit">Upload & Transcribe</button>
+        </form>
+        
+        <script>
+        document.getElementById("uploadForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let fileInput = document.getElementById("audioFile");
+            if (!fileInput.files.length) {
+                alert("Please select an audio file.");
+                return;
+            }
+        
+            let formData = new FormData();
+            formData.append("audio_file", fileInput.files[0]);
+        
+            fetch("/upload_audio_transcription/", {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Transcript: " + data.transcript);
+                } else {
+                    alert("Could not process the audio file.");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        });
+        </script>   
     </main>
 
     <footer>
