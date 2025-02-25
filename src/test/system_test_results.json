@@ -1,0 +1,26 @@
+{
+    "C:\\Users\\aidan\\OneDrive\\Documents\\GitHub\\MeetnSleep\\src\\test\\test_valid_transcription_inputs\\test1.wav": {
+        "transcription": "the quick brown fox jumps over the lazy dog",
+        "summary": "main ideas: the quick brown fox jumps over the lazy dog ."
+    },
+    "C:\\Users\\aidan\\OneDrive\\Documents\\GitHub\\MeetnSleep\\src\\test\\test_valid_transcription_inputs\\test2.wav": {
+        "transcription": "she sells seashells by the seashore",
+        "summary": "main ideas: she sells seashells by the seashore ."
+    },
+    "C:\\Users\\aidan\\OneDrive\\Documents\\GitHub\\MeetnSleep\\src\\test\\test_valid_transcription_inputs\\test3.wav": {
+        "transcription": "I need to buy groceries including eggs milk and bread",
+        "summary": "main ideas: I need to buy groceries including eggs milk and bread . I need to buy groceries including eggs milk and bread ."
+    },
+    "C:\\Users\\aidan\\OneDrive\\Documents\\GitHub\\MeetnSleep\\src\\test\\test_valid_transcription_inputs\\test4.wav": {
+        "transcription": "their car is parked over there next to their waiting friends",
+        "summary": "main ideas: their car is parked over there next to their waiting friends . main ideas: their car is parked over there next to their waiting friends ."
+    },
+    "C:\\Users\\aidan\\OneDrive\\Documents\\GitHub\\MeetnSleep\\src\\test\\test_valid_transcription_inputs\\test5.wav": {
+        "transcription": "I read the book yesterday but I will read another one today",
+        "summary": "main ideas: I read the book yesterday but i will read another one today. main ideas: I read the book yesterday but i will read another one today. main ideas: I read the book yesterday but i will read another one today."
+    },
+    "C:\\Users\\aidan\\OneDrive\\Documents\\GitHub\\MeetnSleep\\src\\test\\test_valid_transcription_inputs\\test6.wav": {
+        "transcription": "he won one game but lost the other",
+        "summary": "main ideas: he won one game but lost the other ."
+    }
+}
