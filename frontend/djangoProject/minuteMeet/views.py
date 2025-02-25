@@ -10,3 +10,4 @@ def recordingPage(request):
 
 def archivePage(request):
     return render(request, "archive.html")
+
