@@ -37,6 +37,6 @@
 - **Future Plans:** 
 
 #### Nadir Isweesi
-- **Last Week Contributions:** 
-- **Current Contributions:**
-- **Future Plans:** 
+- **Last Week Contributions:** improved text summarization more to make it summarize text in the best way we can. (still needs some work though)
+- **Current Contributions:** Added the user manual and the architecture file, s well as ingterating CI/CD workflows (Ryan added a new improved version afterward), as well as, added test cases for openai key and openai text summarization 
+- **Future Plans:** Will work on the frontend to display real-time text.
