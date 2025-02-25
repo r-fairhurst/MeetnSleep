@@ -8,5 +8,6 @@ urlpatterns = [
     path("archivePage/", views.archivePage, name="recordingPage"),
     path('start_transcription/', views.start_transcription, name='start_transcription'),
     path('upload_audio_transcription/', views.upload_audio_transcription, name='upload_audio_transcription'),
+    path("stream_transcription/", views.stream_transcription, name="stream_transcription")
 ]
 

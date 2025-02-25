@@ -1,9 +1,17 @@
 import os
+import sys
+import json
+import time
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.http import JsonResponse
+from django.http import JsonResponse, StreamingHttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from src.main.services.speech_recognition_service import listen_for_speech, transcribe_audio
+# Get the absolute path of 'src/main/services' and add it to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../src/main/services")))
+
+# Now you can import the service
+from speech_recognition_service import listen_for_speech, transcribe_audio
+# from src.main.services.speech_recognition_service import listen_for_speech, transcribe_audio
+
 
 # Create your views here.
 def home(request):
@@ -47,3 +55,15 @@ def upload_audio_transcription(request):
         return JsonResponse({"success": False, "message": "Could not transcribe the audio."})
 
     return JsonResponse({"error": "No audio file provided."}, status=400)
+
+
+@csrf_exempt
+def stream_transcription(request):
+    """Stream transcription data while recording."""
+    
+    def event_stream():
+        for segment in listen_for_speech():
+            yield f"data: {json.dumps(segment)}\n\n"
+            time.sleep(1)  # Prevents flooding the client
+
+    return StreamingHttpResponse(event_stream(), content_type="text/event-stream")
