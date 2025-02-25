@@ -17,7 +17,7 @@ from main.llms.gemini_api import gemini_summary
 def expected_outputs():
     """Fixture to load expected outputs before running tests."""
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    expected_outputs_path = os.path.join(base_dir, "test", "test_transcription_inputs", "expected_outputs.json")
+    expected_outputs_path = os.path.join(base_dir, "test", "test_valid_transcription_inputs", "expected_outputs.json")
     with open(expected_outputs_path, "r") as f:
         outputs = json.load(f)
     return outputs
@@ -25,7 +25,7 @@ def expected_outputs():
 @pytest.fixture(scope="module")
 def test_folder():
     """Fixture to get the path to the folder containing test audio files."""
-    return os.path.join(os.path.dirname(__file__), "test_transcription_inputs")
+    return os.path.join(os.path.dirname(__file__), "test_valid_transcription_inputs")
 
 def test_backend_integration(expected_outputs, test_folder):
     """Test each audio file and return transcript"""
