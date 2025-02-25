@@ -12,9 +12,9 @@
 - **Future Plans:**
 
 #### Aidan Daly
-- **Last Week Contributions:**
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** I will be working with the team this week to finish up our implementation prototype. When we have finished our prototype, I will work on testing it. I will make there that I can spot any bugs in the app, and if there is I will report it to the frontend and backend teams. I will also work with these teams to help fix the bugs that I spot. I have also attended all our stand up meetings after class and have been very active on our discord chat. 
+- **Current Contributions:** I will be participating in all of our team stand up meetings in class. I will work with the team to create tests for our prototype. With these tests we will go ahead and debug our codebase, while pushing the changes to the repo. 
+- **Future Plans:**  I plan to help with the front end development. I also plan to create my validation, integration, unit and system tests and add them to the repo by 2/25.
 
 #### Ryan Fairhurst
 - **Last Week Contributions:** I started the implementation of opening up a summary file or transcription and displaying it as HTML. I have pushed what I have accomplished so far, but requires further testing and to see if this is how we want to handle loading txt files for displayment.
