@@ -7,7 +7,10 @@ import pytest
 # Add the backend/prototype directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../backend/prototype')))
 
-from transcription import transcribe_audio  # Now it can import from backend/prototype
+try:
+    from transcription import transcribe_audio
+except ImportError:
+    raise ImportError("Could not import 'transcription' module. Ensure that 'backend/prototype/transcription.py' exists.")
 
 def test_transcribe_audio():
     # Replace with other test audio files, make sure the file exists for the test
