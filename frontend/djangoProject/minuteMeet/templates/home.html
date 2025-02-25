@@ -22,6 +22,15 @@
                 <button type="button" id="create-button">+</button>
                 <h4>New Recording</h4>
             </div>
+        </section>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.getElementById("create-button-container").addEventListener("click", function() {
+                    window.location.href = "/minuteMeet/recordingPage/"; // redirect to recording page
+                });
+            });
+        </script>        
 
             <div class="button-container" id="archive-settings-container">
                 <button type="button" id="archive-button">Past Summaries</button>

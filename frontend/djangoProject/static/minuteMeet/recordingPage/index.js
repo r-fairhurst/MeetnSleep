@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const startButton = document.getElementById("start-recording");
-    const stopButton = document.getElementById("stop-recording");
     const transcriptElement = document.getElementById("live-transcript");
     let eventSource = null;
 
-    startButton.addEventListener("click", function () {
+    function startTranscription() {
         if (eventSource) {
             eventSource.close();
         }
 
+        // Open a connection to Django streaming endpoint
         eventSource = new EventSource("/minuteMeet/stream_transcription/");
 
         eventSource.onmessage = function (event) {
@@ -17,19 +16,15 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         eventSource.onerror = function () {
-            transcriptElement.innerHTML += "<br><span style='color:red;'>[Connection lost]</span>";
+            transcriptElement.innerHTML += "<br><span style='color:red;'>Recording stopped</span>";
             eventSource.close();
         };
-    });
+    }
 
-    stopButton.addEventListener("click", function () {
-        if (eventSource) {
-            eventSource.close();
-            eventSource = null;
-            transcriptElement.innerHTML += "<br><span style='color:blue;'>[Recording Stopped]</span>";
-        }
-    });
+    // Start automatically when page loads
+    startTranscription();
 });
+
 
 // Helper function to get CSRF token
 // this will ensure Django accepts the request instead of rejecting it as a potential CSRF attack

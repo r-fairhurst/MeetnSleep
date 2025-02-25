@@ -16,36 +16,11 @@
 
         <div id="transcript-container">
             <h2>Live Transcript:</h2>
-            <p id="live-transcript">Waiting for speech...</p>
+            <p id="live-transcript">You can speak now:</p>
         </div>
 
         <button id="start-recording">Start Recording</button>
-        <button id="stop-recording">Stop Recording</button>
-<!-- 
-        <script>
-            document.getElementById("start-recording-home").addEventListener("click", function() {
-                const transcriptElement = document.getElementById("live-transcript");
-
-                // Open a connection to the streaming endpoint
-                const eventSource = new EventSource("/stream_transcription/");
-
-                eventSource.onmessage = function(event) {
-                    const data = JSON.parse(event.data);
-                    transcriptElement.innerHTML += `<br> ${data.text}`;
-                };
-
-                document.getElementById("stop-recording").addEventListener("click", function() {
-                    eventSource.close();
-                });
-            });
-        </script> -->
-
-    <script>
-    document.getElementById("start-recording-home").addEventListener("click", function() {
-        window.location.href = "/minuteMeet/recordingPage/"; // Redirects to the UI
-    });
-    </script>
-        
+        <button id="stop-recording">Say fire extinguisher to quit</button>
 
     </body>
 </html>
