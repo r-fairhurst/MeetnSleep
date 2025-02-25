@@ -7,9 +7,9 @@
 
 ## Individual Contributions:
 #### William Morton
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:**
+- **Last Week Contributions:** Added tests to verify that the backend system is working as intended. Also worked on creating documentation for both users and other developers so that they can have a full understanding of our system.
+- **Current Contributions:** Current plans for the backend team include finalizing the implementation of the backend so that it can be used with the frontend to provide both transcription and summarization. This is in preparation for our beta release.
+- **Future Plans:** Myself and the rest of the backend team will be working on polishing our system and integrating it with our frontend.
 
 #### Aidan Daly
 - **Last Week Contributions:** I will be working with the team this week to finish up our implementation prototype. When we have finished our prototype, I will work on testing it. I will make there that I can spot any bugs in the app, and if there is I will report it to the frontend and backend teams. I will also work with these teams to help fix the bugs that I spot. I have also attended all our stand up meetings after class and have been very active on our discord chat. 
