@@ -37,6 +37,7 @@ def listen_for_speech():
 
                     audio = recognizer.listen(source, timeout=30, phrase_time_limit=60)
                     text = recognizer.recognize_google(audio)
+                    yield {"text": text}  # send updates immediately
 
                     if EXIT_KEYWORD.lower() in text.lower():
                         stop_listening = True
