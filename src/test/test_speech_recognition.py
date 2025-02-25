@@ -22,18 +22,23 @@ def expected_outputs():
     return outputs
 
 @pytest.fixture(scope="module")
-def test_folder():
+def invalid_inputs():
+    """Fixture to load expected outputs before running tests."""
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    expected_outputs_path = os.path.join(base_dir, "test", "test_invalid_transcription_inputs", "invalid_inputs.json")
+    with open(expected_outputs_path, "r") as f:
+        inputs = json.load(f)
+    return inputs
+
+@pytest.fixture(scope="module")
+def valid_test_folder():
     """Fixture to get the path to the folder containing test audio files."""
     return os.path.join(os.path.dirname(__file__), "test_valid_transcription_inputs")
 
-def setUp(self):
-    """Load expected outputs before running tests."""
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    expected_outputs_path = os.path.join(base_dir, "test", "test_valid_transcription_inputs", "expected_outputs.json")
-    with open(expected_outputs_path, "r") as f:
-        self.expected_outputs = json.load(f)
-
-    self.test_folder = os.path.join(os.path.dirname(__file__), "test_valid_transcription_inputs")
+@pytest.fixture(scope="module")
+def invalid_test_folder():
+    """Fixture to get the path to the folder containing test audio files."""
+    return os.path.join(os.path.dirname(__file__), "test_invalid_transcription_inputs")
 
 def calculate_similarity(expected, actual):
     """Calculate transcription accuracy as a percentage using Levenshtein distance."""
@@ -41,16 +46,17 @@ def calculate_similarity(expected, actual):
     max_len = max(len(expected), len(actual))
     return (1 - distance / max_len) * 100 if max_len > 0 else 100
 
-def test_transcription_accuracy(expected_outputs, test_folder):
+# Accuracy testing
+def test_transcription_accuracy(expected_outputs, valid_test_folder):
     """Test each audio file and print similarity score."""
     total_score = 0
     num_tests = 0
 
     # This line shows which file is being tested currently
-    tqdm.write("\n")
+    tqdm.write("\nBeginning Transcription Testing\n")
 
     for filename, expected_text in tqdm(expected_outputs.items(), desc="Testing Transcription", ncols=75):
-        audio_path = os.path.join(test_folder, filename)
+        audio_path = os.path.join(valid_test_folder, filename)
         actual_transcription = transcribe_audio(audio_path)
 
         assert actual_transcription is not None, f"transcribe_audio returned None for {filename}"
@@ -66,3 +72,24 @@ def test_transcription_accuracy(expected_outputs, test_folder):
     if num_tests > 0:
         average_accuracy = total_score / num_tests
         tqdm.write(f"\nAverage Accuracy: {average_accuracy:.2f}%")
+
+# Input validation testing
+def test_valid_input(invalid_inputs, invalid_test_folder):
+    """Test each file and validate that the software will reject bad files"""
+    tqdm.write("\nBeginning Validation Testing\n")
+
+    for filename in tqdm(invalid_inputs, desc="Validating Transcription Inputs", ncols=75):
+        audio_path = os.path.join(invalid_test_folder, filename)
+        
+        # Use try accept for error suppression
+        try:
+            attempt_transcription = transcribe_audio(audio_path)
+        except Exception:
+            attempt_transcription = None
+
+        if attempt_transcription == None:
+            tqdm.write(f"{filename}: PASS")
+        else:
+            tqdm.write(f"{filename}: FAIL")
+            tqdm.write(f"Generated: {attempt_transcription}")
+            pytest.fail()

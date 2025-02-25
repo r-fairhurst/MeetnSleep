@@ -107,5 +107,5 @@ def transcribe_audio(file_path):
             audio = recognizer.record(source)
             return recognizer.recognize_google(audio)
     except Exception as e:
-        print(f"Error transcribing {file_path}: {e}")
+        # print(f"Error transcribing {file_path}: {e}")
         return None
