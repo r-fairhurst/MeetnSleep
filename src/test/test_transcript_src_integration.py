@@ -33,7 +33,11 @@ def test_save_transcript(mock_transcript_segments, tmp_path):
         file_pattern = os.path.join(storage_dir, "test_transcript*.srt")
         matching_files = glob.glob(file_pattern)
     
-        print(f"Matching files: {matching_files}")  # Debug print
+        print(f"Storage directory: {storage_dir}")
+        print(f"Pattern to match: {file_pattern}")
+        print(f"Files found: {matching_files}")
+        print(os.getcwd)
+
     
         # Ensure the file was created
         assert matching_files, "Transcript file was not saved."

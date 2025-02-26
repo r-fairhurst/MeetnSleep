@@ -41,6 +41,11 @@ def test_edge(edge_case_transcript, tmp_path):
     file_pattern = os.path.join(storage_dir, "edge_case_test*.srt")
     matching_files = glob.glob(file_pattern)
     
+    print(f"Storage directory: {storage_dir}")
+    print(f"Pattern to match: {file_pattern}")
+    print(f"Files found: {matching_files}")
+    print(os.getcwd)
+
     
     # Ensure the file was created
     assert matching_files, "No transcript file found."
