@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Minute-Meet - Automatic Transcriber & Summarizer</title>
     <link rel="stylesheet" href="{% static 'minuteMeet/home.css' %}">
-    <script src="{% static 'minuteMeet/index.js' %}" defer></script>
+    <script src="{% static 'minuteMeet/home.js' %}" defer></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>  
 </head>
 <body>
@@ -22,16 +22,7 @@
                 <button type="button" id="create-button">+</button>
                 <h4>New Recording</h4>
             </div>
-        </section>
-        
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                document.getElementById("create-button-container").addEventListener("click", function() {
-                    window.location.href = "/minuteMeet/recordingPage/"; // redirect to recording page
-                });
-            });
-        </script>        
-
+        </section>    
             <div class="form-container">
                 <form id="uploadForm" enctype="multipart/form-data">
                     <input type="file" id="audioFile" accept="audio/*">
@@ -45,33 +36,6 @@
             </div>
         </section>
         
-        <script>
-        document.getElementById("uploadForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            let fileInput = document.getElementById("audioFile");
-            if (!fileInput.files.length) {
-                alert("Please select an audio file.");
-                return;
-            }
-        
-            let formData = new FormData();
-            formData.append("audio_file", fileInput.files[0]);
-        
-            fetch("/upload_audio_transcription/", {
-                method: "POST",
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert("Transcript: " + data.transcript);
-                } else {
-                    alert("Could not process the audio file.");
-                }
-            })
-            .catch(error => console.error("Error:", error));
-        });
-        </script>   
     </main>
 
     <footer>
