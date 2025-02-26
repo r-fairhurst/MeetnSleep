@@ -2,6 +2,7 @@ SpeechRecognition
 ffmpeg
 Fastapi
 Unicorn
+Uvicorn
 tqdm
 python-Levenshtein
 python-dotenv
