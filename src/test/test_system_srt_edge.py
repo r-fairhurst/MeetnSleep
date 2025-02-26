@@ -28,24 +28,24 @@ def edge_case_transcript():
 
 def test_edge(edge_case_transcript, tmp_path):
     """Test saving transcript with edge case content (long and empty text)."""
-    # Set the path where the file will be saved (in the correct test storage directory)
-    storage_dir = os.path.join(os.path.dirname(__file__), "../test/storage/transcripts")
+    # Ensure absolute path for the storage directory
+    storage_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../test/storage/transcripts"))
     
-    
-    # Save the transcript with a full path
+    # Save the transcript
     save_transcript(edge_case_transcript, file_prefix="edge_case_test")
     
     # Give it a moment to write the file just in case
     time.sleep(1)
     
+    # Create file search pattern using absolute path
     file_pattern = os.path.join(storage_dir, "edge_case_test*.srt")
     matching_files = glob.glob(file_pattern)
     
+    # Debugging output
     print(f"Storage directory: {storage_dir}")
     print(f"Pattern to match: {file_pattern}")
     print(f"Files found: {matching_files}")
-    print(os.getcwd)
-
+    print(f"Current working directory: {os.getcwd()}")
     
     # Ensure the file was created
     assert matching_files, "No transcript file found."
@@ -56,7 +56,7 @@ def test_edge(edge_case_transcript, tmp_path):
     with open(file_path, "r", encoding="utf-8") as file:
         file_content = file.read().strip()
     
-    expected_content = "\n".join([
+    expected_content = "\n".join([  # Expected content format
         f"1\n00:00:00,000 --> 00:00:10,000\n{'A' * 10000}\n",
         "2\n00:00:10,000 --> 00:00:20,000\n\n"
     ]).strip()
