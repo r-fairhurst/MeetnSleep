@@ -2,7 +2,7 @@ import sys
 import os
 import pytest
 
-##Test the beahviour of transcribe_audio in transcribe.py
+#Test the beahviour of transcribe_audio in transcribe.py
 
 # Add the backend/prototype directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../backend/prototype')))

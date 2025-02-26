@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     min-height: 100vh;
 }
 
@@ -17,14 +17,14 @@ body {
 header {
     width: 100%;
     background: #2a2a2a;
-    padding: 20px;
+    padding: 10px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     font-size: 2.2rem;
     color: #ffffff;
-    margin: 0;
+    margin-top: 0;
 }
 
 h3 {
@@ -168,6 +168,12 @@ button:hover {
     }
 }
 
+/* Transcript Container Styling */
+#transcript-container {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 10px;
+}
 
 /* Floating "New Recording" Button */
 #create-button {
