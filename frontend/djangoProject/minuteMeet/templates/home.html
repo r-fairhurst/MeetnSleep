@@ -32,15 +32,18 @@
             });
         </script>        
 
+            <div class="form-container">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <input type="file" id="audioFile" accept="audio/*">
+                    <button type="submit">Upload & Transcribe</button>
+                </form>
+            </div>
+
             <div class="button-container" id="archive-settings-container">
                 <button type="button" id="archive-button">Past Summaries</button>
                 <button type="button" id="settings-button">Settings</button>
             </div>
         </section>
-        <form id="uploadForm" enctype="multipart/form-data">
-            <input type="file" id="audioFile" accept="audio/*">
-            <button type="submit">Upload & Transcribe</button>
-        </form>
         
         <script>
         document.getElementById("uploadForm").addEventListener("submit", function(event) {
