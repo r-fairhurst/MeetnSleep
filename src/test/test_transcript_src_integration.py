@@ -3,6 +3,7 @@ import os
 from unittest.mock import patch
 import glob
 import sys
+import time
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../main")))
 from services.speech_recognition_service import save_transcript
@@ -19,15 +20,17 @@ def test_save_transcript(mock_transcript_segments, tmp_path):
     with patch('services.speech_recognition_service.listen_for_speech') as mock_listen:
         mock_listen.return_value = mock_transcript_segments
     
-        # Temporary directory for the transcript
-        storage_dir = tmp_path / "transcripts"
-        storage_dir.mkdir(parents=True, exist_ok=True)
+        # Set the path where the file will be saved 
+        storage_dir = os.path.join(os.path.dirname(__file__), "../test/storage/transcripts")
     
         # Save transcript to temp path
         save_transcript(mock_transcript_segments, file_prefix="test_transcript")
     
-        # Use glob to find files with the expected prefix
-        file_pattern = str(storage_dir / "test_transcript*.srt")
+        # Give it a moment to write the file just in case
+        time.sleep(1)
+    
+        # Adjusted to search in the correct directory (test/storage/transcripts)
+        file_pattern = os.path.join(storage_dir, "test_transcript*.srt")
         matching_files = glob.glob(file_pattern)
     
         print(f"Matching files: {matching_files}")  # Debug print
@@ -47,4 +50,3 @@ def test_save_transcript(mock_transcript_segments, tmp_path):
         ]).strip()
 
         assert file_content == expected_content
-

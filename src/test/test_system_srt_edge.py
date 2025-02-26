@@ -2,6 +2,7 @@ import pytest
 import os
 import sys
 import glob
+import time
 
 # Append the path to import your modules correctly
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../main")))
@@ -25,20 +26,21 @@ def edge_case_transcript():
         }
     ]
 
-def test_save_edge_case_transcripts(edge_case_transcript, tmp_path):
+def test_edge(edge_case_transcript, tmp_path):
     """Test saving transcript with edge case content (long and empty text)."""
-    # Temporary directory for the transcript
-    storage_dir = tmp_path / "transcripts"
-    storage_dir.mkdir(parents=True, exist_ok=True)
+    # Set the path where the file will be saved (in the correct test storage directory)
+    storage_dir = os.path.join(os.path.dirname(__file__), "../test/storage/transcripts")
     
-    # Save the transcript
+    
+    # Save the transcript with a full path
     save_transcript(edge_case_transcript, file_prefix="edge_case_test")
     
-    # Find the file that matches the prefix using glob
-    file_pattern = str(storage_dir / "edge_case_test*.srt")
+    # Give it a moment to write the file just in case
+    time.sleep(1)
+    
+    file_pattern = os.path.join(storage_dir, "edge_case_test*.srt")
     matching_files = glob.glob(file_pattern)
     
-    print(f"Matching files: {matching_files}")  # Debug print
     
     # Ensure the file was created
     assert matching_files, "No transcript file found."
@@ -54,4 +56,8 @@ def test_save_edge_case_transcripts(edge_case_transcript, tmp_path):
         "2\n00:00:10,000 --> 00:00:20,000\n\n"
     ]).strip()
     
+    # Optional: Compare length of content for large texts
+    assert len(file_content) == len(expected_content), f"Length mismatch: {len(file_content)} vs {len(expected_content)}"
+    
+    # Compare content
     assert file_content == expected_content, f"Expected: {expected_content}\nActual: {file_content}"
