@@ -8,23 +8,33 @@ from services.speech_recognition_service import save_transcript
 
 def test_save_srt_transcript(tmp_path):
     prefix = "test_transcript"
-    transcript_content = """1
-00:00:00,000 --> 00:00:04,969
-hi there"""
+    transcript = [
+        {
+            "number": 1,
+            "start_time": "00:00:00,000",
+            "end_time": "00:00:04,969",
+            "text": "hi there"
+        }
+    ]
 
     # Using a temp directory
     storage_dir = tmp_path / "transcripts"
     storage_dir.mkdir(parents=True, exist_ok=True)
 
-    save_transcript(transcript_content, str(storage_dir / prefix))
+    save_transcript(transcript, str(storage_dir / prefix))
 
     # Find the file that matches our prefix
-    matching_files = list(storage_dir.glob(f"{prefix}*"))
+    matching_files = list(storage_dir.glob(f"{prefix}*.srt"))
     assert matching_files, "No transcript file with the expected prefix was found."
 
     file_path = matching_files[0]  # Take the first matching file
     try:
         with open(file_path, "r") as f:
-            assert f.read().strip() == transcript_content.strip(), "Stored transcript does not match expected content."
+            expected_content = """1
+00:00:00,000 --> 00:00:04,969
+hi there
+"""
+            assert f.read().strip() == expected_content.strip(), "Stored transcript does not match expected content."
     finally:
         file_path.unlink()  # Cleanup safely
+
