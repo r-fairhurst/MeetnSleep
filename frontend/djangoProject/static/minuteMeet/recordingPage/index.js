@@ -1,7 +1,9 @@
+// Define eventSource globally
+let eventSource = null;
+
 document.addEventListener("DOMContentLoaded", function () {
     const transcriptElement = document.getElementById("live-transcript");
-    let eventSource = null;
-
+    
     function startTranscription() {
         if (eventSource) {
             eventSource.close();
@@ -21,8 +23,47 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
+
     // Start automatically when page loads
     startTranscription();
+});
+
+function stopTranscription() {
+    const stopRecordingButton = document.getElementById("stop-button");
+    if (!stopRecordingButton) {
+        console.error("Stop button not found");
+        return;
+    }
+    
+    // Add event listener to the stop button
+    stopRecordingButton.addEventListener("click", function() {
+        console.log("Stop button clicked!");
+        
+        // Close the event source first
+        if (eventSource) {
+            eventSource.close();
+            eventSource = null;
+        }
+        
+        eventSource = new EventSource("/minuteMeet/stop_transcription/");
+        eventSource.onmessage = function(event) {
+            console.log("Transcription stopped");
+            eventSource.close();
+            eventSource = null;
+        };
+
+        eventSource.onerror = function() {
+            console.error("Error stopping transcription");
+            eventSource.close();
+            eventSource = null;
+        }
+        
+    });
+}
+
+// Call the function when DOM is loaded to attach the event listener
+document.addEventListener("DOMContentLoaded", function() {
+    stopTranscription();
 });
 
 
