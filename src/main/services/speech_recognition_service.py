@@ -23,7 +23,7 @@ def listen_for_speech():
     
     try:
         with sr.Microphone() as source:
-            print("About to start listening...")
+            print("Starting Transcription...")
 
             # listen ambient noise duration to 1 second for faster startup
             recognizer.adjust_for_ambient_noise(source, duration=1)
@@ -34,7 +34,6 @@ def listen_for_speech():
 
             while not stop_listening:
                 try:
-
                     audio = recognizer.listen(source, timeout=30, phrase_time_limit=60)
                     text = recognizer.recognize_google(audio)
                     yield {"text": text}  # send updates immediately
