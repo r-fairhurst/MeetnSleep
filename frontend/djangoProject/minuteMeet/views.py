@@ -23,6 +23,9 @@ def recordingPage(request):
 def archivePage(request):
     return render(request, "archive.html")
 
+def summaryPage(request):
+    return render(request, "summaries.html")
+
 
 @csrf_exempt
 def stop_transcription(request):
