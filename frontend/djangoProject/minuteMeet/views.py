@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../src/main/services")))
 
 # Now you can import the service
-from speech_recognition_service import listen_for_speech, transcribe_audio
+from speech_recognition_service import listen_for_speech, transcribe_audio, stop_recording
 # from src.main.services.speech_recognition_service import listen_for_speech, transcribe_audio
 
 
@@ -24,6 +24,20 @@ def archivePage(request):
     return render(request, "archive.html")
 
 
+@csrf_exempt
+def stop_transcription(request):
+    # endpoint to stop recording
+    if request.method in ["POST", "GET"]:
+        print("Stopping recording...")
+        try:
+            stop_recording()
+            print("Recording stopped.")
+            return JsonResponse({"success": True})
+        except Exception as e:
+            print(f"Error stopping recording: {str(e)}")
+            return JsonResponse({"success": False, "error": str(e)}, status=500)
+    
+    return JsonResponse({"error": "Invalid request method."}, status=400)
 
 @csrf_exempt
 def start_transcription(request):

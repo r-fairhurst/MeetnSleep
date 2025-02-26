@@ -76,8 +76,20 @@ def listen_for_speech():
     return None
 
 def save_transcript(transcript_segments, file_prefix="meeting_transcript"):
-
+    
     try:
+
+        # Checking if transcript is empty
+        if not transcript_segments:
+            raise ValueError("Transcript content cannot be empty")
+        
+        # making sure each segment exists
+        required_fields = ["number", "start_time", "end_time", "text"]
+        for segment in transcript_segments:
+            for field in required_fields:
+                if field not in segment:
+                    raise ValueError(f"Missing required field: {field}")
+            
         os.makedirs("storage/transcripts", exist_ok=True)
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         filename = f"{file_prefix}_{timestamp}.srt"
@@ -109,3 +121,8 @@ def transcribe_audio(file_path):
     except Exception as e:
         # print(f"Error transcribing {file_path}: {e}")
         return None
+
+
+def stop_recording():
+    global stop_listening
+    stop_listening = True
