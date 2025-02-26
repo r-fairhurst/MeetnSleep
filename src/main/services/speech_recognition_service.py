@@ -122,3 +122,8 @@ def transcribe_audio(file_path):
     except Exception as e:
         # print(f"Error transcribing {file_path}: {e}")
         return None
+
+
+def stop_recording():
+    global stop_listening
+    stop_listening = True
