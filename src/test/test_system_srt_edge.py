@@ -1,6 +1,7 @@
 import pytest
 import os
 import sys
+import glob
 
 # Append the path to import your modules correctly
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../main")))
@@ -33,8 +34,9 @@ def test_save_edge_case_transcripts(edge_case_transcript, tmp_path):
     # Save the transcript
     save_transcript(edge_case_transcript, file_prefix="edge_case_test")
 
-    # Find the file that matches the prefix
-    matching_files = list(storage_dir.glob("edge_case_test*"))
+    # Find the file that matches the prefix using glob
+    file_pattern = str(storage_dir / "edge_case_test*.srt")
+    matching_files = glob.glob(file_pattern)
     assert matching_files, "No transcript file found."
 
     file_path = matching_files[0]  # Get the first matching file
