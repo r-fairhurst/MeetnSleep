@@ -6,16 +6,17 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Minute-Meet - Automatic Transcriber & Summarizer</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'minuteMeet/home.css' %}">
-        <script src='app.js'></script>
-        <script src='index.js'></script>
+        <link rel="stylesheet" href="{% static 'minuteMeet/base.css' %}">
+        <link rel="stylesheet" href="{% static 'minuteMeet/archivePage/archive.css' %}">
+        <script src="{% static 'minuteMeet/archivePage/archive.js' %}" defer></script>
     </head>
     <body>
-        <h1>Minute-Meet</h1>
-        <h3>An Online and In-Person Meeting <strong>Transcriber and Summarizer</strong>, Powered by Python and AI</h2>
-        <h4>Archive Page</h4>
-        
-
+     <!--display header template-->
+     {% include 'partials/header.html' %} 
+    
+     <p>archive page</p>
+    <!--display footer template-->
+    {% include 'partials/footer.html' %} 
         
     </body>
 </html>

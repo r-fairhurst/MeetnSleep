@@ -6,14 +6,13 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Minute-Meet - Automatic Transcriber & Summarizer</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'minuteMeet/home.css' %}">
+        <link rel='stylesheet' type='text/css' media='screen' href="{% static 'minuteMeet/base.css' %}">
+        <link rel="stylesheet" href="{% static 'minuteMeet/recordingPage/recording.css' %}">
         <script src="{% static 'minuteMeet/recordingPage/index.js' %}"></script>        
     </head>
     <body>
-        <header>
-            <h1>Minute-Meet</h1>
-            <h3>An AI-powered <strong>Transcriber & Summarizer</strong></h3>
-        </header>
+        <!-- include header template -->
+        {% include 'partials/header.html' %}
 
         <div id="transcript-container">
             <h2>Live Transcript:</h2>
@@ -24,5 +23,8 @@
                 <button type="button" id="stop-button">⏹</button>
             </div>
         </section>
+
+        <!-- include footer template -->
+        {% include 'partials/footer.html' %}
     </body>
 </html>

@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Minute-Meet - Automatic Transcriber & Summarizer</title>
-    <link rel="stylesheet" href="{% static 'minuteMeet/home.css' %}">
-    <script src="{% static 'minuteMeet/home.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'minuteMeet/base.css' %}">
+    <link rel="stylesheet" href="{% static 'minuteMeet/homePage/home.css' %}">
+    <script src="{% static 'minuteMeet/homePage/home.js' %}" defer></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>  
 </head>
 <body>
-    <header>
-        <h1>Minute-Meet</h1>
-        <h3>An AI-powered <strong>Transcriber & Summarizer</strong></h3>
-    </header>
+    <!--display header template-->
+    {% include 'partials/header.html' %}
 
     <main>
         <section id="controls">
@@ -38,17 +37,7 @@
         
     </main>
 
-    <footer>
-        <p>
-            <a href="https://github.com/r-fairhurst/MeetnSleep/" target="_blank">
-                <i class="fab fa-github"></i> View on GitHub
-            </a>
-        </p>
-        <p>Developers:</p>
-        <p class="developer-names">
-            Ryan Fairhurst, William Morton, Ian McKee, Nadir Isweesi, 
-            Arianna Valencia, Aidan Daly, Aiden Reedy
-        </p>
-    </footer>
+    <!--display footer template-->
+    {% include 'partials/footer.html' %} 
 </body>
 </html>
