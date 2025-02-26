@@ -185,10 +185,31 @@ button:hover {
     justify-content: center;
 }
 
+#stop-button {
+    font-size: 2rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 0;
+    background: #ff4d4d;
+    color: #ffffff;
+    box-shadow: 3px 3px 10px rgba(255, 77, 77, 0.3);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #create-button:hover {
     background: #1ee696;
     transform: scale(1.1);
     box-shadow: 4px 4px 15px rgba(30, 230, 150, 0.3);
+}
+
+#stop-button:hover {
+    background: #ff4d4d;
+    transform: scale(1.1);
+    box-shadow: 4px 4px 15px rgba(255, 77, 77, 0.3);
 }
 
 /* Footer */
