@@ -6,4 +6,6 @@ __pycache__
 src/main/storage/transcripts/
 src/main/storage/transcripts/*
 !src/main/storage/transcripts/.gitkeep
-scripts/convert_audio.py
+scripts/convert_audio.pynode_modules/
+node_modules/
+coverage/

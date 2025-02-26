@@ -1,11 +1,13 @@
-// Mock EventSource globally
-global.EventSource = jest.fn(() => ({
-    onmessage: null,
-    onerror: null,
-    close: jest.fn(),
-}));
+const { getCSRFToken, startTranscription } = require("../index.js"); // Use CommonJS
 
-import { getCSRFToken, startTranscription } from "../index.js"; // Adjust path if needed
+// Mock EventSource globally
+global.EventSource = jest.fn(() => {
+    return {
+        onmessage: jest.fn(),
+        onerror: jest.fn(),
+        close: jest.fn(),
+    };
+});
 
 // Unit Test: Extract CSRF Token
 test("getCSRFToken extracts the CSRF token from cookies", () => {
