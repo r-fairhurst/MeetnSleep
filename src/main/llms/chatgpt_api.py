@@ -2,9 +2,10 @@
 import os
 import sys
 from openai import OpenAI
+
 from main.services.speech_recognition_service import (
     listen_for_speech,
-    reset_listening,
+    start_recording,
     EXIT_KEYWORD
 )
 
@@ -37,7 +38,7 @@ def openai_summary(enablePrint):
     # break and summarize if the keyword is used
     print(f"Listening for the meeting: Use '{EXIT_KEYWORD}' to stop and get a summary.")
 
-    reset_listening()
+    start_recording()
     text = listen_for_speech()
     if not text:
         print("No transcript generated. Exiting...")
