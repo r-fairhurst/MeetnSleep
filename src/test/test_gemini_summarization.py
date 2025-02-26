@@ -38,7 +38,7 @@ def test_gemini_summary(transcript_files):
         
         # If am error occurred, fail the test and return the error
         if error:
-            pytest.skip(f"gemini_summary raised an exception for {file_name}: {type(error).__name__}: {error}")
+            pytest.fail(f"gemini_summary raised an exception for {file_name}: {type(error).__name__}: {error}")
 
         # If the file has content, summary shouldn't be None
         if transcript_content.strip():

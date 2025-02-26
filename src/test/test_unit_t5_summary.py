@@ -17,15 +17,19 @@ def test_t_five_summary_with_valid_transcription(valid_transcription):
     """Unit test for the t_five_summary function."""
     
     # Step 1: Call the t_five_summary function with the valid transcription.
-    summary = t_five_summary(valid_transcription, False)
+    summary, error = t_five_summary(valid_transcription, False)
     
-    # Step 2: Assert that the summary is not empty
+    # Step 2: Check for a thrown error.
+    if error: 
+        pytest.fail(f"t5_summary raised an exception: {type(error).__name__}: {error}")
+
+    # Step 3: Assert that the summary is not empty
     assert summary, "Summary should not be empty."
     
-    # Step 3: Assert that the summary is a string
+    # Step 4: Assert that the summary is a string
     assert isinstance(summary, str), "Summary should be a string."
     
-    # Step 4: (Optional) You can also check if the summary contains relevant content
+    # Step 5: (Optional) You can also check if the summary contains relevant content
     assert "test" in summary.lower(), "Summary should contain relevant keywords from the transcription."
 
 def test_t_five_summary_with_short_transcription():
@@ -35,7 +39,11 @@ def test_t_five_summary_with_short_transcription():
     short_transcription = "Hello world."
     
     # Call the summarization function
-    summary = t_five_summary(short_transcription, False)
+    summary, error = t_five_summary(short_transcription, False)
+
+    # Check for a thrown error.
+    if error: 
+        pytest.fail(f"t5_summary raised an exception: {type(error).__name__}: {error}")
     
     # Assert that the summary is not empty
     assert summary, "Summary should not be empty."

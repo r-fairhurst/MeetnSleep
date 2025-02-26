@@ -31,7 +31,12 @@ def test_transcription_and_summarization(test_audio_file):
     tqdm.write("\nTranscription Successful!")
 
     # Step 2: Summarize Transcription
-    summary = t_five_summary(transcript, False)
+    summary, error = t_five_summary(transcript, False)
+
+    # Step 2.1: Check for error
+    if error:
+        pytest.fail(f"t5_summary raised an exception for {test_audio_file}: {type(error).__name__}: {error}")
+
     assert summary is not None, "Summary returned None, expected a valid summary."
     assert isinstance(summary, str), f"Expected summary to be a string, got {type(summary)}"
     assert len(summary.strip()) > 0, "Summary is empty."
