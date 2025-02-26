@@ -34,3 +34,6 @@ function getCSRFToken() {
         .find(row => row.startsWith("csrftoken"))
         ?.split("=")[1];
 }
+
+// this is for testing purposes
+export { startTranscription, getCSRFToken };
