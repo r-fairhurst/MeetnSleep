@@ -1,4 +1,4 @@
-const { getCSRFToken, startTranscription } = require("../index.js"); // Use CommonJS
+const { getCSRFToken, startTranscription } = require("../index.js");
 
 // Mock EventSource globally
 global.EventSource = jest.fn(() => {

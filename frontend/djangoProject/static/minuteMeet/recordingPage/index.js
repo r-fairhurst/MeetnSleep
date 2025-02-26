@@ -1,39 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
+function startTranscription() {
     const transcriptElement = document.getElementById("live-transcript");
-    let eventSource = null;
+    let eventSource = new EventSource("/minuteMeet/stream_transcription/");
 
-    function startTranscription() {
-        if (eventSource) {
-            eventSource.close();
-        }
+    eventSource.onmessage = function (event) {
+        const data = JSON.parse(event.data);
+        transcriptElement.innerHTML += `<br> ${data.text}`;
+    };
 
-        // Open a connection to Django streaming endpoint
-        eventSource = new EventSource("/minuteMeet/stream_transcription/");
+    eventSource.onerror = function () {
+        transcriptElement.innerHTML += "<br><span style='color:red;'>Recording stopped</span>";
+        eventSource.close();
+    };
 
-        eventSource.onmessage = function (event) {
-            const data = JSON.parse(event.data);
-            transcriptElement.innerHTML += `<br> ${data.text}`;
-        };
-
-        eventSource.onerror = function () {
-            transcriptElement.innerHTML += "<br><span style='color:red;'>Recording stopped</span>";
-            eventSource.close();
-        };
-    }
-
-    // Start automatically when page loads
-    startTranscription();
-});
-
+    return eventSource; // Returning for testability
+}
 
 // Helper function to get CSRF token
-// this will ensure Django accepts the request instead of rejecting it as a potential CSRF attack
-// read more: https://portswigger.net/web-security/csrf
 function getCSRFToken() {
     return document.cookie.split("; ")
         .find(row => row.startsWith("csrftoken"))
         ?.split("=")[1];
 }
 
-// this is for testing purposes
-export { startTranscription, getCSRFToken };
+// Ensure function is called when the page loads
+document.addEventListener("DOMContentLoaded", startTranscription);
+
+// Export functions for testing
+module.exports = { startTranscription, getCSRFToken };
