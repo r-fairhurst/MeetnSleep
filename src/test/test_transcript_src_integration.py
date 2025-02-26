@@ -2,6 +2,7 @@ import pytest
 import os
 from unittest.mock import patch
 import glob
+import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../main")))
 from services.speech_recognition_service import save_transcript
