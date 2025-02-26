@@ -23,8 +23,6 @@ def listen_for_speech():
     
     try:
         with sr.Microphone() as source:
-            print("Starting Transcription...")
-
             # listen ambient noise duration to 1 second for faster startup
             recognizer.adjust_for_ambient_noise(source, duration=1)
 
@@ -106,11 +104,6 @@ def save_transcript(transcript_segments, file_prefix="meeting_transcript"):
     except Exception as e:
         print(f"Error saving transcript: {e}")
 
-def reset_listening():
-    """Reset the stop_listening flag"""
-    global stop_listening
-    stop_listening = False
-
 # TEST FUNC
 def transcribe_audio(file_path):
     """Transcribe audio from a given file and return the text."""
@@ -122,7 +115,16 @@ def transcribe_audio(file_path):
         # print(f"Error transcribing {file_path}: {e}")
         return None
 
+def start_recording():
+    """Reset the stop_listening flag"""
+    global stop_listening
+    stop_listening = False
 
 def stop_recording():
+    """Set the stop_listening flag"""
     global stop_listening
     stop_listening = True
+
+def get_flag():
+    global stop_listening
+    return stop_listening
