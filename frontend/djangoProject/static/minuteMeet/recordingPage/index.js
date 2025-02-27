@@ -1,33 +1,31 @@
 // Define eventSource globally
 let eventSource = null;
 
-document.addEventListener("DOMContentLoaded", function () {
-    const transcriptElement = document.getElementById("live-transcript");
-    let eventSource;
+// document.addEventListener("DOMContentLoaded", function () {
+//     const transcriptElement = document.getElementById("live-transcript");
 
-    function startTranscription() {
-        if (eventSource) {
-            eventSource.close();
-        }
+//     function startTranscription() {
+//         if (eventSource) {
+//             eventSource.close();
+//         }
 
-        // Open a connection to Django streaming endpoint
-        eventSource = new EventSource("/minuteMeet/stream_transcription/");
+//         // Open a connection to Django streaming endpoint
+//         eventSource = new EventSource("/minuteMeet/stream_transcription/");
 
-        eventSource.onmessage = function (event) {
-            const data = JSON.parse(event.data);
-            transcriptElement.innerHTML += `<br> ${data.text}`;
-        };
+//         eventSource.onmessage = function (event) {
+//             const data = JSON.parse(event.data);
+//             transcriptElement.innerHTML += `<br> ${data.text}`;
+//         };
 
-        eventSource.onerror = function () {
-            transcriptElement.innerHTML += "<br><span style='color:red;'>Recording stopped</span>";
-            eventSource.close();
-        };
-    }
+//         eventSource.onerror = function () {
+//             transcriptElement.innerHTML += "<br><span style='color:red;'>Recording stopped</span>";
+//             eventSource.close();
+//         };
+//     }
 
-    console.log("Started Transcription Within Index");
     // Start automatically when page loads
-    startTranscription();
-});
+    // startTranscription();
+// });
 
 function stopTranscription() {
     const stopRecordingButton = document.getElementById("stop-button");
@@ -62,8 +60,42 @@ function stopTranscription() {
     });
 }
 
+function startTranscription() {
+    const startRecordingButton = document.getElementById("start-button");
+    if (!startRecordingButton) {
+        console.error("Start button not found");
+        return;
+    }
+    
+    // Add event listener to the stop button
+    startRecordingButton.addEventListener("click", function() {
+        console.log("Start button clicked!");
+        
+        // Close the event source first
+        if (eventSource) {
+            eventSource.close();
+            eventSource = null;
+        }
+        
+        eventSource = new EventSource("/minuteMeet/start_transcription/");
+        eventSource.onmessage = function(event) {
+            console.log("Transcription started");
+            eventSource.close();
+            eventSource = null;
+        };
+
+        eventSource.onerror = function() {
+            console.error("Error starting transcription");
+            eventSource.close();
+            eventSource = null;
+        }
+        
+    });
+}
+
 // Call the function when DOM is loaded to attach the event listener
 document.addEventListener("DOMContentLoaded", function() {
+    startTranscription();
     stopTranscription();
 });
 

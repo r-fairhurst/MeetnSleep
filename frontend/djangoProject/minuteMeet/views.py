@@ -45,14 +45,18 @@ def stop_transcription(request):
 
 @csrf_exempt
 def start_transcription(request):
-    '''endpoint to start live speech recognition'''
-    if request.method == "POST":
-        start_recording()
+    '''Endpoint to start live speech recognition'''
+    if request.method == 'POST':
         print("Starting Transcription...")
-        transcript = listen_for_speech()
-        if transcript:
-            return JsonResponse({"success": True, "transcript": transcript})
-        return JsonResponse({"success": False, "message": "No speech detected or error occurred."})
+        try:
+            start_recording()
+            transcript = listen_for_speech()
+            if transcript:
+                return JsonResponse({"success": True, "transcript": transcript})
+            return JsonResponse({"success": False, "message": "No speech detected or error occurred."})
+        except Exception as e:
+            print(f"Error during transcription: {str(e)}")
+            return JsonResponse({"success": False, "error": str(e)}, status=500)
     
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
