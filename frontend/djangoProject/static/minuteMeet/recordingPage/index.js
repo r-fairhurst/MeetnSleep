@@ -3,7 +3,8 @@ let eventSource = null;
 
 document.addEventListener("DOMContentLoaded", function () {
     const transcriptElement = document.getElementById("live-transcript");
-    
+    let eventSource;
+
     function startTranscription() {
         if (eventSource) {
             eventSource.close();
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-
+    console.log("Started Transcription Within Index");
     // Start automatically when page loads
     startTranscription();
 });
@@ -77,4 +78,4 @@ function getCSRFToken() {
 }
 
 // this is for testing purposes
-export { startTranscription, getCSRFToken };
+// export { startTranscription, getCSRFToken };

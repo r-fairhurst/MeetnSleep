@@ -29,13 +29,12 @@ def summaryPage(request):
 
 @csrf_exempt
 def stop_transcription(request):
-    # endpoint to stop recording
+    '''endpoint to stop recording'''
     if request.method in ["POST", "GET"]:
         print("Stopping Transcription...")
         try:
             stop_recording()
             print("Transcription stopped.")
-            print(get_flag())
             return JsonResponse({"success": True})
         except Exception as e:
             print(f"Error stopping recording: {str(e)}")
@@ -43,12 +42,13 @@ def stop_transcription(request):
     
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
+
 @csrf_exempt
 def start_transcription(request):
-    # endpoint to start live speech recognition
+    '''endpoint to start live speech recognition'''
     if request.method == "POST":
+        start_recording()
         print("Starting Transcription...")
-        print(get_flag())
         transcript = listen_for_speech()
         if transcript:
             return JsonResponse({"success": True, "transcript": transcript})
@@ -56,9 +56,10 @@ def start_transcription(request):
     
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
+
 @csrf_exempt
 def upload_audio_transcription(request):
-    # endpoint to transcribe uploaded audio files
+    '''endpoint to transcribe uploaded audio files'''
     if request.method == "POST" and request.FILES.get("audio_file"):
         audio_file = request.FILES["audio_file"]
         file_path = f"storage/uploads/{audio_file.name}"
