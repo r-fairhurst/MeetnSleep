@@ -4,13 +4,17 @@ import json
 import pytest
 from tqdm import tqdm
 
-# Add both the root 'MeetnSleep' directory and 'src' directory to sys.path
+# Add both the root 'MeetnSleep' directory 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))  # Root directory
+#Add src directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..", "src")))  # src directory
 
+#import the t5 summary module
 from main.llms.t5_summary import t_five_summary
+#import our audio transcription module
 from backend.prototype.transcription import transcribe_audio  # Adjust if needed
 
+#Start the test in the scope of the module
 @pytest.fixture(scope="module")
 def test_audio_files():
     """Load a list of test audio files for system testing."""
