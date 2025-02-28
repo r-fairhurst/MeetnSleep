@@ -23,9 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
+    const startRecordingButton = document.getElementById("start-button");
 
-    // Start automatically when page loads
-    startTranscription();
+    startRecordingButton.addEventListener("click", function() { 
+        console.error("Transcription starting");
+        startTranscription();
+    });
 });
 
 function stopTranscription() {
@@ -75,6 +78,3 @@ function getCSRFToken() {
         .find(row => row.startsWith("csrftoken"))
         ?.split("=")[1];
 }
-
-// this is for testing purposes
-export { startTranscription, getCSRFToken };
