@@ -3,14 +3,17 @@ let eventSource = null;
 
 document.addEventListener("DOMContentLoaded", function () {
     const transcriptElement = document.getElementById("live-transcript");
-    let eventSource;
+    const startRecordingButton = document.getElementById("start-button");
+    const stopRecordingButton = document.getElementById("stop-button");
 
     function startTranscription() {
+        // Prevent retriggering
         if (eventSource) {
-            eventSource.close();
+            console.warn("Transcription already started!");
+            return;
         }
 
-        // Open a connection to Django streaming endpoint
+        console.log("Starting transcription...");
         eventSource = new EventSource("/minuteMeet/stream_transcription/");
 
         eventSource.onmessage = function (event) {
@@ -19,61 +22,47 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         eventSource.onerror = function () {
-            transcriptElement.innerHTML += "<br><span style='color:red;'>Recording stopped</span>";
-            eventSource.close();
-        };
-    }
-
-    const startRecordingButton = document.getElementById("start-button");
-
-    startRecordingButton.addEventListener("click", function() { 
-        console.error("Transcription starting");
-        startTranscription();
-    });
-});
-
-function stopTranscription() {
-    const stopRecordingButton = document.getElementById("stop-button");
-    if (!stopRecordingButton) {
-        console.error("Stop button not found");
-        return;
-    }
-    
-    // Add event listener to the stop button
-    stopRecordingButton.addEventListener("click", function() {
-        console.log("Stop button clicked!");
-        
-        // Close the event source first
-        if (eventSource) {
-            eventSource.close();
-            eventSource = null;
-        }
-        
-        eventSource = new EventSource("/minuteMeet/stop_transcription/");
-        eventSource.onmessage = function(event) {
-            console.log("Transcription stopped");
-            eventSource.close();
-            eventSource = null;
+            console.warn("Error occurred, stopping transcription...");
+            stopTranscription();
         };
 
-        eventSource.onerror = function() {
-            console.error("Error stopping transcription");
-            eventSource.close();
-            eventSource = null;
+        // Disable start button, enable stop button
+        startRecordingButton.disabled = true;
+        stopRecordingButton.disabled = false;
+    }
+
+    function stopTranscription() {
+        if (!eventSource) {
+            console.warn("No active transcription to stop.");
+            return;
         }
-        
-    });
-}
 
-// Call the function when DOM is loaded to attach the event listener
-document.addEventListener("DOMContentLoaded", function() {
-    stopTranscription();
+        console.log("Stopping transcription...");
+
+        // Send a request to stop transcription on the server
+        fetch("/minuteMeet/stop_transcription_stream/", { method: "POST" })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Stopped:", data);
+                eventSource.close();
+                eventSource = null;
+            })
+            .catch(error => console.error("Error stopping:", error));
+
+        // Update UI
+        transcriptElement.innerHTML += "<br><span style='color:red;'>Transcription stopped</span>";
+
+        // Enable start button, disable stop button
+        startRecordingButton.disabled = false;
+        stopRecordingButton.disabled = true;
+    }
+
+    // Attach event listeners once
+    startRecordingButton.addEventListener("click", startTranscription);
+    stopRecordingButton.addEventListener("click", stopTranscription);
 });
-
 
 // Helper function to get CSRF token
-// this will ensure Django accepts the request instead of rejecting it as a potential CSRF attack
-// read more: https://portswigger.net/web-security/csrf
 function getCSRFToken() {
     return document.cookie.split("; ")
         .find(row => row.startsWith("csrftoken"))

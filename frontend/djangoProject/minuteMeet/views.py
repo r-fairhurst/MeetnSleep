@@ -12,6 +12,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.
 from speech_recognition_service import listen_for_speech, transcribe_audio, start_recording, stop_recording, get_flag
 # from src.main.services.speech_recognition_service import listen_for_speech, transcribe_audio
 
+# This should be a very temporary fix
+# Global variable to control streaming
+transcription_active = False 
 
 # Create your views here.
 def home(request):
@@ -77,14 +80,34 @@ def upload_audio_transcription(request):
 
     return JsonResponse({"error": "No audio file provided."}, status=400)
 
-
 @csrf_exempt
 def stream_transcription(request):
     """Stream transcription data while recording."""
-    
+    global transcription_active
+    transcription_active = True  # Set to active when starting
+
+    print("Starting Transcription Stream...")
+    start_recording()   # Set the flag within the backend
+
     def event_stream():
         for segment in listen_for_speech():
+            if not transcription_active:
+                print("Transcription stopped, exiting stream.")
+                break
             yield f"data: {json.dumps(segment)}\n\n"
-            time.sleep(1)  # Prevents flooding the client
+            time.sleep(1)
 
     return StreamingHttpResponse(event_stream(), content_type="text/event-stream")
+
+@csrf_exempt
+def stop_transcription_stream(request):
+    """Stops the live transcription stream."""
+    global transcription_active     # Set flag here in frontend
+    stop_recording()                # Set flag within actual backend transcription
+
+    if request.method == "POST":
+        transcription_active = False
+        print("Stopping Transcription Stream...")
+        return JsonResponse({"success": True, "message": "Transcription stopped."})
+    
+    return JsonResponse({"error": "Invalid request method."}, status=400)
