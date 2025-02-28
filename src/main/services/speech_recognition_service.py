@@ -119,6 +119,9 @@ def start_recording():
     """Reset the stop_listening flag"""
     global stop_listening
     stop_listening = False
+    print("Starting transcription...")
+    print("Listening for speech...")
+    listen_for_speech()
 
 def stop_recording():
     """Set the stop_listening flag"""
