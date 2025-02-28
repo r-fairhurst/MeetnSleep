@@ -30,7 +30,7 @@ def summaryPage(request):
 @csrf_exempt
 def stop_transcription(request):
     # endpoint to stop recording
-    if request.method in ["POST", "GET"]:
+    if request.method == "POST":
         print("Stopping Transcription...")
         try:
             stop_recording()

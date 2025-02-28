@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function startTranscription() {
         if (eventSource) {
             eventSource.close();
+            eventSource = null;
         }
 
         // Open a connection to Django streaming endpoint
