@@ -14,7 +14,7 @@ except ImportError:
 
 def test_transcribe_audio():
     # Replace with other test audio files, make sure the file exists for the test
-    test_audio_file = 'test_valid_transcription_inputs/test1.wav'  
+    test_audio_file = 'test_valid_transcription_inputs/test1.wav' 
     # Call transcribe_audio and assert the result is a string
     result = transcribe_audio(test_audio_file)
     assert isinstance(result, str), "The transcription result should be a string"
