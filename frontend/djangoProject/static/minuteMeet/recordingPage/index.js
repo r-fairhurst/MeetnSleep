@@ -24,9 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-    console.log("Started Transcription Within Index");
-    // Start automatically when page loads
-    startTranscription();
+    const startRecordingButton = document.getElementById("start-button");
+
+    startRecordingButton.addEventListener("click", function() { 
+        console.error("Transcription starting");
+        startTranscription();
+    });
 });
 
 function stopTranscription() {
@@ -76,6 +79,3 @@ function getCSRFToken() {
         .find(row => row.startsWith("csrftoken"))
         ?.split("=")[1];
 }
-
-// this is for testing purposes
-// export { startTranscription, getCSRFToken };
