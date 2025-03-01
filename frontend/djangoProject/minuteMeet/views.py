@@ -27,7 +27,7 @@ def archivePage(request):
     return render(request, "archive.html")
 
 def summaryPage(request):
-    return render(request, "summaries.html")
+    return render(request, "summary.html")
 
 
 @csrf_exempt

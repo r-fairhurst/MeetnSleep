@@ -4,27 +4,25 @@ link the home page buttons to corresponding pages
 
 //home to recording
 document.addEventListener("DOMContentLoaded", function() {
-    let button = document.getElementById("create-button");
+    let createButton = document.getElementById("create-button");
 
-    if (button) {
-        button.addEventListener("click", function() {
-            console.log("clicked");
+    if (createButton) {
+        createButton.addEventListener("click", function() {
+            console.log("create clicked");
             window.location.href = "/minuteMeet/recordingPage/";
         });
     }
-});
 
-//home to archive
-document.addEventListener("DOMContentLoaded", function() {
-    let button = document.getElementById("archive-button");
+    let summaryButton = document.getElementById("summary-button");
 
-    if (button) {
-        button.addEventListener("click", function() {
-            console.log("clicked");
-            window.location.href = "/minuteMeet/archivePage/";
+    if (summaryButton) {
+        summaryButton.addEventListener("click", function() {
+            console.log("summary clicked");
+            window.location.href = "/minuteMeet/summaryPage/";
         });
     }
 });
+
 
 /*************************************************
 file upload functionality
