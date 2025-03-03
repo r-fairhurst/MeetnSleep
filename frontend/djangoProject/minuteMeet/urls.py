@@ -11,5 +11,6 @@ urlpatterns = [
     path('stop_transcription/', views.stop_transcription, name='stop_transcription'),
     path('upload_audio_transcription/', views.upload_audio_transcription, name='upload_audio_transcription'),
     path("stream_transcription/", views.stream_transcription, name="stream_transcription"),
-    path("stop_transcription_stream/", views.stop_transcription_stream, name="stop_transcription_stream")
+    path("stop_transcription_stream/", views.stop_transcription_stream, name="stop_transcription_stream"),
+    path("upload_transcript/", views.upload_transcript, name="upload_transcript"),
 ]

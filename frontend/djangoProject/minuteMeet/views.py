@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 # Get the absolute path of 'src/main/services' and add it to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../src/main/services")))
 
-# Now you can import the service
+from summarization import summarize_transcript, save_summarized_transcript
 from speech_recognition_service import listen_for_speech, transcribe_audio, start_recording, stop_recording, get_flag
 # from src.main.services.speech_recognition_service import listen_for_speech, transcribe_audio
 
@@ -145,3 +145,29 @@ def download_summary(request, file_name):
     else:
         return JsonResponse({"error": "File not found."}, status=404)
     
+
+@csrf_exempt
+def upload_transcript(request):
+    if request.method == "POST" and request.FILES.get("textFile"):
+        text_file = request.FILES["textFile"]
+        file_path = f"storage/summaries/{text_file.name}"
+
+        os.makedirs("storage/summaries", exist_ok=True)
+        with open(file_path, "wb+") as destination:
+            for chunk in text_file.chunks():
+                destination.write(chunk)
+
+        try:
+            with open(file_path, 'r', encoding='utf-8') as file:
+                transcript_content = file.read()
+            
+            summary = summarize_transcript(transcript_content, enablePrint=False)
+            summary_file_path = file_path.replace(".srt", "_summary.txt")
+            save_summarized_transcript(summary, summary_file_path)
+
+            return JsonResponse({"success": True, "summary_path": summary_file_path})
+
+        except Exception as e:
+            return JsonResponse({"success": False, "message": str(e)})
+
+    return JsonResponse({"error": "No text file provided."}, status=400)

@@ -15,10 +15,10 @@
         {% include 'partials/header.html' %}
 
         <div class="summary-form-container">
-            
-            <form id="summary-upload-form" enctype="multipart/form-data">
-                <label>Please submit a transcript .txt file to be summarized</label>
-                <input type="file" id="textFile" accept=".txt, .srt">
+            <form id="summary-upload-form" enctype="multipart/form-data" method="post" action="{% url 'upload_transcript' %}">
+                {% csrf_token %}
+                <label>Please submit a transcript .srt file to be summarized</label>
+                <input type="file" id="textFile" name="textFile" accept=".srt">
                 <button type="submit">Upload & Summarize</button>
             </form>
         </div>
