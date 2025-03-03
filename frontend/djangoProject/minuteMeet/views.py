@@ -138,13 +138,14 @@ def list_summaries(request):
 
 
 # the download_summary function is used to download the summary files, but doesn't work right now
+@csrf_exempt
 def download_summary(request, file_name):
     file_path = os.path.join(os.path.dirname(__file__), "../../../storage/summaries", file_name)
     if os.path.exists(file_path):
-        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=file_name)
+        response = FileResponse(open(file_path, 'rb'), as_attachment=True, filename=file_name)
+        return response
     else:
         return JsonResponse({"error": "File not found."}, status=404)
-    
 
 @csrf_exempt
 def upload_transcript(request):
