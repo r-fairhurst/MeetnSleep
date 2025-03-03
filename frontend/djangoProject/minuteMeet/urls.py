@@ -14,4 +14,5 @@ urlpatterns = [
     path("stop_transcription_stream/", views.stop_transcription_stream, name="stop_transcription_stream"),
     path("upload_transcript/", views.upload_transcript, name="upload_transcript"),
     path("download_summary/<str:file_name>/", views.download_summary, name="download_summary"),
+    path("view_summary/<str:file_name>/", views.view_summary, name="view_summary"),
 ]

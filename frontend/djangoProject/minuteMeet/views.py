@@ -4,7 +4,7 @@ import json
 import time
 from datetime import datetime
 from django.shortcuts import render
-from django.http import JsonResponse, StreamingHttpResponse, FileResponse
+from django.http import JsonResponse, StreamingHttpResponse, FileResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 # Get the absolute path of 'src/main/services' and add it to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../src/main/services")))
@@ -172,3 +172,13 @@ def upload_transcript(request):
             return JsonResponse({"success": False, "message": str(e)})
 
     return JsonResponse({"error": "No text file provided."}, status=400)
+
+@csrf_exempt
+def view_summary(request, file_name):
+    file_path = os.path.join(os.path.dirname(__file__), "../../../storage/summaries", file_name)
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        return HttpResponse(content, content_type='text/plain')
+    else:
+        return JsonResponse({"error": "File not found."}, status=404)
