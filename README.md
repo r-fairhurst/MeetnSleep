@@ -105,7 +105,7 @@ no quotes are needed around the key.
 the file should now be at path "src/main/llms/KEY.env"
 
 - To submit a transcript for summarization, click on the "Summaries" button from the main page. This will take you to the summarization page.
-- On the summarization page, you can submit a transcript by clicking the "Upload & Summerize" button. This will take you to the submit transcript page.
+- On the summarization page, you can submit a transcript by clicking the "Upload & Summarize" button. This will take you to the submit transcript page.
     - Currently the only way to submit a transcript is by uploading a .srt file. You can do this by clicking the "Choose File" button and selecting the file you want to upload. it has to be a .srt file that it will look for
 
 - once sumitted wait until you see "success: true" on the page
