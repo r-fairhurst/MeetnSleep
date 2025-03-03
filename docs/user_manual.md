@@ -1,16 +1,73 @@
-# What is Minute-Meet?
-Minute meet is a tool that allows you to transcrib and summarize your meetings from anywhere. Be it google meetings, microsoft teams, or even in-real-life, Minute-Meet is here to help you keep track of your meetings.
+# 1. How to install the software
 
-## How to Install
-Work in progress, refer to developer_guidelines for now
+### Prerequisites
+- Python 3.10
+- Pip
+- Git
 
-## How to run the software
-Work in progress
+### Cloning the Repository and installing the required packages
+To install the project, you will need to clone the repository and install the required packages. 
 
-## How to use the software
-Work in progress
+```bash
+git clone https://github.com/r-fairhurst/MeetnSleep
+```
 
-## How to report a bug
+then cd into the main directory
+
+```bash
+cd MeetnSleep
+```
+
+then use the following command to install the required packages
+
+**NOTE:** THIS WILL PROBABLY TAKE A FEW MINS
+```bash
+pip install -r requirements.txt
+```
+
+#### NOTE:
+If neccesary create a python virtual environment to install the required packages.
+
+```
+python -m venv "venv"
+```
+
+then activate the virtual environment
+
+```
+source venv/bin/activate
+```
+
+you can replace venv with any name you want to give the virtual environment.
+
+then run the commands above to install all the required packages.
+
+# 2. How to run the software.
+To run the program, you will need to run the following command in the terminal.
+
+```bash
+python frontend/djangoProject/manage.py runserver
+```
+
+this should initiallize a local server that you can access by going to the following link in your browser.
+
+# 3. How to use the software
+
+This software is designed for users who are familiar with our platform
+
+**Web Application (work in progress)**
+
+- Open your preferred web browser.
+
+- Navigate to the localhost URL provided
+
+```
+http://127.0.0.1:8000/minuteMeet
+```
+
+# 4. Support & Questions
+
+## Found a bug?
 If you ever encounter a bug while using our software and want to help us keep our product bug-free then follow these guidelines!
 
 #### Step 1
@@ -28,5 +85,9 @@ Follwing our bug report template found in this folder named "bug_report_template
 #### Step 4
 Simply wait for us to fix it, and keep an ear out if we need any more information from you
 
-## Thank you!
-Thanks for using our software!
+- Reach out to the maintainers via isweesin@oregonstate.edu or mortonwi@oregonstate.edu
+
+# 5. Known bugs
+
+- take a look at our github issues to see if the bug you are experiencing is already listed there
+- https://github.com/r-fairhurst/MeetnSleep/issues 
