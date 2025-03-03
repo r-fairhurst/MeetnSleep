@@ -7,9 +7,10 @@ All important changes to this project will be documented in this file.
 
 ## [1.0.2] - 2024-03-2-2025 [20:07]
 ### Added
-- Added Ability to upload transcripts for summerization
+- Added Ability to upload transcripts for summarization
 - Added table to view stored summaries
 - Added download functionality for summaries
+- 
 
 ### Changed
 - Modified urls.py, views.py, summarization.py, summary.html, summary.css
