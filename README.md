@@ -1,5 +1,5 @@
 # MeetnSleep / Minute-Meet
-Our product is a meeting summary tool that the user can boot up to listen to a specific program's audio output. The program will listen to the users microphone and or meeting software, transcribe the meeting. When the meeting is over the transcript will then save, allowing the user to submit it for summerization.
+Our product is a meeting summary tool that the user can boot up to listen to a specific program's audio output. The program will listen to the users microphone and or meeting software, transcribe the meeting. When the meeting is over the transcript will then save, allowing the user to submit it for summarization.
 
 ## Installation Steps
 
@@ -70,12 +70,12 @@ make sure you go to /minuteMeet to access the main page.
 - To start a meeting, click on the "Start Meeting" button, this is the green cirlce with a + in the middle. This will have you go to the recording page
 - On the recording page, you can start recording by clicking the "Start Recording" button. This will start the recording process.
 - Once you are done recording, click the "Stop Recording" button to stop the recording process. this is the red square button.
-- the transcript will be saved and you can submit it for summerization.
+- the transcript will be saved and you can submit it for summarization.
    - this file is found in the main directory of the project, in the "storage/transcripts" folder. it will be a .srt file
 
 
 ### Submit A Transcript For Summarization
-**NOTE** you will need a gemini API key to submit a transcript for summerization. You can get one by going to the following link and signing up for an account.
+**NOTE** you will need a gemini API key to submit a transcript for summarization. You can get one by going to the following link and signing up for an account.
 ```
 https://ai.google.dev/gemini-api/docs/api-key
 ```
@@ -104,8 +104,8 @@ no quotes are needed around the key.
 
 the file should now be at path "src/main/llms/KEY.env"
 
-- To submit a transcript for summerization, click on the "Summaries" button from the main page. This will take you to the summerization page.
-- On the summerization page, you can submit a transcript by clicking the "Upload & Summerize" button. This will take you to the submit transcript page.
+- To submit a transcript for summarization, click on the "Summaries" button from the main page. This will take you to the summarization page.
+- On the summarization page, you can submit a transcript by clicking the "Upload & Summerize" button. This will take you to the submit transcript page.
     - Currently the only way to submit a transcript is by uploading a .srt file. You can do this by clicking the "Choose File" button and selecting the file you want to upload. it has to be a .srt file that it will look for
 
 - once sumitted wait until you see "success: true" on the page
@@ -113,8 +113,8 @@ the file should now be at path "src/main/llms/KEY.env"
 - then you can either view or download it
 
 ### Submitting An Audio File For Transcription
-- to submit an audio file for summerization, click browse button next to "No file selected" and select the audio file you want to submit.
-- then click the "Upload & Transcribe" button to submit the audio file for summerization.
+- to submit an audio file for summarization, click browse button next to "No file selected" and select the audio file you want to submit.
+- then click the "Upload & Transcribe" button to submit the audio file for summarization.
 
 
 ### Common Installation Issues
