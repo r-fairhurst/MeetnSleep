@@ -74,7 +74,7 @@ make sure you go to /minuteMeet to access the main page.
    - this file is found in the main directory of the project, in the "storage/transcripts" folder. it will be a .srt file
 
 
-### submit a transcript for summerization
+### Submit a transcript for summarization
 **NOTE** you will need a gemini API key to submit a transcript for summerization. You can get one by going to the following link and signing up for an account.
 ```
 https://ai.google.dev/gemini-api/docs/api-key
