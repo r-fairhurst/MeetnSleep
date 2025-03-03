@@ -87,11 +87,29 @@
 
 .summary-list table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0; 
     margin-top: 20px;
     border: 1px solid #3a3a3a;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: hidden; /
+}
+
+/* Add styling for the corner cells to maintain rounded corners */
+.summary-list th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.summary-list th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.summary-list tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.summary-list tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
 }
 
 .summary-list th, .summary-list td {
