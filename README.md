@@ -8,7 +8,7 @@ Our product is a meeting summary tool that the user can boot up to listen to a s
 - Pip
 - Git
 
-### Cloning the Repository and installing the required packages
+### Cloning The Repository And Installing The Required Packages
 To install the project, you will need to clone the repository and install the required packages. 
 
 ```bash
@@ -45,7 +45,7 @@ you can replace venv with any name you want to give the virtual environment.
 
 then run the commands above to install all the required packages.
 
-## Running the Program
+## Running The Program
 
 To run the program, you will need to run the following command in the terminal.
 
@@ -61,12 +61,12 @@ http://127.0.0.1:8000/minuteMeet
 
 make sure you go to /minuteMeet to access the main page.
 
-## How to use the program
+## How To Use The Program
 
 **NOTE** while on the site if you are the main page "http://127.0.0.1:8000/ and get a 404 error, make sure you go to the /minuteMeet page. 
 - so the full link should be http://127.0.0.1:8000/minuteMeet
 
-### Start a meeting to record
+### Start A Meeting To Record
 - To start a meeting, click on the "Start Meeting" button, this is the green cirlce with a + in the middle. This will have you go to the recording page
 - On the recording page, you can start recording by clicking the "Start Recording" button. This will start the recording process.
 - Once you are done recording, click the "Stop Recording" button to stop the recording process. this is the red square button.
@@ -74,7 +74,7 @@ make sure you go to /minuteMeet to access the main page.
    - this file is found in the main directory of the project, in the "storage/transcripts" folder. it will be a .srt file
 
 
-### Submit a transcript for summarization
+### Submit A Transcript For Summarization
 **NOTE** you will need a gemini API key to submit a transcript for summerization. You can get one by going to the following link and signing up for an account.
 ```
 https://ai.google.dev/gemini-api/docs/api-key
@@ -112,7 +112,7 @@ the file should now be at path "src/main/llms/KEY.env"
 - you can now go back on the page and refresh to see the transcript appear
 - then you can either view or download it
 
-### Submitting a audio file for Transcription
+### Submitting An Audio File For Transcription
 - to submit an audio file for summerization, click browse button next to "No file selected" and select the audio file you want to submit.
 - then click the "Upload & Transcribe" button to submit the audio file for summerization.
 
