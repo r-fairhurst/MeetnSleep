@@ -13,4 +13,3 @@ urlpatterns = [
     path("stream_transcription/", views.stream_transcription, name="stream_transcription"),
     path("stop_transcription_stream/", views.stop_transcription_stream, name="stop_transcription_stream")
 ]
-

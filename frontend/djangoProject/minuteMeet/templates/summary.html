@@ -8,7 +8,7 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href="{% static 'minuteMeet/base.css' %}">
         <link rel="stylesheet" href="{% static 'minuteMeet/summaryPage/summary.css' %}">
-        <script src="{% static 'minuteMeet/summaryPage/summary.js' %}"></script>        
+        <script src="{% static 'minuteMeet/summaryPage/summary.js' %}"></script>
     </head>
     <body>
         <!-- include header template -->
@@ -21,6 +21,44 @@
                 <input type="file" id="textFile" accept=".txt, .srt">
                 <button type="submit">Upload & Summarize</button>
             </form>
+        </div>
+
+        <div class="summary-list-container">
+            <h2>Your Summaries</h2>
+            <div class="summary-list">
+                {% if summaries %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Size (bytes)</th>
+                                <th>Created</th>
+                                <th>Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for summary in summaries %}
+                                <tr>
+                                    <td>{{ summary.name }}</td>
+                                    <td>{{ summary.size }}</td>
+                                    <td>{{ summary.created }}</td>
+                                    <td>
+                                        <button onclick="downloadSummary('{{ summary.path }}', '{{ summary.name }}')" class="download-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                <polyline points="7 10 12 15 17 10"></polyline>
+                                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p id="summaries-status">No summaries found.</p>
+                {% endif %}
+            </div>
         </div>
 
         <!-- include footer template -->

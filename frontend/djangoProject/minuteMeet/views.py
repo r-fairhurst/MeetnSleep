@@ -2,8 +2,9 @@ import os
 import sys
 import json
 import time
+from datetime import datetime
 from django.shortcuts import render
-from django.http import JsonResponse, StreamingHttpResponse
+from django.http import JsonResponse, StreamingHttpResponse, FileResponse
 from django.views.decorators.csrf import csrf_exempt
 # Get the absolute path of 'src/main/services' and add it to sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../src/main/services")))
@@ -27,8 +28,10 @@ def archivePage(request):
     return render(request, "archive.html")
 
 def summaryPage(request):
-    return render(request, "summary.html")
-
+    summaries = list_summaries(request)
+    if not summaries:
+        return render(request, "summary.html", {"error": "Error loading summaries."})
+    return render(request, "summary.html", {"summaries": summaries})
 
 @csrf_exempt
 def stop_transcription(request):
@@ -111,3 +114,34 @@ def stop_transcription_stream(request):
         return JsonResponse({"success": True, "message": "Transcription stopped."})
     
     return JsonResponse({"error": "Invalid request method."}, status=400)
+
+@csrf_exempt
+def list_summaries(request):
+    summaries = []
+    try:
+        summaries_dir = os.path.join(os.path.dirname(__file__), "../../../storage/summaries")
+        os.makedirs(summaries_dir, exist_ok=True)
+        summary_files = [f for f in os.listdir(summaries_dir) if f.endswith('.txt')]
+        for file in summary_files:
+            file_path = os.path.join(summaries_dir, file)
+            stats = os.stat(file_path)
+            summaries.append({
+                'name': file,
+                'path': f"{summaries_dir}/{file}",  # Update path to URL
+                'size': stats.st_size,
+                'created': datetime.fromtimestamp(stats.st_mtime).strftime('%Y-%m-%d %H:%M:%S')
+            })
+    except Exception as e:
+        print(f"Error loading summaries: {str(e)}")
+        return 
+    return summaries
+
+
+# the download_summary function is used to download the summary files, but doesn't work right now
+def download_summary(request, file_name):
+    file_path = os.path.join(os.path.dirname(__file__), "../../../storage/summaries", file_name)
+    if os.path.exists(file_path):
+        return FileResponse(open(file_path, 'rb'), as_attachment=True, filename=file_name)
+    else:
+        return JsonResponse({"error": "File not found."}, status=404)
+    
