@@ -37,6 +37,6 @@
 - **Future Plans:** 
 
 #### Nadir Isweesi
-- **Last Week Contributions:** 
-- **Current Contributions:**
-- **Future Plans:** 
+- **Last Week Contributions:** worked on the frontend to display real-time text.
+- **Current Contributions:** read the feedback from the other team and create gihub issues for them
+- **Future Plans:** Will work on uplaoding already existing audios/videos to the frontend
