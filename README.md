@@ -112,6 +112,21 @@ no quotes are needed around the key.
 
 the file should now be at path "src/main/llms/KEY.env"
 
+##### alternative API key method
+edit the file located at "src/main/llms/gemini_api.py" and at line 15 it should look like this:
+
+```python
+    api_key = config.get("GEMINI_KEY")
+```
+
+replace the config.get with your key so it looks like this:
+
+```python
+    api_key = "YOUR API KEY"
+``` 
+
+then save the file
+
 - To submit a transcript for summarization, click on the "Summaries" button from the main page. This will take you to the summarization page.
 - On the summarization page, you can submit a transcript by clicking the "Upload & Summarize" button. This will take you to the submit transcript page.
     - Currently the only way to submit a transcript is by uploading a .srt file. You can do this by clicking the "Choose File" button and selecting the file you want to upload. it has to be a .srt file that it will look for
