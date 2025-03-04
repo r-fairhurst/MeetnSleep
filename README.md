@@ -1,6 +1,14 @@
 # MeetnSleep / Minute-Meet
 Our product is a meeting summary tool that the user can boot up to listen to a specific program's audio output. The program will listen to the users microphone and or meeting software, transcribe the meeting. When the meeting is over the transcript will then save, allowing the user to submit it for summarization.
 
+## Current Use Cases
+
+### Transcription
+Users should be able to transcribe their meetings using the transcription/recording tool.
+
+### Summarization
+Users should be able to get summaries of their .srt transcripts using the summary tool.
+
 ## Installation Steps
 
 ### Prerequisites
