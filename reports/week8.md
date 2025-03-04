@@ -7,9 +7,9 @@
 
 ## Individual Contributions:
 #### William Morton
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:**
+- **Last Week Contributions:**  The backend team include finalized the implementation of transcription and summarization so that it can be used with the frontend. This was for our beta release.
+- **Current Contributions:** Myself and the rest of the backend team will be working on polishing our system and integrating it with our frontend. This includes the audio file upload for transcription, the ability to change device audio inputs, and polishing the rest of our system.
+- **Future Plans:** Finalize the rest of our implementation for the backend, and create a cool presentation showing off our product.
 
 #### Aidan Daly
 - **Last Week Contributions:**
