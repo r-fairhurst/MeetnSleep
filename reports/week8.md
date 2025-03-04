@@ -22,9 +22,9 @@
 - **Future Plans:** Add Ability to upload audio files for transcription, and download/view transcriptions. As well as bug fixes and going over the beta testing feedback
 
 #### Ian McKee
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** Clarify dependencies with team on backend side, to facilitate backend integration, this will be done by middle of week 2/26. I'll implement one test. Help backend team with writing documentation, and even facilitate drafts for frontend documentation, by end of week 2/30.
+- **Current Contributions:** Clarified dependencies including Uvicorn in requirements. Modified summary code to sort them by most recent first. 
+- **Future Plans:** make UI adjustments in CSS with Arianna. Create one test (backlog) by Friday this week Mar 8. Proofread documentation instructions and make them more clear.
 
 #### Aiden Reedy
 - **Last Week Contributions:** 
@@ -38,5 +38,5 @@
 
 #### Nadir Isweesi
 - **Last Week Contributions:** worked on the frontend to display real-time text.
-- **Current Contributions:** read the feedback from the other team and create gihub issues for them
-- **Future Plans:** Will work on uplaoding already existing audios/videos to the frontend
+- **Current Contributions:** read the feedback from the other team and create github issues for them
+- **Future Plans:** Will work on uploading already existing audios/videos to the frontend
