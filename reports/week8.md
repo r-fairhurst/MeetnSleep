@@ -27,9 +27,9 @@
 - **Future Plans:** make UI adjustments in CSS with Arianna. Create one test (backlog) by Friday this week Mar 8. Proofread documentation instructions and make them more clear.
 
 #### Aiden Reedy
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:**  Still trying to find the best way to not have a gap in recordings. Adding tests to out project and did the weekly report.
+- **Current Contributions:** Just made a constant recording script that allows for live transcription, did my weekly report, and helped with the beta release.
+- **Future Plans:** Format the constant recording script to work with the rest of our code and pass the tests.
 
 #### Arianna Valencia
 - **Last Week Contributions:** 
