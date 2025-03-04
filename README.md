@@ -139,7 +139,7 @@ or if its a specific to building the wheel for pyaudio, your system might be mis
 sudo apt-get install portaudio19-dev
 ```
 
-## Techinal Details
+## Technical Details
 
 ### Version Control
 - We used Git for version control, making new branches to test new features and then merging them into the main branch when they were ready.
