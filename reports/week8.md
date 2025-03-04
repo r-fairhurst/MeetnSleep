@@ -1,9 +1,9 @@
-# Week 3 Report
+# Week 8 Report
 
 ## Team Report:
-- **Goals From Last Week:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Goals From Last Week:** We planned to integrate the frontend and backend, with team discussions, by end of week 2/30. We plan to have draft documentation of at least the backend by end of week 2/28.
+- **Current Contributions:** Implemented the biggest features of our project, such as the ability to view saved summaries, upload transcripts for summarization, and download/view transcripts. We also added the ability to upload audio files for transcription, and updated README documentation.
+- **Future Plans:** go over the beta test feedback and make any necessary changes to the project as well as fix any bugs/finalize our features for the final release.
 
 ## Individual Contributions:
 #### William Morton
@@ -17,9 +17,9 @@
 - **Future Plans:** 
 
 #### Ryan Fairhurst
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:**
+- **Last Week Contributions:** Setting up our CI integration with GitHub Actions, helping decide on testing software we will use for your project, as well as comparing different CI's before utimetly deciding to use Github actions. I implemented the automatic testing of our python files using pytest and the GitHub actions.
+- **Current Contributions:** Implementing ability to view saved summaries, upload transcripts for summarization, and download/view transcripts. 
+- **Future Plans:** Add Ability to upload audio files for transcription, and download/view transcriptions. As well as bug fixes and going over the beta testing feedback
 
 #### Ian McKee
 - **Last Week Contributions:** 
