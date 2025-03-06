@@ -70,18 +70,22 @@ def upload_audio_transcription(request):
     '''endpoint to transcribe uploaded audio files and return them as a .txt'''
     if request.method == "POST" and request.FILES.get("audio_file"):
         audio_file = request.FILES["audio_file"]
-        file_path = f"storage/uploads/{audio_file.name}"
+        temp_file_path = f"storage/uploads/temp_{audio_file.name}"
 
         os.makedirs("storage/uploads", exist_ok=True)
-        with open(file_path, "wb+") as destination:
+        with open(temp_file_path, "wb+") as destination:
             for chunk in audio_file.chunks():
                 destination.write(chunk)
 
-        transcript = transcribe_audio(file_path)
+        transcript = transcribe_audio(temp_file_path)
+
         if transcript:
             response = HttpResponse(transcript, content_type='text/plain')
             response['Content-Disposition'] = 'attachment; filename="transcript.txt"'
+            os.remove(temp_file_path)
             return response
+
+        os.remove(temp_file_path)
 
         return JsonResponse({"success": False, "message": "Could not transcribe the audio."})
 
