@@ -70,3 +70,18 @@ function getCSRFToken() {
         .find(row => row.startsWith("csrftoken"))
         ?.split("=")[1];
 }
+
+window.addEventListener("beforeunload", () => {
+    if (eventSource) {
+        fetch("/minuteMeet/stop_transcription_stream/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": getCSRFToken(),
+            },
+        }).catch(error => console.error("Error stopping transcription:", error));
+
+        eventSource.close();
+        eventSource = null;
+    }
+});
