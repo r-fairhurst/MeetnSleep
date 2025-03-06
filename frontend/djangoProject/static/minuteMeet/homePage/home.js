@@ -13,6 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    let settingsButton = document.getElementById("settings-button");
+
+    if (settingsButton) {
+        settingsButton.addEventListener("click", function() {
+            console.log("settings clicked");
+            window.location.href = "/minuteMeet/settingsPage/";
+        });
+    }
+
     let summaryButton = document.getElementById("summary-button");
 
     if (summaryButton) {

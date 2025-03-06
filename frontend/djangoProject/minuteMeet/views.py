@@ -27,6 +27,9 @@ def recordingPage(request):
 def archivePage(request):
     return render(request, "archive.html")
 
+def settingsPage(request):
+    return render(request, 'settings.html')
+
 def summaryPage(request):
     summaries = list_summaries(request)
     if not summaries:

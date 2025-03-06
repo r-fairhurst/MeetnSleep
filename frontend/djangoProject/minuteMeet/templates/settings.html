@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Minute-Meet - Automatic Transcriber & Summarizer</title>
+    <link rel="stylesheet" href="{% static 'minuteMeet/base.css' %}">
+    <link rel="stylesheet" href="{% static 'minuteMeet/settingsPage/settings.css' %}">
+    <script src="{% static 'minuteMeet/settingsPage/settings.js' %}" defer></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>  
+</head>
+<body>
+    <!--display header template-->
+    {% include 'partials/header.html' %}
+
+    <main>
+
+        <p>Settings Page</p>
+        
+    </main>
+
+    <!--display footer template-->
+    {% include 'partials/footer.html' %} 
+</body>
+</html>
