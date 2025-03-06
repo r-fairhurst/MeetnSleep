@@ -3,11 +3,13 @@ let eventSource = null;
 
 document.addEventListener("DOMContentLoaded", function () {
     const transcriptElement = document.getElementById("live-transcript");
-    const startRecordingButton = document.getElementById("start-button");
-    const stopRecordingButton = document.getElementById("stop-button");
+    const startButton = document.getElementById("start-button");
+    const stopButton = document.getElementById("stop-button");
+
+    startButton.style.display = "inline-block";
+    stopButton.style.display = "none";
 
     function startTranscription() {
-        // Prevent retriggering
         if (eventSource) {
             console.warn("Transcription already started!");
             return;
@@ -27,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
             stopTranscription();
         };
 
-        // Disable start button, enable stop button
-        startRecordingButton.disabled = true;
-        stopRecordingButton.disabled = false;
+        // Toggle button visibility
+        startButton.style.display = "none"; // Hide start button
+        stopButton.style.display = "inline-block"; // Show stop button
     }
 
     function stopTranscription() {
@@ -41,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Stopping Transcription");
         console.log("Stopping transcription...");
 
-        // Send a request to stop transcription on the server
         fetch("/minuteMeet/stop_transcription_stream/", { method: "POST" })
             .then(response => response.json())
             .then(data => {
@@ -51,17 +52,16 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error("Error stopping:", error));
 
-        // Update UI
         transcriptElement.innerHTML += "<br><span style='color:red;'>Transcription stopped</span>";
 
-        // Enable start button, disable stop button
-        startRecordingButton.disabled = false;
-        stopRecordingButton.disabled = true;
+        // Toggle button visibility
+        startButton.style.display = "inline-block"; // Show start button
+        stopButton.style.display = "none"; // Hide stop button
     }
 
-    // Attach event listeners once
-    startRecordingButton.addEventListener("click", startTranscription);
-    stopRecordingButton.addEventListener("click", stopTranscription);
+    // Attach event listeners
+    startButton.addEventListener("click", startTranscription);
+    stopButton.addEventListener("click", stopTranscription);
 });
 
 // Helper function to get CSRF token
