@@ -45,8 +45,17 @@ document.getElementById("uploadForm").addEventListener("submit", function(event)
         return;
     }
 
+    let file = fileInput.files[0];
+
+    const validFileTypes = ["audio/mpeg", "audio/wav", "audio/ogg", "audio/mp3"];
+    if (!validFileTypes.includes(file.type)) {
+        alert("Invalid file type. Please upload a valid audio file.");
+        return;
+    }
+
+    alert("Transcribing audio file... \n\nPlease do not navigate away from this page until your transcript has downloaded.");
     let formData = new FormData();
-    formData.append("audio_file", fileInput.files[0]);
+    formData.append("audio_file", file);
 
     fetch("/minuteMeet/upload_audio_transcription/", {
         method: "POST",
