@@ -8,12 +8,18 @@ for all home page specific css changes
     flex-direction: column;
     align-items: center;
     margin: 15px 0;
+
+    /* turning upload form into a pop-up - in progress*/
+    transform: translate(-50%, -50%);
+    position: fixed;
+    z-index: 1000;
 }
 
 #uploadForm {
     display: flex;
     background: #2a2a2a;
     padding: 30px;
+    padding-top: 0px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     flex-direction: column;
@@ -97,10 +103,10 @@ for all home page specific css changes
     font-size: 2rem;
     width: 80px;
     height: 80px;
-    border-radius: 50%;
+    border-radius: 30%;
     padding: 0;
-    background: #19c37d;
-    color: #ffffff;
+    background: #66b7ac;
+    color: #424874;
     box-shadow: 3px 3px 10px rgba(25, 195, 125, 0.3);
     transition: all 0.3s ease-in-out;
     display: flex;
@@ -109,7 +115,27 @@ for all home page specific css changes
 }
 
 #create-button:hover {
-    background: #1ee696;
+    background: #6bc4b8;
     transform: scale(1.1);
     box-shadow: 4px 4px 15px rgba(30, 230, 150, 0.3);
+}
+
+h4{
+    color: #060606;
+    font-weight: 1000;
+}
+
+/* Controls Section */
+/* moved this into home page instead */
+#controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+    margin-top: 200px;
+}
+
+#cancel-button {
+    align-self: flex-end;
+    padding-bottom: 20px;
 }

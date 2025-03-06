@@ -6,6 +6,13 @@ link the home page buttons to corresponding pages
 document.addEventListener("DOMContentLoaded", function() {
     let createButton = document.getElementById("create-button");
 
+    //for upload pop-up toggle 
+    let uploadForm = document.getElementById("uploadForm");
+    let uploadButton = document.getElementById("upload-audio-button");
+
+    // set invisible initially
+    uploadForm.style.display = "none";
+
     if (createButton) {
         createButton.addEventListener("click", function() {
             console.log("create clicked");
@@ -28,6 +35,13 @@ document.addEventListener("DOMContentLoaded", function() {
         summaryButton.addEventListener("click", function() {
             console.log("summary clicked");
             window.location.href = "/minuteMeet/summaryPage/";
+        });
+    }
+
+    if (uploadButton) {
+        uploadButton.addEventListener("click", function() {
+            console.log("upload clicked");
+            uploadForm.style.display = "flex";
         });
     }
 });

@@ -5,7 +5,7 @@ for all global css changes
 /* General Styles */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #1c1c1c; /* Slightly improved contrast */
+    background-color: #424874;
     color: #d1d1d1; 
     text-align: center;
     margin: 0;
@@ -20,7 +20,7 @@ body {
 /* Header */
 header {
     width: 100%;
-    background: #2a2a2a;
+    background: #1f2238;
     padding: 10px 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -38,14 +38,6 @@ h3 {
     margin-top: 5px;
 }
 
-/* Controls Section */
-#controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-}
-
 /* Button Containers */
 .button-container {
     display: flex;
@@ -56,8 +48,8 @@ h3 {
 
 /* Buttons */
 button {
-    background: #2f2f2f;
-    color: #d1d1d1;
+    background: #CACFD6; 
+    color: #424874;
     border: none;
     padding: 14px 30px;
     margin: 10px;
@@ -86,7 +78,7 @@ button:hover {
 /* Footer */
 footer {
     width: 100%;
-    background: #2a2a2a;
+    background: #1f2238;
     color: #c5c5c5;
     padding: 15px;
     font-size: 0.9rem;
@@ -96,7 +88,7 @@ footer {
 }
 
 footer a {
-    color: #19c37d;
+    color: #6bc4b8;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -111,7 +103,7 @@ footer a i {
 }
 
 footer a:hover {
-    color: #1ee696;
+    color: #87dfd3;
 }
 
 /* Developer Names Styling */
