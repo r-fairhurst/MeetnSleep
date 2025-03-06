@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        alert("Starting Transcription");
         console.log("Starting transcription...");
         eventSource = new EventSource("/minuteMeet/stream_transcription/");
 
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        alert("Stopping Transcription");
         console.log("Stopping transcription...");
 
         // Send a request to stop transcription on the server
