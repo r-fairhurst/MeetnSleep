@@ -5,6 +5,18 @@ All important changes to this project will be documented in this file.
 ## [Unreleased]
 - use it for upcoming changes
 
+## [1.0.4] - 2024-03-05-2025 [16:46]
+### Added
+- Added audio file upload for transcription.
+- Added the ability to download the file as a .txt file that can be summarized.
+
+### Changed
+- Modified home.js and views.py.
+- Changed the file transcription to download the transcript instead of just showing it to the user.
+
+### Fixed
+- Fixed the upload audio file transcription.
+
 ## [1.0.3] - 2024-03-05-2025 [16:46]
 ### Added
 - Added notifications for starting and stopping transcription.
