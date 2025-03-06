@@ -48,17 +48,16 @@ document.getElementById("uploadForm").addEventListener("submit", function(event)
     let formData = new FormData();
     formData.append("audio_file", fileInput.files[0]);
 
-    fetch("/upload_audio_transcription/", {
+    fetch("/minuteMeet/upload_audio_transcription/", {
         method: "POST",
         body: formData,
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert("Transcript: " + data.transcript);
-        } else {
-            alert("Could not process the audio file.");
-        }
+    .then(response => response.blob())
+    .then(blob => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "transcript.txt";
+        link.click();
     })
     .catch(error => console.error("Error:", error));
 });

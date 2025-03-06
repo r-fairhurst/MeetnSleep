@@ -65,10 +65,9 @@ def start_transcription(request):
     
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
-
 @csrf_exempt
 def upload_audio_transcription(request):
-    '''endpoint to transcribe uploaded audio files'''
+    '''endpoint to transcribe uploaded audio files and return them as a .txt'''
     if request.method == "POST" and request.FILES.get("audio_file"):
         audio_file = request.FILES["audio_file"]
         file_path = f"storage/uploads/{audio_file.name}"
@@ -80,7 +79,9 @@ def upload_audio_transcription(request):
 
         transcript = transcribe_audio(file_path)
         if transcript:
-            return JsonResponse({"success": True, "transcript": transcript})
+            response = HttpResponse(transcript, content_type='text/plain')
+            response['Content-Disposition'] = 'attachment; filename="transcript.txt"'
+            return response
 
         return JsonResponse({"success": False, "message": "Could not transcribe the audio."})
 
