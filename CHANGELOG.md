@@ -5,6 +5,14 @@ All important changes to this project will be documented in this file.
 ## [Unreleased]
 - use it for upcoming changes
 
+## [1.0.3] - 2024-03-05-2025 [16:46]
+### Added
+- Added notifications for starting and stopping transcription.
+
+### Changed
+- Modified recording.html, recording.css, index.js.
+- Changed the recording button so that it toggles between the two, instead of just one button.
+
 ## [1.0.2] - 2024-03-2-2025 [20:07]
 ### Added
 - Added Ability to upload transcripts for summarization
