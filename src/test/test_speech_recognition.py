@@ -84,12 +84,21 @@ def test_valid_input(invalid_inputs, invalid_test_folder):
         # Use try accept for error suppression
         try:
             attempt_transcription = transcribe_audio(audio_path)
-        except Exception:
-            attempt_transcription = None
 
-        if attempt_transcription == None:
-            tqdm.write(f"{filename}: PASS")
-        else:
-            tqdm.write(f"{filename}: FAIL")
-            tqdm.write(f"Generated: {attempt_transcription}")
-            pytest.fail()
+            if attempt_transcription == None:
+                tqdm.write(f"{filename}: PASS")
+            else:
+                tqdm.write(f"{filename}: FAIL")
+                tqdm.write(f"Generated: {attempt_transcription}")
+                pytest.fail()
+        except OSError as e:
+            # Specifically catch OSError and check if it's related to No Default Input Device Available
+            if "No Default Input Device Available" in str(e):
+                tqdm.write(f"{filename}: Skipping due to OSError - No Default Input Device Available")
+            else:
+                # Reraise any other OSError
+                raise
+        except Exception as e:
+            # Handle other general exceptions
+            tqdm.write(f"{filename}: FAIL - Error: {str(e)}")
+            pytest.fail(f"Unexpected error for {filename}: {str(e)}")
