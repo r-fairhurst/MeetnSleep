@@ -26,14 +26,10 @@ def test_save_transcript(mock_transcript_segments, tmp_path):
     
         # Set the path where the file will be saved using absolute path
         storage_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../test/storage/transcripts"))
-        try:
+    
         # Save transcript to the directory
-            save_transcript(mock_transcript_segments, file_prefix="test_transcript")
-        except OSError as e:
-            if "No Default Input Device Available" in str(e):
-                pytest.skip(f"Skipping test due to OSError: No Default Input Device Available")
-            else:
-                raise e  # Re-raise if it's a different OSError
+        save_transcript(mock_transcript_segments, file_prefix="test_transcript")
+    
         # Give it a moment to write the file just in case
         time.sleep(1)
     

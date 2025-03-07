@@ -27,7 +27,6 @@ def test_folder():
     """Fixture to get the path to the folder containing test audio files."""
     return os.path.join(os.path.dirname(__file__), "test_valid_transcription_inputs")
 
-
 def test_backend_integration(expected_outputs, test_folder):
     """Test each audio file and return transcript"""
 
@@ -36,30 +35,23 @@ def test_backend_integration(expected_outputs, test_folder):
 
     for filename, _ in tqdm(expected_outputs.items(), desc="Testing Transcription", ncols=75):
         audio_path = os.path.join(test_folder, filename)
-        try:
-            transcription = transcribe_audio(audio_path)
+        transcription = transcribe_audio(audio_path)
 
-            assert transcription is not None, f"transcribe_audio returned None for {filename}"
+        assert transcription is not None, f"transcribe_audio returned None for {filename}"
 
-            transcription = transcription.strip()
-            tqdm.write(f"{filename}: Transcription returned")
-            tqdm.write(transcription)
+        transcription = transcription.strip()
+        tqdm.write(f"{filename}: Transcription returned")
+        tqdm.write(transcription)
+    
+        # Pass transcript into Gemini to determine if it gets a summary back
+        summary, error = gemini_summary(transcription, False)
         
-            # Pass transcript into Gemini to determine if it gets a summary back
-            summary, error = gemini_summary(transcription, False)
-            
-            # If am error occurred, fail the test and return the error
-            if error:
-                pytest.skip(f"gemini_summary raised an exception for {filename}: {type(error).__name__}: {error}")
+        # If am error occurred, fail the test and return the error
+        if error:
+            pytest.skip(f"gemini_summary raised an exception for {filename}: {type(error).__name__}: {error}")
 
-            # If the file has content, summary shouldn't be None
-            assert summary is not None, f"Summary is None for {filename}"
+        # If the file has content, summary shouldn't be None
+        assert summary is not None, f"Summary is None for {filename}"
 
-            tqdm.write(f"{filename}: Summary returned")
-            tqdm.write(summary)
-
-        except OSError as e:
-            # Check if the error is the 'No Default Input Device Available' error
-            if 'No Default Input Device Available' in str(e):
-                tqdm.write(f"Ignoring OSError for {filename}: {e}. Skipping this test.")
-                continue 
+        tqdm.write(f"{filename}: Summary returned")
+        tqdm.write(summary)

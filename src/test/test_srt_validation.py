@@ -13,19 +13,14 @@ def test_save_invalid_srt(tmp_path):
     # Set storage directory inside the temp path
     storage_dir = tmp_path / "transcripts"
     storage_dir.mkdir(parents=True, exist_ok=True)
-    try:
-        # Test empty transcript
-        empty_transcript = []
-        save_transcript(empty_transcript, str(storage_dir / prefix))
 
-        # Test incorrectly formatted transcript (missing timestamps)
-        invalid_srt = [{"number": 1, "text": "hi there"}]
-        save_transcript(invalid_srt, str(storage_dir / prefix))
-    except OSError as e:
-        if str(e) == "No Default Input Device Available":
-            print("Warning: No default input device available, skipping microphone-dependent test.")
-        else:
-            raise  # Re-raise other OSError if it's not the expected one
+    # Test empty transcript
+    empty_transcript = []
+    save_transcript(empty_transcript, str(storage_dir / prefix))
+
+    # Test incorrectly formatted transcript (missing timestamps)
+    invalid_srt = [{"number": 1, "text": "hi there"}]
+    save_transcript(invalid_srt, str(storage_dir / prefix))
 
     # Ensure no files were created
     srt_files = list(storage_dir.glob(f"{prefix}*"))

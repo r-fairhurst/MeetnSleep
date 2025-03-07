@@ -64,22 +64,14 @@ def test_openai_summary_missing_key(mock_listen):
 def test_openai_summary_no_speech(mock_openai, mock_listen):
     """Test behavior when no speech is captured"""
     os.environ["CHATGPT_API"] = "FAKE_OPENAI_KEY"
-    try:
-        mock_listen.return_value = None
+    mock_listen.return_value = None
 
-        with patch("builtins.print") as mock_print:
-            summary, error = openai_summary(False)
-        
-        assert summary is None
-        assert error is None
-        mock_print.assert_any_call("No transcript generated. Exiting...")
-    except OSError as e:
-        # If the error is related to "No Default Input Device Available", we just skip this test
-        if 'No Default Input Device Available' in str(e):
-            print(f"Ignoring OSError: {e}, skipping this test...")
-            return  # Skip this specific test case
-        else:
-            raise e
+    with patch("builtins.print") as mock_print:
+        summary, error = openai_summary(False)
+    
+    assert summary is None
+    assert error is None
+    mock_print.assert_any_call("No transcript generated. Exiting...")
 
 if __name__ == "__main__":
     import pytest
