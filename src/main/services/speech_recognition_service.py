@@ -22,7 +22,13 @@ def format_timestamp(seconds):
     minutes, seconds = divmod(remainder, 60)
     return f"{hours:02d}:{minutes:02d}:{seconds:02d},{td.microseconds//1000:03d}"
 
-def listen_1(input=sr.Microphone()):
+def listen_1(input=None):
+    if input == None:
+        try:
+            input = sr.Microphone()  # Initialize only when the function is called
+        except OSError:
+            print("No default input device available.")
+            return None
     global stop_listening, audio_data, time_queue
     with input as source:
         recognizer.adjust_for_ambient_noise(source, duration=1)
@@ -35,7 +41,13 @@ def listen_1(input=sr.Microphone()):
             audio_data.put(audio)
             time_queue.put(time.time())
 
-def listen_2(input=sr.Microphone()):
+def listen_2(input=None):
+    if input == None:
+        try:
+            input = sr.Microphone()  # Initialize only when the function is called
+        except OSError:
+            print("No default input device available.")
+            return None
     global stop_listening, audio_data, time_queue
     with input as source:
         recognizer.adjust_for_ambient_noise(source, duration=1)
