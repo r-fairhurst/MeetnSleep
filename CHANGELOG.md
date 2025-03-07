@@ -4,6 +4,15 @@ All important changes to this project will be documented in this file.
 
 ## [Unreleased]
 - use it for upcoming changes
+  
+## [1.0.5] - 2024-03-06-2025 
+### Added
+- Made the header into a home button
+
+### Changed
+- Changed speech_recognition_service.py to use threads for recording
+- header.html to add button
+- recordingPage/index.js to stop recording when page unloads
 
 ## [1.0.4] - 2024-03-05-2025 [16:46]
 ### Added
