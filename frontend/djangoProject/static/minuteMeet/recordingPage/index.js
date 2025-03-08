@@ -1,5 +1,6 @@
 // Define eventSource globally
 let eventSource = null;
+let transcriptText = "";
 
 document.addEventListener("DOMContentLoaded", function () {
     const transcriptElement = document.getElementById("live-transcript");
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         eventSource.onmessage = function (event) {
             const data = JSON.parse(event.data);
             transcriptElement.innerHTML += `<br> ${data.text}`;
+            transcriptText += data.text + "\n";
         };
 
         eventSource.onerror = function () {
@@ -49,14 +51,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("Stopped:", data);
                 eventSource.close();
                 eventSource = null;
+                downloadTranscript();
             })
             .catch(error => console.error("Error stopping:", error));
 
-        transcriptElement.innerHTML += "<br><span style='color:red;'>Transcription stopped</span>";
+        //transcriptElement.innerHTML += "<br><span style='color:red;'>Transcription stopped</span>";
 
         // Toggle button visibility
         startButton.style.display = "inline-block"; // Show start button
         stopButton.style.display = "none"; // Hide stop button
+    }
+
+    function downloadTranscript() {
+        const blob = new Blob([transcriptText], { type: "text/plain" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "transcript.txt";
+        link.click();
     }
 
     // Attach event listeners
