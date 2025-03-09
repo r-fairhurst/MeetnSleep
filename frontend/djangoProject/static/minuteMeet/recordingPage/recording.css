@@ -3,12 +3,6 @@ for all recording page specific css changes
 *************************************************/
 
 /* Transcript Container Styling */
-#transcript-container {
-    width: 80%;
-    max-width: 800px;
-    margin-top: 10px;
-}
-
 /* Instructions Container Styling */
 #instructions-container {
     width: 70%;
@@ -17,4 +11,88 @@ for all recording page specific css changes
     font-size: 1.1rem;
     padding: 15px;
     line-height: 1.5;
+    background: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #d1d1d1;
+}
+
+/* Transcript Container Styling */
+#transcript-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    max-width: 700px;
+    color: #d1d1d1;
+}
+
+
+/* Recording Device Container Styling */
+#recording-device-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    max-width: 700px;
+    color: #d1d1d1;
+}
+
+
+/* Recording Device Container Styling */
+#recording-device-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 70%;
+    max-width: 700px;
+    color: #d1d1d1;
+}
+
+/* Recording Device List Dropdown Styling */
+#recording-device-list {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #1c1c1c;
+    color: #d1d1d1;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+#recording-device-list:focus {
+    border-color: #19c37d;
+    background-color: #2a2a2a;
+}
+
+/* Responsive Upload Form */
+@media (max-width: 600px) {
+    #transcript-upload-form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #transcript-upload-form button {
+        width: 90%;
+        padding: 12px;
+    }
 }

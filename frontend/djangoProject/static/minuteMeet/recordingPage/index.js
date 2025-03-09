@@ -96,3 +96,26 @@ window.addEventListener("beforeunload", () => {
         eventSource = null;
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const deviceList = document.getElementById("recording-device-list");
+
+    // Fetch the list of input devices
+    fetch("/minuteMeet/get_input_devices/")
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                data.devices.forEach(device => {
+                    const option = document.createElement("option");
+                    option.value = device.index;
+                    option.textContent = device.name;
+                    deviceList.appendChild(option);
+                });
+            } else {
+                console.error("Failed to load input devices:", data.message);
+            }
+        })
+        .catch(error => console.error("Error fetching input devices:", error));
+});

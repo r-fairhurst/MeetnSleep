@@ -17,4 +17,5 @@ urlpatterns = [
     path("download_summary/<str:file_name>/", views.download_summary, name="download_summary"),
     path("view_summary/<str:file_name>/", views.view_summary, name="view_summary"),
     path('upload_transcript_key/', views.upload_transcript_key, name='upload_transcript_key'),
+    path('get_input_devices/', views.get_input_devices, name='get_input_devices'),
 ]

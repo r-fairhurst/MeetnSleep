@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import time
+import pyaudio
 from datetime import datetime
 from django.shortcuts import render
 from django.http import JsonResponse, StreamingHttpResponse, FileResponse, HttpResponse
@@ -230,4 +231,18 @@ def upload_transcript_key(request):
         except Exception as e:
             return JsonResponse({"success": False, "message": str(e)})
     
+    return JsonResponse({"error": "Invalid request method."}, status=400)
+
+
+# used to get the input devices, there is a billion, idk why, but there is
+@csrf_exempt
+def get_input_devices(request):
+    """Endpoint to get the list of input devices."""
+    if request.method == "GET":
+        p = pyaudio.PyAudio()
+        device_count = p.get_device_count()
+        devices = [{"index": i, "name": p.get_device_info_by_index(i).get("name")} for i in range(device_count)]
+        devices.append({"index": -1, "name": "Desktop Audio"})  # Add desktop as an option
+        p.terminate()
+        return JsonResponse({"success": True, "devices": devices})
     return JsonResponse({"error": "Invalid request method."}, status=400)
