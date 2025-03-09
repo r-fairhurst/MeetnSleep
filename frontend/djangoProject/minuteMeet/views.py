@@ -36,6 +36,8 @@ def summaryPage(request):
         return render(request, "summary.html", {"error": "Error loading summaries."})
     return render(request, "summary.html", {"summaries": summaries})
 
+
+# used to stop the transcription
 @csrf_exempt
 def stop_transcription(request):
     '''endpoint to stop recording'''
@@ -52,6 +54,7 @@ def stop_transcription(request):
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
 
+# used to start the transcription
 @csrf_exempt
 def start_transcription(request):
     '''endpoint to start live speech recognition'''
@@ -65,6 +68,8 @@ def start_transcription(request):
     
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
+
+# used to upload
 @csrf_exempt
 def upload_audio_transcription(request):
     '''endpoint to transcribe uploaded audio files and return them as a .txt'''
@@ -91,6 +96,8 @@ def upload_audio_transcription(request):
 
     return JsonResponse({"error": "No audio file provided."}, status=400)
 
+
+# used to stream the transcription to the frontend
 @csrf_exempt
 def stream_transcription(request):
     """Stream transcription data while recording."""
@@ -110,6 +117,8 @@ def stream_transcription(request):
 
     return StreamingHttpResponse(event_stream(), content_type="text/event-stream")
 
+
+# used to stop transcription 
 @csrf_exempt
 def stop_transcription_stream(request):
     """Stops the live transcription stream."""
@@ -123,6 +132,8 @@ def stop_transcription_stream(request):
     
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
+
+# used to list the summaries of the transcript files
 @csrf_exempt
 def list_summaries(request):
     summaries = []
@@ -155,6 +166,8 @@ def download_summary(request, file_name):
     else:
         return JsonResponse({"error": "File not found."}, status=404)
 
+
+# used to upload the transcript file and summarize it
 @csrf_exempt
 def upload_transcript(request):
     if request.method == "POST" and request.FILES.get("textFile"):
@@ -188,6 +201,8 @@ def upload_transcript(request):
 
     return JsonResponse({"error": "No text file provided."}, status=400)
 
+
+# used to view the summary of the transcript
 @csrf_exempt
 def view_summary(request, file_name):
     file_path = os.path.join(os.path.dirname(__file__), "../../../storage/summaries", file_name)
@@ -197,3 +212,22 @@ def view_summary(request, file_name):
         return HttpResponse(content, content_type='text/plain')
     else:
         return JsonResponse({"error": "File not found."}, status=404)
+    
+
+# used to let user upload the transcript key
+@csrf_exempt
+def upload_transcript_key(request):
+    if request.method == "POST":
+        transcript_key = request.POST.get("textKeyInput")
+        if not transcript_key:
+            return JsonResponse({"success": False, "message": "No transcript key provided."})
+        
+        path_to_key = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../src/main/llms/KEY.env"))
+        try:
+            with open(path_to_key, "w") as key_file:
+                key_file.write(f"GEMINI_KEY={transcript_key}")
+            return JsonResponse({"success": True, "message": "Transcript key successfully saved."})
+        except Exception as e:
+            return JsonResponse({"success": False, "message": str(e)})
+    
+    return JsonResponse({"error": "Invalid request method."}, status=400)

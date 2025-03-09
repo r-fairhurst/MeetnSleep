@@ -16,4 +16,5 @@ urlpatterns = [
     path("upload_transcript/", views.upload_transcript, name="upload_transcript"),
     path("download_summary/<str:file_name>/", views.download_summary, name="download_summary"),
     path("view_summary/<str:file_name>/", views.view_summary, name="view_summary"),
+    path('upload_transcript_key/', views.upload_transcript_key, name='upload_transcript_key'),
 ]

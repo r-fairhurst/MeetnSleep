@@ -2,3 +2,79 @@
 for all setting page specific css changes
 *************************************************/
 
+/* Settings Form Styling */
+.settings-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+
+#settings-key-upload-form {
+    display: flex;
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+#settings-key-upload-form input[type="text"] {
+    background-color: #1c1c1c;
+    color: #d1d1d1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #3a3a3a;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+#settings-key-upload-form input[type="text"]::file-selector-button {
+    background: #2f2f2f;
+    color: #d1d1d1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#settings-key-upload-form input[type="text"]::file-selector-button:hover {
+    background: #3a3a3a;
+    transform: scale(1.05);
+}
+
+/* Upload Button Styled Like Other Buttons */
+#settings-key-upload-form button {
+    background: #2f2f2f;
+    color: #d1d1d1;
+    border: none;
+    padding: 14px 30px;
+    margin: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#settings-key-upload-form button:hover {
+    background: #3a3a3a;
+    transform: scale(1.05);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
