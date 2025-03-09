@@ -234,15 +234,28 @@ def upload_transcript_key(request):
     return JsonResponse({"error": "Invalid request method."}, status=400)
 
 
-# used to get the input devices, there is a billion, idk why, but there is
+# used to get the input devices
 @csrf_exempt
 def get_input_devices(request):
     """Endpoint to get the list of input devices."""
     if request.method == "GET":
         p = pyaudio.PyAudio()
         device_count = p.get_device_count()
-        devices = [{"index": i, "name": p.get_device_info_by_index(i).get("name")} for i in range(device_count)]
-        devices.append({"index": -1, "name": "Desktop Audio"})  # Add desktop as an option
+        
+        # Use a dict to track unique devices by name
+        unique_devices = {}
+        for i in range(device_count):
+            device_info = p.get_device_info_by_index(i)
+            device_name = device_info.get("name")
+            # Only add if it's not already in our list
+            if device_name not in unique_devices:
+                unique_devices[device_name] = {"index": i, "name": device_name}
+        
+        # Convert to list
+        devices = list(unique_devices.values())
+        # Add desktop audio as an option
+        devices.append({"index": -1, "name": "Desktop Audio"})
+        
         p.terminate()
         return JsonResponse({"success": True, "devices": devices})
     return JsonResponse({"error": "Invalid request method."}, status=400)
