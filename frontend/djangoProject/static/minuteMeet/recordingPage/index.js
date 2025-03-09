@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const blob = new Blob([transcriptText], { type: "text/plain" });
         const link = document.createElement("a");
         link.href = URL.createObjectURL(blob);
-        link.download = "transcript.txt";
+        link.download = "transcript.srt";
         link.click();
     }
 
