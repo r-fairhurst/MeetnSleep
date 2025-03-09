@@ -8,7 +8,6 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href="{% static 'minuteMeet/base.css' %}">
         <link rel="stylesheet" href="{% static 'minuteMeet/summaryPage/summary.css' %}">
-        <script src="{% static 'minuteMeet/summaryPage/summary.js' %}"></script>
     </head>
     <body>
         <!-- include header template -->
@@ -17,8 +16,8 @@
         <div class="summary-form-container">
             <form id="summary-upload-form" enctype="multipart/form-data" method="post" action="{% url 'upload_transcript' %}">
                 {% csrf_token %}
-                <label>Please submit a transcript .srt file to be summarized.</label>
-                <input type="file" id="textFile" name="textFile" accept=".srt">
+                <label>Please submit a transcript .srt or .txt file to be summarized.</label>
+                <input type="file" id="textFile" name="textFile" accept=".srt,.txt">
                 <button type="submit">Upload & Summarize</button>
             </form>
         </div>
@@ -69,5 +68,7 @@
 
         <!-- include footer template -->
         {% include 'partials/footer.html' %}
+
+        <script src="{% static 'minuteMeet/summaryPage/summary.js' %}"></script>
     </body>
 </html>

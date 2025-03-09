@@ -171,11 +171,18 @@ def upload_transcript(request):
                 transcript_content = file.read()
             
             summary = summarize_transcript(transcript_content, enablePrint=False)
-            summary_file_path = file_path.replace(".srt", "_summary.txt")
+            if not summary:
+                return JsonResponse({"success": False, "message": "Could not summarize the transcript."})
+            
+            summary_file_path = file_path.replace(".srt", "_summary.txt").replace(".txt", "_summary.txt")
             save_summarized_transcript(summary, summary_file_path)
 
-            return JsonResponse({"success": True, "summary_path": summary_file_path})
-
+            # After successfully saving the summary, return a response with redirect info
+            return JsonResponse({
+                "success": True, 
+                "summary_path": summary_file_path,
+                "redirect": "/minuteMeet/summaryPage/"
+            })
         except Exception as e:
             return JsonResponse({"success": False, "message": str(e)})
 
