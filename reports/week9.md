@@ -31,5 +31,5 @@
 - **Current Contributions:** 
 
 #### Nadir Isweesi
-- **Last Week Contributions:** 
-- **Current Contributions:**
+- **Last Week Contributions:**  I worked on the poster and added the abstract and High-level methodology.
+- **Current Contributions:** finalizing the team docs and reviewing our work
