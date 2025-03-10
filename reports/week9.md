@@ -6,11 +6,11 @@
 
 ## Individual Contributions:
 #### William Morton
-- **Last Week Contributions:** 
-- **Current Contributions:** 
+- **Last Week Contributions:** Myself and the rest of the backend team worked on polishing our system and integrating it with our frontend. This includes the audio file upload for transcription, the ability to change device audio inputs, and polishing the rest of our system. Fixed the audio upload functionality.
+- **Current Contributions:** Finalize the rest of our implementation, update the living document, create a cool presentation showing off our product.
 
 #### Aidan Daly
-- **Last Week Contributions:**I worked with the backend and frontend team to test our functionality of the current application and make sure that the frontend and backend are connected properly, and all of our use cases are working. 
+- **Last Week Contributions:** I worked with the backend and frontend team to test our functionality of the current application and make sure that the frontend and backend are connected properly, and all of our use cases are working. 
 - **Current Contributions:** I created the summarize transcript implementation for our assignment by calling the gemini summarizing api. Along with this I worked with ryan to allow users to download these summary .txt files to their local machine from our application. 
 - **Future Plans:** I plan to take our beta testing critiques and try to fix those issues before we submit our initial release of our project to the public. I also plan to work with the group on our poster slides, as well as our demo and the living document. 
 
