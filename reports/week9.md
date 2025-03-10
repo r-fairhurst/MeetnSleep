@@ -3,13 +3,11 @@
 ## Team Report:
 - **Goals From Last Week:** 
 - **Current Contributions:** 
-- **Future Plans:** 
 
 ## Individual Contributions:
 #### William Morton
 - **Last Week Contributions:** 
 - **Current Contributions:** 
-- **Future Plans:**
 
 #### Aidan Daly
 - **Last Week Contributions:**I worked with the backend and frontend team to test our functionality of the current application and make sure that the frontend and backend are connected properly, and all of our use cases are working. 
@@ -19,24 +17,19 @@
 #### Ryan Fairhurst
 - **Last Week Contributions:** 
 - **Current Contributions:** 
-- **Future Plans:**
 
 #### Ian McKee
 - **Last Week Contributions:** 
 - **Current Contributions:** 
-- **Future Plans:** 
 
 #### Aiden Reedy
 - **Last Week Contributions:** 
 - **Current Contributions:** 
-- **Future Plans:** 
 
 #### Arianna Valencia
 - **Last Week Contributions:** 
 - **Current Contributions:** 
-- **Future Plans:** 
 
 #### Nadir Isweesi
 - **Last Week Contributions:** 
 - **Current Contributions:**
-- **Future Plans:** 
