@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const transcriptElement = document.getElementById("live-transcript");
     const startButton = document.getElementById("start-button");
     const stopButton = document.getElementById("stop-button");
+    const deviceList = document.getElementById("recording-device-list");
 
     startButton.style.display = "inline-block";
     stopButton.style.display = "none";
@@ -16,9 +17,18 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Get the selected device index
+        const selectedDeviceIndex = deviceList.value;
+        if (!selectedDeviceIndex || selectedDeviceIndex === "") {
+            alert("Please select a recording device first");
+            return;
+        }
+
         alert("Starting Transcription");
-        console.log("Starting transcription...");
-        eventSource = new EventSource("/minuteMeet/stream_transcription/");
+        console.log(`Starting transcription with device index: ${selectedDeviceIndex}...`);
+
+        // Include the device index in the URL as a query parameter
+        eventSource = new EventSource(`/minuteMeet/stream_transcription/?device_index=${selectedDeviceIndex}`);
 
         eventSource.onmessage = function (event) {
             const data = JSON.parse(event.data);

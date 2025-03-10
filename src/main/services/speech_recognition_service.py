@@ -15,6 +15,7 @@ time_queue = Queue(maxsize=1000)
 
 EXIT_KEYWORD = "fire extinguisher"
 
+
 def format_timestamp(seconds):
     """Convert seconds to SRT timestamp format (to use it as subtitles later)"""
     td = timedelta(seconds=seconds)
@@ -22,52 +23,68 @@ def format_timestamp(seconds):
     minutes, seconds = divmod(remainder, 60)
     return f"{hours:02d}:{minutes:02d}:{seconds:02d},{td.microseconds//1000:03d}"
 
-def listen_1(input=None):
-    if input == None:
-        try:
-            input = sr.Microphone()  # Initialize only when the function is called
-        except OSError:
-            print("No default input device available.")
-            return None
+
+def listen_1(device_index=None):
+    """Thread function that listens for speech using the specified device"""
     global stop_listening, audio_data, time_queue
-    with input as source:
-        recognizer.adjust_for_ambient_noise(source, duration=1)
-        while not stop_listening:
-            mutex.acquire()
-            print("THREAD 1 AQURIED")
-            audio = recognizer.listen(source, timeout=30, phrase_time_limit=60)
-            mutex.release()
-            print("THREAD 1 ENDED")
-            audio_data.put(audio)
-            time_queue.put(time.time())
+    
+    try:
+        # Create the Microphone object inside the thread with the proper context manager
+        with sr.Microphone(device_index=device_index) as source:
+            # Adjust for ambient noise
+            recognizer.adjust_for_ambient_noise(source, duration=1)
+            
+            # Continue listening until the stop flag is set
+            while not stop_listening:
+                mutex.acquire()
+                print("THREAD 1 ACQUIRED")
+                try:
+                    audio = recognizer.listen(source, timeout=30, phrase_time_limit=60)
+                    audio_data.put(audio)
+                    time_queue.put(time.time())
+                except Exception as e:
+                    print(f"Error in listen_1: {e}")
+                finally:
+                    mutex.release()
+                    print("THREAD 1 ENDED")
+    except Exception as e:
+        print(f"Error setting up microphone in listen_1: {e}")
 
-def listen_2(input=None):
-    if input == None:
-        try:
-            input = sr.Microphone()  # Initialize only when the function is called
-        except OSError:
-            print("No default input device available.")
-            return None
+
+def listen_2(device_index=None):
+    """Thread function that listens for speech using the specified device"""
     global stop_listening, audio_data, time_queue
-    with input as source:
-        recognizer.adjust_for_ambient_noise(source, duration=1)
-        while not stop_listening:
-            mutex.acquire()
-            print("THREAD 2 AQURIED")
-            audio = recognizer.listen(source, timeout=30, phrase_time_limit=60)
-            mutex.release()
-            print("THREAD 2 ENDED")
-            audio_data.put(audio)
-            time_queue.put(time.time())
+    
+    try:
+        # Create the Microphone object inside the thread with the proper context manager
+        with sr.Microphone(device_index=device_index) as source:
+            # Adjust for ambient noise
+            recognizer.adjust_for_ambient_noise(source, duration=1)
+            
+            # Continue listening until the stop flag is set
+            while not stop_listening:
+                mutex.acquire()
+                print("THREAD 2 ACQUIRED")
+                try:
+                    audio = recognizer.listen(source, timeout=30, phrase_time_limit=60)
+                    audio_data.put(audio)
+                    time_queue.put(time.time())
+                except Exception as e:
+                    print(f"Error in listen_2: {e}")
+                finally:
+                    mutex.release()
+                    print("THREAD 2 ENDED")
+    except Exception as e:
+        print(f"Error setting up microphone in listen_2: {e}")
 
 
-
-def listen_for_speech():
+def listen_for_speech(device_index=None):
     global stop_listening, audio_data, time_queue
     transcript_segments = []
     
     try:
-        with sr.Microphone() as source:
+        # Use the specified device index if provided
+        with sr.Microphone(device_index=device_index) as source:
             # listen ambient noise duration to 1 second for faster startup
             recognizer.adjust_for_ambient_noise(source, duration=1)
 
@@ -75,14 +92,16 @@ def listen_for_speech():
             segment_start_time = start_time
             segment_number = 1
 
-            mic_thread1 = threading.Thread(target=listen_1)
-            mic_thread2 = threading.Thread(target=listen_2)
+            # Create threads without passing Microphone instances directly
+            # Instead, pass the device_index to the thread functions
+            mic_thread1 = threading.Thread(target=listen_1, args=(device_index,))
+            mic_thread2 = threading.Thread(target=listen_2, args=(device_index,))
             mic_thread1.start()
             mic_thread2.start()
 
             while not stop_listening:
                 try:
-                    audio = audio_data.get()
+                    audio = audio_data.get(timeout=1)
                     text = recognizer.recognize_google(audio)
                     yield {"text": text}  # send updates immediately
 
@@ -103,7 +122,9 @@ def listen_for_speech():
                     
                     segment_start_time = current_time
                     segment_number += 1
-
+                except Empty:
+                    # Queue is empty, just continue the loop
+                    continue
                 except sr.RequestError as e:
                     print(f"Speech recognition service error: {e}")
                     continue

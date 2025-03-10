@@ -104,12 +104,25 @@ def stream_transcription(request):
     """Stream transcription data while recording."""
     global transcription_active
     transcription_active = True  # Set to active when starting
-
-    print("Starting Transcription Stream...")
+    
+    # Get the selected device index from the query parameter
+    device_index = request.GET.get("device_index")
+    if device_index:
+        try:
+            device_index = int(device_index)
+            print(f"Starting Transcription Stream with device index: {device_index}...")
+        except ValueError:
+            print(f"Invalid device index: {device_index}, using default device")
+            device_index = None
+    else:
+        device_index = None
+        print("Starting Transcription Stream with default device...")
+    
     start_recording()   # Set the flag within the backend
 
     def event_stream():
-        for segment in listen_for_speech():
+        # Pass the device index to listen_for_speech
+        for segment in listen_for_speech(device_index=device_index):
             if not transcription_active:
                 print("Transcription stopped, exiting stream.")
                 break
