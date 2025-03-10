@@ -66,7 +66,7 @@ http://127.0.0.1:8000/minuteMeet
 
 # 4. Support & Questions
 
-** Found a bug? **
+### Found a bug?
 If you ever encounter a bug while using our software and want to help us keep our product bug-free then follow these guidelines!
 
 #### Step 1
