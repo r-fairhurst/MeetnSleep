@@ -32,9 +32,9 @@
 - **Future Plans:** Format the constant recording script to work with the rest of our code and pass the tests.
 
 #### Arianna Valencia
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** Added onto the HTML base and created basic CSS code for the home page. Created and linked all pages (HTML, CSS, JS) we will be implementing in Django. Added a button to the transcription functionality instead of it running on page load. 
+- **Current Contributions:**  Read the feedback from the beta testing. Added an upload form in CSS and HTML for the summarization page
+- **Future Plans:** Work on making the CSS of the project more like our initial prototype
 
 #### Nadir Isweesi
 - **Last Week Contributions:** worked on the frontend to display real-time text.

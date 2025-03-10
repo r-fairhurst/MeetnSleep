@@ -32,9 +32,9 @@
 - **Future Plans:** Finish the merge between front and back end so everything runs smoothly and so we have a working prototype that we can present.
 
 #### Arianna Valencia
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** Work on completing the HTML and CSS within the Django project before connecting to backend 
+- **Current Contributions:** Added onto the HTML base and created basic CSS code for the home page. Created and linked all pages we will be implementing in Django.
+- **Future Plans:** Start connecting the transcription functionality in the backend to the frontend already present in the Django project. 
 
 #### Nadir Isweesi
 - **Last Week Contributions:** improved text summarization more to make it summarize text in the best way we can. (still needs some work though)

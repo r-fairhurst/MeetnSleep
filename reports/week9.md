@@ -28,8 +28,8 @@
 - **Current Contributions:** Worked on my weekly report, updated living document, helped make the recorded demo.
 
 #### Arianna Valencia
-- **Last Week Contributions:** 
-- **Current Contributions:** 
+- **Last Week Contributions:** Read the feedback from the beta testing. Added an upload form in the HTML and CSS for the summarization page. 
+- **Current Contributions:** Helped edit the presentation poster and submitted it to Media Hub. Worked on my weekly report. 
 
 #### Nadir Isweesi
 - **Last Week Contributions:**  I added issue for the beta-testing, also, worked on the poster and added the abstract and High-level methodology.

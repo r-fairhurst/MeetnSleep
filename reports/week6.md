@@ -32,9 +32,9 @@
 - **Future Plans:**  Connect the speech to text, transcription and summarizer all together / to the front end and get a prototype going.
 
 #### Arianna Valencia
-- **Last Week Contributions:** 
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:** Worked on the team presentation and architecture document. Helped create a more formal prototype of the UI of our product. Got the Django Project created 
+- **Current Contributions:** Worked on the CSS and HTML. Collaborated with Ian to plan out more UI
+- **Future Plans:** Work on completing the HTML and CSS before connecting to backend 
 
 #### Nadir Isweesi
 - **Last Week Contributions:** Added text summarization to meetings using LLMs!
