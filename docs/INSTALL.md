@@ -1,8 +1,7 @@
 # 1. How to install the software
 
 ### Prerequisites
-- Python 3.10
-- Pip
+- Python >= 3.10
 - Git
 
 ### Cloning the Repository and installing the required packages
@@ -67,7 +66,7 @@ http://127.0.0.1:8000/minuteMeet
 
 # 4. Support & Questions
 
-## Found a bug?
+** Found a bug? **
 If you ever encounter a bug while using our software and want to help us keep our product bug-free then follow these guidelines!
 
 #### Step 1
