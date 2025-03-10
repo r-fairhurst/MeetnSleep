@@ -32,5 +32,5 @@
 - **Current Contributions:** 
 
 #### Nadir Isweesi
-- **Last Week Contributions:**  I added issue for the beta-testing, also, worked on the poster and added the abstract and High-level methodology
+- **Last Week Contributions:**  I added issue for the beta-testing, also, worked on the poster and added the abstract and High-level methodology.
 - **Current Contributions:** I added install instructions to the repo, also, I worked on updating the living document.
