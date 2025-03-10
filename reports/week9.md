@@ -1,8 +1,8 @@
 # Week 9 Report
 
 ## Team Report:
-- **Goals From Last Week:** 
-- **Current Contributions:** 
+- **Goals From Last Week:** Go over the beta test feedback and make any necessary changes to the project as well as fix any bugs/finalize our features for the final release.
+- **Current Contributions:** We polished and finalized our project to present this week. Specifically, our documentation and submission of poster.
 
 ## Individual Contributions:
 #### William Morton
