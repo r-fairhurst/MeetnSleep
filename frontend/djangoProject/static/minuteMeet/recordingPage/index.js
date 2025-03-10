@@ -17,18 +17,41 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Get the selected device index
+        // Get the selected device option
+        const selectedOption = deviceList.options[deviceList.selectedIndex];
         const selectedDeviceIndex = deviceList.value;
+        
         if (!selectedDeviceIndex || selectedDeviceIndex === "") {
             alert("Please select a recording device first");
             return;
         }
-
+        
+        // Get device properties
+        const deviceId = selectedOption.getAttribute("data-device-id");
+        const isLoopback = selectedOption.getAttribute("data-loopback") === "true";
+        const isGlobal = selectedOption.getAttribute("data-global") === "true";
+        
         alert("Starting Transcription");
-        console.log(`Starting transcription with device index: ${selectedDeviceIndex}...`);
+        console.log(`Starting transcription with device index: ${selectedDeviceIndex}`);
+        if (isLoopback) console.log("Using desktop audio capture");
+        if (isGlobal) console.log("Using global desktop audio capture");
 
-        // Include the device index in the URL as a query parameter
-        eventSource = new EventSource(`/minuteMeet/stream_transcription/?device_index=${selectedDeviceIndex}`);
+        // Build the stream URL with appropriate parameters
+        let streamUrl = `/minuteMeet/stream_transcription/?device_index=${selectedDeviceIndex}`;
+        
+        if (isLoopback) {
+            streamUrl += `&is_loopback=true`;
+        }
+        
+        if (isGlobal) {
+            streamUrl += `&is_global=true`;
+        }
+        
+        if (deviceId) {
+            streamUrl += `&device_id=${encodeURIComponent(deviceId)}`;
+        }
+        
+        eventSource = new EventSource(streamUrl);
 
         eventSource.onmessage = function (event) {
             const data = JSON.parse(event.data);
@@ -107,8 +130,6 @@ window.addEventListener("beforeunload", () => {
     }
 });
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const deviceList = document.getElementById("recording-device-list");
 
@@ -117,12 +138,52 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
+                // Add option groups for different device types
+                const globalGroup = document.createElement("optgroup");
+                globalGroup.label = "Global Audio";
+                
+                const micGroup = document.createElement("optgroup");
+                micGroup.label = "Microphones";
+                
+                const desktopGroup = document.createElement("optgroup");
+                desktopGroup.label = "Specific Desktop Audio";
+                
                 data.devices.forEach(device => {
                     const option = document.createElement("option");
                     option.value = device.index;
                     option.textContent = device.name;
-                    deviceList.appendChild(option);
+                    
+                    // Store device attributes as data attributes
+                    if (device.id) {
+                        option.setAttribute("data-device-id", device.id);
+                    }
+                    
+                    if (device.is_loopback) {
+                        option.setAttribute("data-loopback", "true");
+                    }
+                    
+                    if (device.is_global) {
+                        option.setAttribute("data-global", "true");
+                        globalGroup.appendChild(option);
+                    } else if (device.is_virtual || device.is_loopback) {
+                        desktopGroup.appendChild(option);
+                    } else {
+                        micGroup.appendChild(option);
+                    }
                 });
+                
+                // Add the groups to select element
+                if (globalGroup.children.length > 0) {
+                    deviceList.appendChild(globalGroup);
+                }
+                
+                if (micGroup.children.length > 0) {
+                    deviceList.appendChild(micGroup);
+                }
+                
+                if (desktopGroup.children.length > 0) {
+                    deviceList.appendChild(desktopGroup);
+                }
             } else {
                 console.error("Failed to load input devices:", data.message);
             }
