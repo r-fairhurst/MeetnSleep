@@ -253,21 +253,26 @@ def get_input_devices(request):
     """Endpoint to get the list of input devices."""
     if request.method == "GET":
         p = pyaudio.PyAudio()
-        device_count = p.get_device_count()
         
-        # Use a dict to track unique devices by name
-        unique_devices = {}
-        for i in range(device_count):
-            device_info = p.get_device_info_by_index(i)
-            device_name = device_info.get("name")
-            # Only add if it's not already in our list
-            if device_name not in unique_devices:
-                unique_devices[device_name] = {"index": i, "name": device_name}
+        # Get the default input device
+        default_input_index = p.get_default_input_device_info()['index']
+        default_input_device = {
+            "index": default_input_index,
+            "name": p.get_device_info_by_index(default_input_index)['name'] + " (Default Input)"
+        }
         
-        # Convert to list
-        devices = list(unique_devices.values())
-        # Add desktop audio as an option
-        devices.append({"index": -1, "name": "Desktop Audio"})
+        # Get the default output device
+        default_output_index = p.get_default_output_device_info()['index']
+        default_output_device = {
+            "index": default_output_index,
+            "name": p.get_device_info_by_index(default_output_index)['name'] + " (Default Output)",
+            "is_loopback": True
+        }
+        
+        # Create a list with default devices first
+        devices = [default_input_device, default_output_device]
+        
+        # Find other output devices that support WASAPI loopback for desktop audio capture
         
         p.terminate()
         return JsonResponse({"success": True, "devices": devices})
