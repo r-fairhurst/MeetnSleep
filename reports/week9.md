@@ -24,8 +24,8 @@
 - **Current Contributions:** 
 
 #### Aiden Reedy
-- **Last Week Contributions:** 
-- **Current Contributions:** 
+- **Last Week Contributions:** Integrated the upgraded speech to text to work with the rest of our code. Made the banner into a home button so people can go back to the home page. Made the live transcription stop when the page unloads and not just when someone clicks stop recording.
+- **Current Contributions:** Worked on my weekly report, updated living document, helped make the recorded demo.
 
 #### Arianna Valencia
 - **Last Week Contributions:** 
