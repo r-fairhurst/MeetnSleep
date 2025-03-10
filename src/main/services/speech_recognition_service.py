@@ -31,15 +31,19 @@ def listen_1(device_index=None):
     try:
         # Create the Microphone object inside the thread with the proper context manager
         with sr.Microphone(device_index=device_index) as source:
-            # Adjust for ambient noise
-            recognizer.adjust_for_ambient_noise(source, duration=1)
-            
+            # Reduce ambient noise adjustment time but increase energy threshold sensitivity
+            recognizer.adjust_for_ambient_noise(source, duration=0.5)
+            # Lower the energy threshold for better sensitivity to quiet speech
+            recognizer.energy_threshold = recognizer.energy_threshold * 0.8
+            # Set dynamic energy threshold to adapt to changing noise conditions
+            recognizer.dynamic_energy_threshold = True
+
             # Continue listening until the stop flag is set
             while not stop_listening:
                 mutex.acquire()
                 print("THREAD 1 ACQUIRED")
                 try:
-                    audio = recognizer.listen(source, timeout=30, phrase_time_limit=60)
+                    audio = recognizer.listen(source, timeout=10, phrase_time_limit=10)
                     audio_data.put(audio)
                     time_queue.put(time.time())
                 except Exception as e:
@@ -58,15 +62,19 @@ def listen_2(device_index=None):
     try:
         # Create the Microphone object inside the thread with the proper context manager
         with sr.Microphone(device_index=device_index) as source:
-            # Adjust for ambient noise
-            recognizer.adjust_for_ambient_noise(source, duration=1)
+            # Reduce ambient noise adjustment time but increase energy threshold sensitivity
+            recognizer.adjust_for_ambient_noise(source, duration=0.5)
+            # Lower the energy threshold for better sensitivity to quiet speech
+            recognizer.energy_threshold = recognizer.energy_threshold * 0.8
+            # Set dynamic energy threshold to adapt to changing noise conditions
+            recognizer.dynamic_energy_threshold = True
             
             # Continue listening until the stop flag is set
             while not stop_listening:
                 mutex.acquire()
                 print("THREAD 2 ACQUIRED")
                 try:
-                    audio = recognizer.listen(source, timeout=30, phrase_time_limit=60)
+                    audio = recognizer.listen(source, timeout=10, phrase_time_limit=10)
                     audio_data.put(audio)
                     time_queue.put(time.time())
                 except Exception as e:
