@@ -20,8 +20,8 @@
 - **Future plans:** I plan on finalyzing the documentation and live presentation/demo file
 
 #### Ian McKee
-- **Last Week Contributions:** 
-- **Current Contributions:** 
+- **Last Week Contributions:** Make UI adjustments in CSS with Arianna. Create one test (backlog) by Friday this week Mar 8. Proofread documentation instructions and make them more clear.
+- **Current Contributions:** I discussed UI adjustments with Arianna and Ryan. I discussed with team our final prospects of whether the tool will be accessible just on GitHub, or hosted on the web. I helped write, and used technical writing, to make the poster as clear and catered to our users.
 
 #### Aiden Reedy
 - **Last Week Contributions:** Integrated the upgraded speech to text to work with the rest of our code. Made the banner into a home button so people can go back to the home page. Made the live transcription stop when the page unloads and not just when someone clicks stop recording.
