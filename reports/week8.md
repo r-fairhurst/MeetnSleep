@@ -12,9 +12,9 @@
 - **Future Plans:** Finalize the rest of our implementation for the backend, and create a cool presentation showing off our product.
 
 #### Aidan Daly
-- **Last Week Contributions:**
-- **Current Contributions:** 
-- **Future Plans:** 
+- **Last Week Contributions:**I will be participating in all of our team stand up meetings in class. I will work with the team to create tests for our prototype. With these tests we will go ahead and debug our codebase, while pushing the changes to the repo. 
+- **Current Contributions:** I worked with the backend and frontend team to test our functionality of the current application and make sure that the frontend and backend are connected properly, and all of our use cases are working. 
+- **Future Plans:** Adding functionality to the application, by letting users provide a .srt or .txt file that our application can summarize into a new .txt file
 
 #### Ryan Fairhurst
 - **Last Week Contributions:** Setting up our CI integration with GitHub Actions, helping decide on testing software we will use for your project, as well as comparing different CI's before utimetly deciding to use Github actions. I implemented the automatic testing of our python files using pytest and the GitHub actions.
