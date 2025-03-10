@@ -15,8 +15,9 @@
 - **Future Plans:** I plan to take our beta testing critiques and try to fix those issues before we submit our initial release of our project to the public. I also plan to work with the group on our poster slides, as well as our demo and the living document. 
 
 #### Ryan Fairhurst
-- **Last Week Contributions:** 
-- **Current Contributions:** 
+- **Last Week Contributions:** Implementing ability to view saved summaries, upload transcripts for summarization, and download/view transcripts.
+- **Current Contributions:** Improved transcript summarization to auto redirct once the summary has finished, the ability for users to upload a gemini key for ease of use, and worked on adding desktop audio to the project on a seperate branch
+- **Future plans:** I plan on finalyzing the documentation and live presentation/demo file
 
 #### Ian McKee
 - **Last Week Contributions:** 
