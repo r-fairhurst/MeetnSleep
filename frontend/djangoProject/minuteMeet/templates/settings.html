@@ -17,10 +17,6 @@
 
     <main>
 
-        <p>Settings Page</p>
-        <p>We should add input options here for microphone input</p>
-        <p>Light/Dark mode</p>
-
         <div class="settings-form-container">
             <form id="settings-key-upload-form" enctype="multipart/form-data" method="post" action="{% url 'upload_transcript_key' %}">
                 {% csrf_token %}
