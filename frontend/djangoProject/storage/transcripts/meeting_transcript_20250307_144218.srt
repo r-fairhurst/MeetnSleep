@@ -1,0 +1,12 @@
+1
+00:00:00,000 --> 23:59:12,491
+hello welcome to our app
+
+2
+23:59:12,491 --> 23:59:15,132
+we transcribe and summarize text and audio files
+
+3
+23:59:15,132 --> 23:59:23,561
+hope you enjoy using our app
+
