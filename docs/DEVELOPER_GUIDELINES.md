@@ -95,15 +95,15 @@ for the audio. It is required that the audio file is in english.
     - **How to execute the test:**, aka pytest, or navigate to it and run it
     
 ### Backend
-- test_unit_t5_summary.py
+- **test_unit_t5_summary.py**
     - **Author:** Aidan Daly
     - **Goal/Description of test:** The goal of this is to test the summarization function that is implemented from the t5 summary api. This test makes sure that valid transcripts will have a summary. It also tests if short transcription files can be converted into summaries. 
     - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_unit_t5_summary.py
-- test_t5_summarization.py
+- **test_t5_summarization.py**
     - **Author:** Aidan Daly
     - **Goal/Description of test:** The foal of this is to test the summarization function from the t5 api over many different transcriptions to make sure that all of them are able to be transformed into a summary with the api. Returns any errors if the test fails. 
     - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_t5_summarization.py
-- test_system_transcription_summary.py
+- **test_system_transcription_summary.py**
     - **Author:** Aidan Daly
     - **Goal/Description of test:** This test integrates both the summarization function from our api, and our transcription function, to test the full workflow of our program. This test uses multiple audio recording files (.wav) to transcribe them then summarize them, reporting any issues to the console in teh process. 
     - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_system_transcription_summary.py
