@@ -60,7 +60,7 @@ with the expected outputs `.json` file.
 
 To run the tests, navigate to the `src/test/` directory and run the following command:
 
-`pytest` or `pytest`
+`pytest` or `pytest -s`
 
 PyTest will the the automated tests and determine if they all pass.
 
