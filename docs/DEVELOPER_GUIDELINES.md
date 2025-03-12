@@ -119,5 +119,16 @@ for the audio. It is required that the audio file is in english.
     - **Author:** Aidan Daly
     - **Goal/Description of test:** This test integrates both the summarization function from our api, and our transcription function, to test the full workflow of our program. This test uses multiple audio recording files (.wav) to transcribe them then summarize them, reporting any issues to the console in teh process. 
     - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_system_transcription_summary.py
-    
+- test_transcript_src_integration
+    - **Author:** Aiden Reedy
+    - **Goal/Description of test:** This tests to make sure the program saves the files in the correct file type (.srt) and format. This is important because many other parts rely on the file being in that format.
+    - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_transcript_src_integration.py
+- test_srt_validation
+    - **Author:** Aiden Reedy
+    - **Goal/Description of test:** This tests to make sure that the file saving script doesn't save a file if it has the wrong format or other issues like being empty. This is important because many other parts rely on the file being in that format.
+    - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_srt_validation.py
+- test_unit_file_saving
+    - **Author:** Aiden Reedy
+    - **Goal/Description of test:** This tests to make sure the program saves the file to the right location. This is important because other parts of the program like summarization need to access the file.
+    - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_unit_file_saving.py
 
