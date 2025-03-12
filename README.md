@@ -1,14 +1,19 @@
 # Minute-Meet
 Our product is a meeting summary tool that the user can boot up to listen to a specific program's audio output. The program will listen to the user's microphone and/or meeting software and transcribe the meeting. When the meeting is over, the transcript will be saved, allowing the user to submit it for summarization.
 
-## Installation Steps
+## How to Install Minute-Meet
 
-### Prerequisites
-- Python >= 3.10
+### Requirements
+Requirements are simple. You'll need base Python and Git.
+
+- Python (Version >= 3.10)
 - Git
 
-### Cloning The Repository And Installing The Required Packages
-To install the project, you will need to clone the repository and install the required packages. 
+### Build Instructions
+
+To run our software, you'll need the repository on your local device.
+
+First: clone the repository in your terminal (and directory) of choice with:
 
 ```bash
 git clone https://github.com/r-fairhurst/MeetnSleep
@@ -20,7 +25,7 @@ then cd into the main directory
 cd MeetnSleep
 ```
 
-Then use the following command to install the required packages
+Then, install the required packages with:
 
 **NOTE:** THIS WILL PROBABLY TAKE A FEW MINS
 ```bash
@@ -28,13 +33,13 @@ pip install -r requirements.txt
 ```
 
 #### NOTE:
-If neccesary create a python virtual environment to install the required packages.
+If necessary, create a Python virtual environment to install the required packages.
 
 ```bash
 python -m venv "venv"
 ```
 
-Then activate the virtual environment
+Then activate the virtual environment:
 
 ```bash
 source venv/bin/activate
@@ -42,11 +47,9 @@ source venv/bin/activate
 
 You can replace venv with any name you want to give the virtual environment.
 
-Then run the commands above to install all the required packages.
+## Run Minute-Meet
 
-## Running The Program
-
-To run the program, you will need to run the following command in the terminal.
+To run the program, enter the following command in the terminal:
 
 ```bash
 python frontend/djangoProject/manage.py runserver
@@ -92,9 +95,9 @@ This includes:
 ## Contributors
  - Frontend
     - Ian McKee
-        - site design, manual testing API calls through our software to Gemini API 
+        - Site design, documentation, manual testing with Gemini API calls from the software.
     - Arianna Valencia
-        - Django setup, css styling, and recording button
+        - Django setup, CSS styling, and recording button
  - Backend
     - William Morton
         - Gemini API summarization tool, and setting rules for the prompt, general bug fixing, pioneering tests 
