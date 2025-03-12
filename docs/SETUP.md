@@ -146,7 +146,12 @@ https://aistudio.google.com/apikey
 If you ever encounter a bug while using our software and want to help us keep our product bug-free then follow these guidelines!
 
 #### Step 1
-If you found a bug, make sure you are using the latest software version we have available, and also double check that it is not already listed within the issue tracker found on github: https://github.com/r-fairhurst/MeetnSleep/issues 
+If you found a bug, make sure you are using the latest software version we have available, and also double check that it is not already listed within the issue tracker found on github: 
+
+```
+https://github.com/r-fairhurst/MeetnSleep/issues
+```
+
 - **NOTE:** If you do not have an account on GitHub and do not wish to create one you can email one the devs about the bug following the same format.
 
 #### Step 2
@@ -154,7 +159,12 @@ Determine the steps required to reproduce the bug.
 - This is important as it allows our dev team to reproduce the issue on their own machines.
 
 #### Step 3
-Following our bug report template found in this folder named "bug_report_template", a new issue can be created on our github found here: https://github.com/r-fairhurst/MeetnSleep/issues
+Following our bug report template found in this folder named "bug_report_template", a new issue can be created on our github found here: 
+
+```
+https://github.com/r-fairhurst/MeetnSleep/issues
+```
+
 - **NOTE:** If you do not have an account on GitHub and do not wish to create one you can email one the devs about the bug following the same format.
 
 #### Step 4
@@ -165,4 +175,6 @@ Wait for a patch from the dev team and keep an ear out if we need any more infor
 # 6. Known bugs
 
 - Check the link below for frequently encountered issues:
-- https://github.com/r-fairhurst/MeetnSleep/issues
+```
+https://github.com/r-fairhurst/MeetnSleep/issues
+```
