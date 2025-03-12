@@ -87,6 +87,7 @@ This includes:
  - The project proposal
  - Bug reporting documentation
  - Developer guidelines.
+ - And more...
 
 ## Contributors
  - Frontend
