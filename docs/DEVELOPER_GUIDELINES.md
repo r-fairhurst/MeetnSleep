@@ -131,4 +131,16 @@ for the audio. It is required that the audio file is in english.
     - **Author:** Aiden Reedy
     - **Goal/Description of test:** This tests to make sure the program saves the file to the right location. This is important because other parts of the program like summarization need to access the file.
     - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_unit_file_saving.py
+- test_system_transcription_summary
+    - **Author:** William Morton
+    - **Goal/Description of test:** This tests the transcription and summarization backend integration. It first gets a valid audio file, transcribes it, and then passes it to summarization. This tests T_5 in particular but it can be swapped out for either the OpenAI or Gemini models.
+    - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_system_transcription_summary.py
+- test_gemini_summarization
+    - **Author:** William Morton
+    - **Goal/Description of test:** This tests the Gemini summary service by passing valid inputs into the API and checking if the returned values are valid. This also checks for thrown exceptions including a missing API key.
+    - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_gemini_summarization.py
+- test_transcription
+    - **Author:** William Morton
+    - **Goal/Description of test:** The purpose of this test is to test the accuracy of the transcription service and also to ensure that the transcription service is working as intended. It does this by testing the transcription outputs against the correct transcription outputs for predefined files.
+    - **How to execute the test:** navigate to MeetnSleep/src/test then run this command: python -m pytest .\test_transcription.py
 
