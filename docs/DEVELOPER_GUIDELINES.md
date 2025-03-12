@@ -86,4 +86,13 @@ for the audio. It is required that the audio file is in english.
 5. Test that the file is included in the test suite by executing the test suite as explained in Developer Guidelines
 5.
 
-# 6. How to build a release of the software
+# 6. Current Test Descriptions
+
+### Frontend
+- Example Test name
+    - **Author:** your name
+    - **Goal/Description of test:** words words blah blah blah 
+    - **How to execute the test:**, aka pytest, or navigate to it and run it
+    
+### Backend
+
