@@ -4,7 +4,7 @@ import pytest
 from tqdm import tqdm
 
 # Add the correct paths for transcription and main modules
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../src/test/prototype")))  # transcription module path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../src/prototype")))  # transcription module path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../src")))  # main module path
 
 from transcription import transcribe_audio  # Now it can import from backend/prototype
