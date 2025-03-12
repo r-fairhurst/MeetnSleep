@@ -99,7 +99,7 @@ This includes:
     - William Morton
         - Gemini API summarization tool, and setting rules for the prompt, general bug fixing, pioneering tests 
     - Aiden Reedy 
-        - Speech to text transcription optimization
+        - Speech to text transcription and audio preprocessing optimization 
  - Fullstack
     - Nadir Isweesi
         - Django setup, created API calls to different LLMS
