@@ -156,7 +156,7 @@ def list_summaries(request):
     return summaries
 
 
-# the download_summary function is used to download the summary files, but doesn't work right now
+# the download_summary function is used to download the summary files
 @csrf_exempt
 def download_summary(request, file_name):
     file_path = os.path.join(os.path.dirname(__file__), "../../../storage/summaries", file_name)
@@ -189,6 +189,9 @@ def upload_transcript(request):
             
             summary_file_path = file_path.replace(".srt", "_summary.txt").replace(".txt", "_summary.txt")
             save_summarized_transcript(summary, summary_file_path)
+
+            # Also remove the uploaded .txt or .srt file
+            os.remove(file_path)
 
             # After successfully saving the summary, return a response with redirect info
             return JsonResponse({

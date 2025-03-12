@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../.
 #import the t5 summary module
 from main.llms.t5_summary import t_five_summary
 #import our audio transcription module
-from backend.prototype.transcription import transcribe_audio  # Adjust if needed
+from prototype.transcription import transcribe_audio  # Adjust if needed
 
 #Start the test in the scope of the module
 @pytest.fixture(scope="module")
