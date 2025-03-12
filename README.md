@@ -81,7 +81,12 @@ sudo apt-get install portaudio19-dev
 ```
 
 ## More Information
-More information can be found in the docs folder of the project. This includes the project proposal, bug reporting documentation, as well as developer guidelines.
+More information the software can be found in the project docs folder. 
+This includes: 
+ - Steps on using the software
+ - The project proposal
+ - Bug reporting documentation
+ - Developer guidelines.
 
 ## Contributors
  - Frontend
