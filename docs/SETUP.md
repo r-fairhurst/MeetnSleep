@@ -124,9 +124,9 @@ Summarization is handled through Google's Gemini API and the summarization page.
 - Press "Settings."
 - Get a FREE Gemini API key from the following link:
 
-'''
+```
 https://aistudio.google.com/apikey
-'''
+```
 
 - Enter your API key into the text field.
 - Select "Submit Gemini API Key."
