@@ -1,8 +1,9 @@
 # 1. How to install the software
 
 ### Prerequisites
-- Python >= 3.10
+- Python 3.10 or greater
 - Git
+### Required Packages
 - SpeechRecognition
 - ffmpeg
 - Fastapi
