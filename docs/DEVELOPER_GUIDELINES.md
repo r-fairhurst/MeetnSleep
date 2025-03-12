@@ -69,7 +69,19 @@ returns the accuracy as a percentage.
 
 ## Summarization
 
-Not yet implemented.
+The transcription testing suite uses a predefined `.json` transcription file with expected outputs.
+
+The `.json` transcription files used for testing can be found at `src/test/test_transcription_inputs/expected_outputs.json` along 
+with the audio inputs of each in their respective `.wav` file.
+
+To run the tests, navigate to the `src/test/` directory and run the following command:
+
+`python -m pytest test_testname.py`
+
+PyTest will the the automated tests and determine if they all pass.
+
+If `python -m pytest` was executed, the automated tool summarizes the transcription, compares it with the expected output, and 
+returns the accuracy as a percentage.
 
 # 5. How to add a new test
 
