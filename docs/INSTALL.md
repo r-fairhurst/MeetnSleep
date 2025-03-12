@@ -54,15 +54,45 @@ this should initiallize a local server that you can access by going to the follo
 
 This software is designed for users who are familiar with our platform
 
-**Web Application (work in progress)**
+**Web Application**
+## How To Use The Program
 
+### Accessing the locally hosted site:
 - Open your preferred web browser.
-
 - Navigate to the localhost URL provided
-
 ```
 http://127.0.0.1:8000/minuteMeet
 ```
+**NOTE** while on the site if you are the main page "http://127.0.0.1:8000/ and get a 404 error, make sure you go to the /minuteMeet page. 
+
+### Start A Meeting To Record
+- To start a meeting, click on the "Start Meeting" button, this is the green cirlce with a + in the middle. This will have you go to the recording page
+- On the recording page, you can start recording by clicking the "Start Recording" button. This will start the recording process.
+- Once you are done recording, click the "Stop Recording" button to stop the recording process. this is the red square button.
+- the transcript will be saved and you can submit it for summarization.
+   - this file is found in the main directory of the project, in the "storage/transcripts" folder. it will be a .srt file
+
+
+### Submit A Transcript For Summarization
+**NOTE** you will need a gemini API key to submit a transcript for summarization. You can get one by going to the following link and signing up for an account.
+```
+https://ai.google.dev/gemini-api/docs/api-key
+```
+#### Setting up a Gemini API key for summarization 
+    1. After installing and running MinuteMeet, click on the settings page on the bottom home page "http://127.0.0.1:8000/minuteMeet/settingsPage/"
+    2. Copy and paste your Gemini API key into the text box
+    3. Click on "Submit Gemini API Key"
+    4. You are all set, it will auto redirct you back to the home page
+
+- To submit a transcript for summarization, click on the "Summaries" button from the main page. This will take you to the summarization page.
+- On the summarization page, you can submit a transcript by clicking the "Browse" button and selecting the .txt or .srt file of your transcript 
+- Once Selected click on "Upload & Summarize" button. This now start the API call to Gemini, and once the page refreshes you will see it appear in the table named "Your Summaries"
+- then you can either view or download it
+
+### Submitting An Audio File For Transcription
+- to submit an audio file for summarization, click browse button next to "No file selected" and select the audio file you want to submit.
+- then click the "Upload & Transcribe" button to submit the audio file for summarization.
+
 
 # 4. Support & Questions
 
