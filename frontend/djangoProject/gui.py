@@ -4,6 +4,7 @@ from threading import Thread
 import webview
 
 
+# Run the project as a seperate window mimicing a desktop app
 def start_webview():
     window = webview.create_window('Minute Meet', 'http://127.0.0.1:8000/minuteMeet', confirm_close=True)
     
@@ -14,6 +15,7 @@ def start_webview():
     window.closed = os._exit(0)
 
 
+# Start django using the runserver command
 def start_startdjango():
     if sys.platform in ['win32', 'win64']:
         os.system("python frontend/djangoProject/manage.py runserver 127.0.0.1:8000")
