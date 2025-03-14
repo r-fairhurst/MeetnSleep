@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import time
+import random
 from datetime import datetime
 from django.shortcuts import render
 from django.http import JsonResponse, StreamingHttpResponse, FileResponse, HttpResponse
@@ -180,14 +181,20 @@ def upload_transcript(request):
                 destination.write(chunk)
 
         try:
+            # Create a random number to prevent duplicate files
+            num = str(random.randint(1, 100000))
+
             with open(file_path, 'r', encoding='utf-8') as file:
                 transcript_content = file.read()
             
             summary = summarize_transcript(transcript_content, enablePrint=False)
             if not summary:
                 return JsonResponse({"success": False, "message": "Could not summarize the transcript."})
-            
-            summary_file_path = file_path.replace(".srt", "_summary.txt").replace(".txt", "_summary.txt")
+
+            # Split name and extension
+            # Add random number
+            base, ext = os.path.splitext(file_path)
+            summary_file_path = f"{base}_{num}_summary.txt"
             save_summarized_transcript(summary, summary_file_path)
 
             # Also remove the uploaded .txt or .srt file
@@ -212,7 +219,9 @@ def view_summary(request, file_name):
     if os.path.exists(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
-        return HttpResponse(content, content_type='text/plain')
+        
+        # Pass returned content to a template viewing file
+        return render(request, 'summaryTemplate.html', {"summary": content})
     else:
         return JsonResponse({"error": "File not found."}, status=404)
     
