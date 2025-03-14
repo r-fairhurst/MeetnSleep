@@ -6,11 +6,12 @@ import webview
 
 # Run the project as a seperate window mimicing a desktop app
 def start_webview():
+    webview.settings['ALLOW_DOWNLOADS'] = True
     window = webview.create_window('Minute Meet', 'http://127.0.0.1:8000/minuteMeet', confirm_close=True)
     
     def hide_scrollbars():
         window.evaluate_js("document.body.style.overflow = 'hidden';")
-    
+
     webview.start(hide_scrollbars)
     window.closed = os._exit(0)
 
