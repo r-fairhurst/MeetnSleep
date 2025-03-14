@@ -16,3 +16,4 @@ pyaudio
 pytest
 django
 flake8
+pywebview
